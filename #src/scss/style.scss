@@ -1,0 +1,36 @@
+@import "nullstyle";
+@import "mixins";
+@import "fonts";
+
+$font: "Inter";
+$transition: 0.3s ease 0s;
+
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #F8F8F8;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0px 15px;
+    margin: 0 auto;
+    @media (max-width: 970px) {
+        max-width: 800px;
+    }
+    @media (max-width: 767px) {
+        max-width: none;
+    }
+}
+
+main {
+    flex: 1 1 auto;
+}
+
+@import "header";
+
+
+
+@import "footer";

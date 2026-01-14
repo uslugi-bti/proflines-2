@@ -1,0 +1,44 @@
+document.addEventListener("DOMContentLoaded", function () {
+    function testWebP(callback) {
+        var webP = new Image();
+        webP.onload = webP.onerror = function () {
+            callback(webP.height == 2);
+        };
+        webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
+    }
+    testWebP(function (support) {
+        if (support == true) {
+            document.querySelector('body').classList.add('webp');
+        } else {
+            document.querySelector('body').classList.add('no-webp');
+        }
+    });
+
+    const openSubMenu = document.querySelectorAll(".header-bottom__item>span");
+    const subMenu = document.querySelectorAll(".header-bottom__subitems");
+
+    for (let i = 0; i < subMenu.length; i++) {
+        openSubMenu[i].addEventListener("click", function () {
+            if (openSubMenu[i].classList.contains("open")) {
+                openSubMenu[i].classList.remove("open");
+                subMenu[i].classList.remove("open");
+            } else {
+                for (let i = 0; i < subMenu.length; i++) {
+                    openSubMenu[i].classList.remove("open");
+                    subMenu[i].classList.remove("open");
+                }
+                openSubMenu[i].classList.add("open");
+                subMenu[i].classList.add("open");
+            }
+        });
+    }
+
+    document.addEventListener("click", function (event) {
+        if (!event.target.closest(".header-bottom__subitems") && !event.target.closest(".header-bottom__item>span")) {
+            for (let i = 0; i < subMenu.length; i++) {
+                openSubMenu[i].classList.remove("open");
+                subMenu[i].classList.remove("open");
+            }
+        }
+    });
+});
