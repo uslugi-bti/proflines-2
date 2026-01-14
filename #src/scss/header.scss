@@ -156,6 +156,9 @@
         }
         &>button {
             display: none;
+            @media (max-width: 525px) {
+                display: block;
+            }
         }
         input {
             font-size: 13px;
@@ -259,11 +262,6 @@
             }
             @media (max-width: 767px) {
                 max-width: 136px;
-            }
-            @media (max-width: 525px) {
-                position: absolute;
-                top: 100%;
-                left: 0;
             }
             &::placeholder {
                 font-size: 13px;
