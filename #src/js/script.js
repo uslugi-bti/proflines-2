@@ -60,4 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
             searchBody.reset();
         }
     });
+
+    const body = document.querySelector("body");
+    const headerMenu = document.querySelector(".header-bottom__menu");
 });
