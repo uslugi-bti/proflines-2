@@ -64,4 +64,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const body = document.querySelector("body");
     const headerMenu = document.querySelector(".header-bottom__menu");
     const headerList = document.querySelector(".header-bottom__list");
+
+    headerMenu.addEventListener("click", function () {
+        body.classList.add("header-lock");
+        headerList.classList.add("active");
+        headerMenu.classList.add("active");
+    });
 });
