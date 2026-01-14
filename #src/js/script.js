@@ -41,4 +41,15 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
+
+    const searchBody = document.querySelector(".header-bottom-search__body");
+    const searchButton = document.querySelector(".header-bottom__search");
+
+    searchButton.addEventListener("click", function () {
+        if (searchBody.classList.contains("open")) {
+            searchBody.classList.remove("open");
+        } else {
+            searchBody.classList.add("open");
+        }
+    });
 });
