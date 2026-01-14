@@ -248,8 +248,9 @@
         gap: 8px;
         @media (max-width: 525px) {
             position: absolute;
-            top: 100%;
+            top: calc(100% + 8px);
             left: 0;
+            width: 100%;
         }
         input {
             font-size: 13px;
@@ -262,6 +263,10 @@
             }
             @media (max-width: 767px) {
                 max-width: 136px;
+            }
+            @media (max-width: 525px) {
+                max-width: none;
+                width: 100%;
             }
             &::placeholder {
                 font-size: 13px;
