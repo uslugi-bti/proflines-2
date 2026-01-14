@@ -25,6 +25,14 @@ $transition: 0.3s ease 0s;
     }
 }
 
+body {
+    @media (max-width: 767px) {
+        &.header-lock {
+            overflow-y: hidden;
+        }
+    }
+}
+
 main {
     flex: 1 1 auto;
 }

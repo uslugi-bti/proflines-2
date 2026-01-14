@@ -66,8 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const headerList = document.querySelector(".header-bottom__list");
 
     headerMenu.addEventListener("click", function () {
-        body.classList.add("header-lock");
-        headerList.classList.add("active");
-        headerMenu.classList.add("active");
+        body.classList.toggle("header-lock");
+        headerList.classList.toggle("active");
+        headerMenu.classList.toggle("active");
     });
 });

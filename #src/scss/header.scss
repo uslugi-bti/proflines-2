@@ -91,6 +91,9 @@
             padding: 135px 15px 25px 15px;
             background-color: #F8F8F8;
             overflow-y: auto;
+            &.active {
+                top: 0;
+            }
         }
     }
 
