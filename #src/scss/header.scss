@@ -169,11 +169,6 @@
             @media (max-width: 767px) {
                 max-width: 136px;
             }
-            @media (max-width: 525px) {
-                position: absolute;
-                top: 100%;
-                left: 0;
-            }
             &::placeholder {
                 font-size: 13px;
                 letter-spacing: -0.26px;
@@ -248,6 +243,11 @@
         border-bottom: 1px solid #E4E4E4;
         padding: 4px 8px;
         gap: 8px;
+        @media (max-width: 525px) {
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
         input {
             font-size: 13px;
             letter-spacing: -0.26px;
