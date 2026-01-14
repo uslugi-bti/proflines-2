@@ -6,3 +6,4 @@
 !package.json
 !gulpfile.js
 !.gitignore
+.DS_Store
