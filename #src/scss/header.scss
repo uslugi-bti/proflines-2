@@ -15,11 +15,16 @@
     margin: 0px 0px 15px 0px;
     &__text {
         text-align: center;
-        p {
+        line-height: 124%;
+        @media (max-width: 375px) {
+            line-height: 80%;
+        }
+        span {
             text-align: center;
             font-size: 13px;
-            letter-spacing: -2px;
-            line-height: 124%;
+            @media (max-width: 375px) {
+                font-size: 10px;
+            }
         }
     }
 }
