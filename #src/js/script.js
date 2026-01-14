@@ -63,4 +63,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const body = document.querySelector("body");
     const headerMenu = document.querySelector(".header-bottom__menu");
+    const headerList = document.querySelector(".header-bottom__list");
 });
