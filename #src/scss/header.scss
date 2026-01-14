@@ -79,6 +79,8 @@
         align-items: center;
         justify-content: center;
         flex: 1 1 auto;
+        position: relative;
+        z-index: 3;
         @media (max-width: 767px) {
             position: fixed;
             top: -100%;
@@ -91,6 +93,7 @@
             padding: 135px 15px 25px 15px;
             background-color: #F8F8F8;
             overflow-y: auto;
+            z-index: auto;
             &.active {
                 top: 0;
             }
@@ -236,6 +239,7 @@
             width: 100%;
             height: 2px;
             background-color: #242A36;
+            transition: $transition;
             &:first-child {
                 width: 16px;
                 top: 10px;
@@ -244,6 +248,23 @@
             }
             &:last-child {
                 bottom: 10px;
+            }
+        }
+        &.active {
+            span {
+                &:first-child {
+                    width: 100%;
+                    top: 14px;
+                    left: 0;
+                    right: auto;
+                    transform: rotate(45deg);
+                }
+                &:last-child {
+                    width: 100%;
+                    bottom: 14px;
+                    left: 0;
+                    transform: rotate(-45deg);
+                }
             }
         }
     }
@@ -285,6 +306,7 @@
         border-bottom: 1px solid #E4E4E4;
         padding: 4px 8px;
         gap: 8px;
+        background-color: #F8F8F8;
         @media (max-width: 525px) {
             position: absolute;
             top: calc(100% + 8px);
