@@ -69,6 +69,7 @@ main {
         background-color: #FFFFFF;
         border-radius: 9999px;
         position: relative;
+        text-align: center;
         &::before {
             content: '';
             position: absolute;
@@ -170,6 +171,12 @@ main {
         display: inline-block;
         position: relative;
         padding: 0px 75px;
+        @media (max-width: 970px) {
+            padding: 0px 60px;
+        }
+        @media (max-width: 425px) {
+            padding: 0px 0px;
+        }
     }
     &__img {
         position: absolute;
