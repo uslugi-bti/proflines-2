@@ -78,7 +78,10 @@ document.addEventListener("DOMContentLoaded", function () {
     headerSidebar.addEventListener("click", function (event) {
         if (!event.target.closest(".header-sidebar__body")) {
             body.classList.remove("lock");
+            header.classList.remove("active");
             headerSidebar.classList.remove("active");
+            headerList.classList.remove("active");
+            headerMenu.classList.remove("active");
         }
     });
 });
