@@ -421,11 +421,14 @@
     }
 }
 
-/*.breadcrump {
-    display: flex;
-    align-items: center;
-    z-index: 3;
-    position: relative;
+.breadcrump {
+    &__body {
+        display: flex;
+        align-items: center;
+        z-index: 3;
+        position: relative;
+        padding: 135px 0px 0px 0px;
+    }
     &__item {
         a {
             color: #717580;
@@ -445,4 +448,4 @@
             }
         }
     }
-}*/
+}
