@@ -98,6 +98,7 @@ main {
     &__text {
         max-width: 459px;
         width: 100%;
+        margin: 0px 0px 32px 0px;
         p {
             font-weight: 400;
             font-size: 20px;
@@ -107,9 +108,49 @@ main {
     }
 
     &__buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin: 0px 0px 16px 0px;
+        a {
+            display: inline-block;
+            padding: 14.5px 32px;
+            font-size: 16px;
+            border-radius: 6px;
+            &:first-child {
+                background: radial-gradient(52.01% 257.68% at 57.62% -157.68%, #68799C 0%, #242A36 100%);
+                box-shadow: 0px 2px 5px 0px #0000001A;
+                box-shadow: 0px 10px 10px 0px #00000017;
+                box-shadow: 0px 22px 13px 0px #0000000D;
+                box-shadow: 0px 40px 16px 0px #00000003;
+                box-shadow: 0px 62px 17px 0px #00000000;
+                color: #ffffff;
+            }
+            &:last-child {
+                color: #242A36;
+                border: 1px solid #0000000A;
+                position: relative;
+                padding: 14.5px 55.33px 14.5px 32px;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    right: 32px;
+                    transform: translate(0, -50%);
+                    width: 13.33px;
+                    height: 11px;
+                    background: url('../img/hero/03.svg') center / contain no-repeat;
+                }
+            }
+        }
     }
 
     &__inscription {
+        p {
+            color: #717580;
+            font-size: 16px;
+            line-height: 157%;
+        }
     }
 }
 .hero-title {
