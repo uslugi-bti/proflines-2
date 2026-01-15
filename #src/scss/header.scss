@@ -56,12 +56,6 @@
 .header-bottom {
     display: flex;
     align-items: center;
-    position: relative;
-    z-index: 3;
-    margin: 0px 0px 15px 0px;
-    @media (max-width: 525px) {
-        margin: 0px 0px 8px 0px;
-    }
     & > *:last-child {
         margin: 0;
     }
@@ -192,7 +186,7 @@
         gap: 8px;
         margin: 0px 32px 0px 0px;
         position: relative;
-        z-index: 3;
+        z-index: 4;
         @media (max-width: 1250px) {
             margin: 0px 15px 0px 0px;
         }
@@ -200,7 +194,7 @@
 
     &__search {
         margin: 0px 32px 0px 0px;
-        z-index: 3;
+        z-index: 4;
         @media (max-width: 1250px) {
             margin: 0px 15px 0px 0px;
         }
@@ -246,7 +240,7 @@
         width: 30px;
         height: 30px;
         position: relative;
-        z-index: 3;
+        z-index: 4;
         span {
             position: absolute;
             left: 0;
@@ -369,7 +363,7 @@
     }
 }
 
-.breadcrump {
+/*.breadcrump {
     display: flex;
     align-items: center;
     z-index: 3;
@@ -393,4 +387,4 @@
             }
         }
     }
-}
+}*/
