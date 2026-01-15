@@ -97,6 +97,8 @@ main {
             }
             @media (max-width: 525px) {
                 font-size: 35px;
+                line-height: 120%;
+                letter-spacing: 0;
             }
             @media (max-width: 425px) {
                 font-size: 30px;
@@ -121,6 +123,7 @@ main {
         flex-wrap: wrap;
         gap: 24px;
         margin: 0px 0px 16px 0px;
+        justify-content: center;
         a {
             display: inline-block;
             padding: 14.5px 32px;
@@ -167,7 +170,6 @@ main {
         display: inline-block;
         position: relative;
         padding: 0px 75px;
-        line-height: 87%;
     }
     &__img {
         position: absolute;
