@@ -84,6 +84,7 @@ main {
     }
 
     &__title {
+        margin: 0px 0px 14px 0px;
         h1 {
             color: #242A36;
             text-align: center;
@@ -95,6 +96,14 @@ main {
     }
 
     &__text {
+        max-width: 459px;
+        width: 100%;
+        p {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 174%;
+            text-align: center;
+        }
     }
 
     &__buttons {
@@ -112,8 +121,6 @@ main {
     }
     &__img {
         position: absolute;
-        top: 0;
-        left: 0;
         width: 60px;
         height: 60px;
         border-radius: 6px;
@@ -128,7 +135,8 @@ main {
             object-fit: contain;
         }
         &.--1 {
-            top: 30px;
+            left: 0;
+            top: 15px;
             background: radial-gradient(106.75% 98.19% at 55.99% 51.38%, #FFB121 0%, #F9F5E7 100%);
             box-shadow: 1px 1px 5px 0px #FFE09E8A;
             box-shadow: 6px 6px 8px 0px #FFE09E78;
@@ -136,6 +144,17 @@ main {
             box-shadow: 24px 24px 13px 0px #FFE09E14;
             box-shadow: 37px 37px 15px 0px #FFE09E03;
             transform: rotate(-10deg);
+        }
+        &.--2 {
+            top: 10px;
+            right: 0;
+            background: radial-gradient(52.01% 257.68% at 57.62% -157.68%, #68799C 0%, #242A36 100%);
+            box-shadow: 0px 2px 5px 0px #343A4426;
+            box-shadow: 0px 9px 9px 0px #343A4421;
+            box-shadow: 0px 20px 12px 0px #343A4414;
+            box-shadow: 0px 35px 14px 0px #343A4405;
+            box-shadow: 0px 54px 15px 0px #343A4400;
+            transform: rotate(12deg);
         }
     }
 }
