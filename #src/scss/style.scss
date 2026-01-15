@@ -47,17 +47,47 @@ main {
         transform: translate(-50%, -50%);
         width: 354px;
         height: 354px;
-        background-color: #FFC721;
-        backdrop-filter: blur(602px);
+        background: #FFC721;
         border-radius: 50%;
+        filter: blur(500px);
     }
     &__body {
+        padding: 193px 0px 144px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
     }
 
     &__badge {
+        margin: 0px 0px 14px 0px;
+        padding: 6px 13px 6px 31px;
+        border: 1px solid #E4E4E4;
+        background-color: #FFFFFF;
+        border-radius: 9999px;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 13px;
+            top: 50%;
+            transform: translate(0, -50%);
+            width: 8px;
+            height: 8px;
+            background-color: #FFC721;
+            border-radius: 50%;
+            border: 2px solid #FFC72140;
+        }
     }
 
     &__title {
+        h1 {
+            color: #242A36;
+            text-align: center;
+        }
     }
 
     &__text {
