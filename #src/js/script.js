@@ -92,7 +92,15 @@ document.addEventListener("DOMContentLoaded", function () {
     function moveSidebarItems() {
         const viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         if (viewport_width <= 767) {
-            
+            for (let i = 0; i < sidebarItems.length; i++) {
+                headerBottomItems.insertBefore(sidebarItems[i], headerBottomItems.children[headerBottomItems.children.length + i]);
+            }
+        } else {
+            for (let i = 0; i < sidebarItems.length; i++) {
+                sidebarNav.insertBefore(sidebarItems[i], sidebarNav.children[i]);
+            }
         }
     }
+    moveSidebarItems();
+    window.addEventListener("resize", moveSidebarItems);
 });
