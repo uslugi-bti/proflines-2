@@ -63,14 +63,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const body = document.querySelector("body");
     const header = document.querySelector(".header");
-    const headerSidebar = document.querySelector("")''
+    const headerSidebar = document.querySelector(".header-sidebar");
     const headerMenu = document.querySelector(".header-bottom__menu");
     const headerList = document.querySelector(".header-bottom__list");
 
     headerMenu.addEventListener("click", function () {
-        body.classList.toggle("header-lock");
+        body.classList.toggle("lock");
         header.classList.toggle("active");
+        headerSidebar.classList.toggle("active");
         headerList.classList.toggle("active");
         headerMenu.classList.toggle("active");
+    });
+
+    headerSidebar.addEventListener("click", function (event) {
+        if (!event.target.closest(".header-sidebar__body")) {
+            body.classList.remove("lock");
+            headerSidebar.classList.remove("active");
+        }
     });
 });
