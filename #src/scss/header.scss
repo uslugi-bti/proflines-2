@@ -49,6 +49,10 @@
     align-items: center;
     position: relative;
     z-index: 4;
+    margin: 0px 0px 15px 0px;
+    @media (max-width: 525px) {
+        margin: 0px 0px 8px 0px;
+    }
     & > *:last-child {
         margin: 0;
     }
@@ -362,8 +366,22 @@
     z-index: 3;
     position: relative;
     &__item {
+        a {
+            color: #717580;
+            font-size: 13px;
+        }
         &::after {
-            content: ' / ';
+            content: '/';
+            padding: 0px 3px;
+            color: #717580;
+        }
+        &:last-child {
+            a {
+                color: #242A36;
+            }
+            &::after {
+                display: none;
+            }
         }
     }
 }
