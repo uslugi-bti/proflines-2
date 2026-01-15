@@ -84,4 +84,10 @@ document.addEventListener("DOMContentLoaded", function () {
             headerMenu.classList.remove("active");
         }
     });
+
+    const sidebarItems = document.querySelectorAll(".header-sidebar__item");
+    const headerBottomItems = document.querySelector(".header-bottom__items");
+    const sidebarNav = document.querySelector(".header-sidebar__body");
+
+    function moveSidebarItems() {}
 });
