@@ -62,11 +62,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const body = document.querySelector("body");
+    const header = document.querySelector(".header");
     const headerMenu = document.querySelector(".header-bottom__menu");
     const headerList = document.querySelector(".header-bottom__list");
 
     headerMenu.addEventListener("click", function () {
         body.classList.toggle("header-lock");
+        header.classList.toggle("active");
         headerList.classList.toggle("active");
         headerMenu.classList.toggle("active");
     });
