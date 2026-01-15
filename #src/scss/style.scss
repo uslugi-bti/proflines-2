@@ -37,6 +37,42 @@ main {
 
 @import "header";
 
+.hero {
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 354px;
+        height: 354px;
+        background-color: #FFC721;
+        backdrop-filter: blur(602px);
+        border-radius: 50%;
+    }
+    &__body {
+    }
 
+    &__badge {
+    }
+
+    &__title {
+    }
+
+    &__text {
+    }
+
+    &__buttons {
+    }
+
+    &__inscription {
+    }
+}
+.hero-title {
+
+    &__img {
+    }
+}
 
 @import "footer";
