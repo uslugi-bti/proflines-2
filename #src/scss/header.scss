@@ -63,7 +63,6 @@
 .header-bottom {
     display: flex;
     align-items: center;
-    padding: 0px 0px 15px 0px;
     & > *:last-child {
         margin: 0;
     }
@@ -427,7 +426,7 @@
         align-items: center;
         z-index: 3;
         position: relative;
-        padding: 135px 0px 0px 0px;
+        margin: 0px 0px 15px 0px;
     }
     &__item {
         a {

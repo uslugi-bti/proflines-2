@@ -114,4 +114,13 @@ document.addEventListener("DOMContentLoaded", function () {
     colorHeader();
     window.addEventListener("scroll", colorHeader);
     window.addEventListener("resize", colorHeader);
+
+    const breadcrump = document.querySelector(".breadcrump");
+
+    function breadcrumpPadding() {
+        let headerHeight = header.clientHeight;
+        breadcrump.style.paddingTop = headerHeight + 15 + "px";
+    }
+    breadcrumpPadding();
+    window.addEventListener("resize", breadcrumpPadding);
 });
