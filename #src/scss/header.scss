@@ -250,20 +250,22 @@
                 bottom: 10px;
             }
         }
-        &.active {
-            span {
-                &:first-child {
-                    width: 100%;
-                    top: 14px;
-                    left: 0;
-                    right: auto;
-                    transform: rotate(45deg);
-                }
-                &:last-child {
-                    width: 100%;
-                    bottom: 14px;
-                    left: 0;
-                    transform: rotate(-45deg);
+        @media (max-width: 767px) {
+            &.active {
+                span {
+                    &:first-child {
+                        width: 100%;
+                        top: 14px;
+                        left: 0;
+                        right: auto;
+                        transform: rotate(45deg);
+                    }
+                    &:last-child {
+                        width: 100%;
+                        bottom: 14px;
+                        left: 0;
+                        transform: rotate(-45deg);
+                    }
                 }
             }
         }
