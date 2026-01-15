@@ -44,7 +44,7 @@ main {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, calc(-50% + 35px));
         width: 354px;
         height: 354px;
         background: #FFC721;
@@ -87,6 +87,10 @@ main {
         h1 {
             color: #242A36;
             text-align: center;
+            font-size: 52px;
+            font-weight: 500;
+            letter-spacing: -2.6px;
+            line-height: 87%;
         }
     }
 
@@ -100,8 +104,35 @@ main {
     }
 }
 .hero-title {
-
+    &__images {
+        position: relative;
+    }
     &__img {
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        position: relative;
+        border-radius: 6px;
+        overflow: hidden;
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 52%;
+            height: 52%;
+            object-fit: contain;
+        }
+        &.--1 {
+            top: 30px;
+            background: radial-gradient(106.75% 98.19% at 55.99% 51.38%, #FFB121 0%, #F9F5E7 100%);
+            box-shadow: 1px 1px 5px 0px #FFE09E8A;
+            box-shadow: 6px 6px 8px 0px #FFE09E78;
+            box-shadow: 13px 13px 11px 0px #FFE09E47;
+            box-shadow: 24px 24px 13px 0px #FFE09E14;
+            box-shadow: 37px 37px 15px 0px #FFE09E03;
+            transform: rotate(-10deg);
+        }
     }
 }
 
