@@ -89,5 +89,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const headerBottomItems = document.querySelector(".header-bottom__items");
     const sidebarNav = document.querySelector(".header-sidebar__body");
 
-    function moveSidebarItems() {}
+    function moveSidebarItems() {
+        const viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        if (viewport_width <= 767) {
+            
+        }
+    }
 });
