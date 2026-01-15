@@ -103,4 +103,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     moveSidebarItems();
     window.addEventListener("resize", moveSidebarItems);
+
+    function colorHeader() {
+        if (window.scrollY > 70) {
+            header.classList.add("color");
+        } else {
+            header.classList.remove("color");
+        }
+    }
+    colorHeader();
+    window.addEventListener("scroll", colorHeader);
+    window.addEventListener("resize", colorHeader);
 });
