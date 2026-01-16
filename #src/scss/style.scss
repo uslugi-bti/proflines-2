@@ -478,6 +478,7 @@ main {
     gap: 32px;
 }
 .packages__item {
+    align-self: start;
     padding: 32px 24px;
     display: flex;
     flex-direction: column;
@@ -502,6 +503,9 @@ main {
                 color: #717580;
             }
         }
+        .packages-item__price {
+            border: none;
+        }
         .packages-item-price__number {
             span, p {
                 color: #FFFFFF;
@@ -511,6 +515,17 @@ main {
             span {
                 color: #717580;
             }
+        }
+        .packages-item__text {
+            p {
+                color: #F8F8F8;
+            }
+        }
+        .packages-item__button.button a {
+            background: none;
+            background-color: #F8F8F8;
+            box-shadow: 0px 2px 5px 0px #0000001A;
+            color: #242A36;
         }
     }
 }
