@@ -487,6 +487,32 @@ main {
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    &.dark {
+        background-color: #242A36;
+        border: none;
+        .packages-item__plan {
+            background: transparent;
+            border: 1px solid #717580;
+            span {
+                color: #FFFFFF;
+            }
+        }
+        .packages-item__description {
+            p {
+                color: #717580;
+            }
+        }
+        .packages-item-price__number {
+            span, p {
+                color: #FFFFFF;
+            }
+        }
+        .packages-item-price__period {
+            span {
+                color: #717580;
+            }
+        }
+    }
 }
 .packages-item__sticker {
     position: absolute;
