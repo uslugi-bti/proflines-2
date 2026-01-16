@@ -264,19 +264,41 @@ main {
         text-align: center;
     }
 }
-.companys__body {}
+.companys__marquee {
+    overflow: hidden;
+    width: 100%;
+}
+
+.companys__track {
+    display: flex;
+    width: max-content;
+    animation: marquee 20s linear infinite;
+}
 
 .companys__items {
     display: flex;
     align-items: center;
     gap: 32px;
-    overflow: hidden;
+    &:first-child {
+        margin: 0px 32px 0px 0px;
+    }
 }
 
 .companys__item {
     height: 56px;
     img {
         height: 100%;
+        width: auto;
+        display: block;
+    }
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
     }
 }
 
