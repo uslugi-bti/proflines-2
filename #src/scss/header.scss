@@ -17,6 +17,7 @@
         transition: $transition;
     }
     &.color {
+        padding: 4px 0px 15px 0px;
         &::before {
             background-color: #F8F8F8;
             box-shadow: 0 0 10px -2px #242A36;
