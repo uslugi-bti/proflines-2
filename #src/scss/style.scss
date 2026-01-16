@@ -265,9 +265,17 @@ main {
     }
 }
 .companys__body {}
-.companys__wrapper {}
-.swiper {}
-.companys__items {}
+.companys__wrapper {
+}
+.companys__items {
+}
+.companys__item {
+    width: auto !important;
+    img {
+        max-height: 56px;
+        max-width: 100%;
+    }
+}
 .swiper-wrapper {}
 .swiper-slide {}
 

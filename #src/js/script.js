@@ -125,6 +125,18 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", breadcrumpPadding);
     
     if (document.querySelector(".companys__wrapper.swiper")) {
-        
+        const swiper = new Swiper('.companys__wrapper.swiper', {
+            slidesPerView: 'auto',
+            spaceBetween: 32,
+            loop: true,
+
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+
+            speed: 600,
+            grabCursor: true,
+        });
     }
 });
