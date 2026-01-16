@@ -19,7 +19,7 @@
     &.color {
         padding: 4px 0px 15px 0px;
         @media (max-width: 525px) {
-            margin: 0px 0px 8px 0px;
+            padding: 0px 0px 8px 0px;
         }
         &::before {
             background-color: #F8F8F8;
