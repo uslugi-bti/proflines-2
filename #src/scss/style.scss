@@ -532,9 +532,10 @@ main {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    max-width: 282px;
     align-items: center;
     margin: 0px 0px 24px 0px;
+    padding: 0px 24px;
+    gap: 20px;
 }
 .packages-item-price__number {
     display: flex;
