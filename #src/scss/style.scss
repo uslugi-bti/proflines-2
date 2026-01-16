@@ -436,8 +436,61 @@ main {
         color: #717580;
     }
 }
-.choose {}
-.expertise-item__button {}
-.button {}
+
+.packages {
+    border-bottom: 1px solid #E4E4E4;
+    border-top: 1px solid #E4E4E4;
+    margin: 0px 0px 120px 0px;
+    padding: 64px 0px;
+    @media (max-width: 425px) {
+        margin: 0px 0px 90px 0px;
+    }
+}
+.packages__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 0px 0px 32px 0px;
+}
+.packages-head__title {
+    h1 {
+        font-size: 35px;
+        color: #242A36;
+        font-weight: 700;
+        letter-spacing: -1px;
+        line-height: 112%;
+        @media (max-width: 425px) {
+            font-size: 25px;
+        }
+    }
+}
+.packages-head__text {
+    p {
+        font-size: 18px;
+        letter-spacing: -1px;
+        color: #717580;
+    }
+}
+.packages__body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+.packages__item {
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.packages-item__sticker {}
+.packages-item__plan {}
+.packages-item__description {}
+.packages-item__price {}
+.packages-item-price__number {}
+.packages-item-price__period {}
+.packages-item__text {}
+.packages-item__button {}
+.packages-item__inscription {}
 
 @import "footer";
