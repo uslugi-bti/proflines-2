@@ -368,6 +368,9 @@ main {
         font-weight: 700;
         letter-spacing: -1px;
         line-height: 112%;
+        @media (max-width: 425px) {
+            font-size: 25px;
+        }
     }
 }
 .expertise__body {
