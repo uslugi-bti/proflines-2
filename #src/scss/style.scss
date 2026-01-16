@@ -64,6 +64,9 @@ main {
         z-index: 2;
         max-width: 800px;
         margin: 0 auto;
+        @media (max-width: 425px) {
+            padding: 0px 0px 100px 0px;
+        }
     }
 
     &__badge {
@@ -254,6 +257,9 @@ main {
 
 .companys {
     margin: 0px 0px 120px 0px;
+    @media (max-width: 425px) {
+        margin: 0px 0px 90px 0px;
+    }
 }
 .companys__title {
     margin: 0px 0px 24px 0px;
