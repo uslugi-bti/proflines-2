@@ -255,6 +255,15 @@ main {
 .companys {
     margin: 0px 0px 120px 0px;
 }
+.companys__title {
+    margin: 0px 0px 24px 0px;
+    h1 {
+        font-size: 22px;
+        font-weight: 500;
+        letter-spacing: -1px;
+        text-align: center;
+    }
+}
 .companys__body {}
 .companys__wrapper {}
 .swiper {}

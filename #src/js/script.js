@@ -123,4 +123,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     breadcrumpPadding();
     window.addEventListener("resize", breadcrumpPadding);
+    
+    if (document.querySelector(".companys__wrapper.swiper")) {
+        
+    }
 });
