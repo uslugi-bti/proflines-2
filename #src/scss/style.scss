@@ -485,9 +485,24 @@ main {
     background-color: #FFFFFF;
     border: 1px solid #E4E4E4;
     border-radius: 10px;
+    position: relative;
 }
 .packages-item__sticker {
     background-color: #FFC721;
+    width: 100%;
+    text-align: center;
+    padding: 5px 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: rotate(45deg) translate(-50%, 50%);
+    span {
+        font-size: 18px;
+        letter-spacing: -1px;
+        text-align: center;
+        font-weight: 500;
+        color: #242A36;
+    }
 }
 .packages-item__plan {}
 .packages-item__description {}
