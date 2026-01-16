@@ -531,11 +531,19 @@ main {
 .packages-item__price {
     width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin: 0px 0px 24px 0px;
-    padding: 0px 24px;
+    margin: 0px 0px 32px 0px;
+    padding: 0px 24px 24px 24px;
+    border-bottom: 1px solid #E4E4E4;
     gap: 20px;
+}
+
+.packages-item__price:has(.packages-item-price__period) {
+    justify-content: space-between;
+}
+
+.packages-item__price:not(:has(.packages-item-price__period)) {
+    justify-content: center;
 }
 .packages-item-price__number {
     display: flex;
@@ -558,8 +566,27 @@ main {
         font-size: 14px;
     }
 }
-.packages-item__text {}
-.packages-item__button {}
-.packages-item__inscription {}
+.packages-item__text {
+    margin: 0px 0px 32px 0px;
+    p {
+        color: #242A36;
+        font-size: 16px;
+        padding: 16px;
+        line-height: 157%;
+    }
+}
+.packages-item__button {
+    width: 100%;
+    margin: 0px 0px 16px 0px;
+    a {
+        width: 100%;
+    }
+}
+.packages-item__inscription {
+    span {
+        font-size: 14px;
+        color: #717580;
+    }
+}
 
 @import "footer";
