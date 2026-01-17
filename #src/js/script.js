@@ -126,8 +126,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (document.querySelector(".services")) {
         const servicesItems = document.querySelectorAll(".services .columns__item");
-        for (let i = 3; i < servicesItems.length; i++) {
-            servicesItems[i].style.display = "none";
+        const servicesButton = document.querySelector(".services__button > button");
+        const servicesButtonTextBefore = servicesButton.innerHTML;
+        const servicesButtonTextAfter = servicesButton.id;
+
+        function showServices() {
+            for (let i = 3; i < servicesItems.length; i++) {
+                servicesItems[i].style.display = "none";
+            }
         }
+
+        function hideServices() {
+            for (let i = 0; i < servicesItems.length; i++) {
+                servicesItems[i].style.display = "block";
+            }
+        }
+        hideServices();
     }
 });
