@@ -724,6 +724,11 @@ main {
             height: 24px;
             background: url('../img/services/arrow/01.svg') center / contain no-repeat;
         }
+        &.show {
+            &::before {
+                transform: translate(0, -50%) rotate(180deg);
+            }
+        }
     }
 }
 

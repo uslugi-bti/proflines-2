@@ -130,17 +130,28 @@ document.addEventListener("DOMContentLoaded", function () {
         const servicesButtonTextBefore = servicesButton.innerHTML;
         const servicesButtonTextAfter = servicesButton.id;
 
-        function showServices() {
+        function hideServices() {
             for (let i = 3; i < servicesItems.length; i++) {
                 servicesItems[i].style.display = "none";
             }
         }
 
-        function hideServices() {
+        function showServices() {
             for (let i = 0; i < servicesItems.length; i++) {
                 servicesItems[i].style.display = "block";
             }
         }
         hideServices();
+        servicesButton.addEventListener("click", function () {
+            if (servicesButton.classList.contains("show")) {
+                hideServices();
+                servicesButton.innerHTML = servicesButtonTextBefore;
+                servicesButton.classList.remove("show");
+            } else {
+                showServices();
+                servicesButton.innerHTML = servicesButtonTextAfter;
+                servicesButton.classList.add("show");
+            }
+        });
     }
 });
