@@ -684,6 +684,7 @@ main {
 .services__body {
     .columns__body {
         grid-template-columns: 1fr;
+        margin: 0px 0px 32px 0px;
     }
     .columns__item {
         padding: 32px;

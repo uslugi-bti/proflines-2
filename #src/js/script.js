@@ -123,4 +123,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     breadcrumpPadding();
     window.addEventListener("resize", breadcrumpPadding);
+
+    if (document.querySelector(".services")) {
+        const servicesItems = document.querySelectorAll(".services .columns__item");
+        for (let i = 3; i < servicesItems.length; i++) {
+            servicesItems[i].style.display = "none";
+        }
+    }
 });
