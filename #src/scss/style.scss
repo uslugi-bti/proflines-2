@@ -706,6 +706,25 @@ main {
         }
     }
 }
-.columns__button {}
+.columns__button {
+    text-align: center;
+    button {
+        padding: 0px 32px 0px 0px;
+        position: relative;
+        background: none;
+        font-size: 16px;
+        color: #717580;
+        &::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            width: 24px;
+            height: 24px;
+            background: url('../img/services/arrow/01.svg') center / contain no-repeat;
+        }
+    }
+}
 
 @import "footer";
