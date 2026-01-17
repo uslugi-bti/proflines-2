@@ -759,4 +759,57 @@ main {
     }
 }
 
+.process {
+    margin: 0px 0px 120px 0px;
+    padding: 64px 0px;
+    border-top: 1px solid #E4E4E4;
+    border-bottom: 1px solid #E4E4E4;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 223px;
+        height: 208px;
+        top: 111px;
+        right: 17%;
+        background-color: #FFC721;
+        border-radius: 50%;
+        filter: blur(180px);
+    }
+    @media (max-width: 425px) {
+        margin: 0px 0px 90px 0px;
+    }
+
+    .columns__body {
+        position: relative;
+        z-index: 2;
+    }
+    .columns-item__icon {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #F8F8F8;
+        border: 1px solid #E4E4E4;
+        border-radius: 10px;
+        span {
+            font-size: 16px;
+            color: #242A36;
+            font-weight: 600;
+        }
+    }
+}
+
+.process__title {
+    margin: 0px 0px 40px 0px;
+    h1 {
+        font-size: 35px;
+        letter-spacing: -1px;
+        color: #242A36;
+        font-weight: 700;
+        text-align: center;
+    }
+}
+
 @import "footer";
