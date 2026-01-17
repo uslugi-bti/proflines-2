@@ -874,7 +874,10 @@ main {
         grid-template-columns: 1fr;
     }
 }
-.testimonials__item {}
+.testimonials__item {
+    padding: 40px 20px;
+    background-color: #FFFFFF;
+}
 .testimonials-item__text {}
 .testimonials-item__body {}
 .testimonials-item__img {}
