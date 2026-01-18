@@ -92,13 +92,6 @@
 .footer-bottom__button {
     text-align: center;
     margin: 0px 0px 32px 0px;
-    &.open {
-        button {
-            &::before {
-                transform: translate(0, -50%) rotate(180deg);
-            }
-        }
-    }
     button {
         background: none;
         font-size: 16px;
@@ -114,6 +107,11 @@
             width: 24px;
             height: 24px;
             background: url('../img/services/arrow/01.svg') center / contain no-repeat;
+        }
+        &.open {
+            &::before {
+                transform: translate(0, -50%) rotate(180deg);
+            }
         }
     }
 }

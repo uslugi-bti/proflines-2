@@ -309,7 +309,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     
-    const footerText = document.querySelectorAll(".footer-bottom__text");
+    const footerText = document.querySelector(".footer-bottom__text");
     const footerButton = document.querySelector(".footer-bottom__button > button");
     const footerButtonTextBefore = footerButton.innerHTML;
     const footerButtonTextAfter = footerButton.id;
