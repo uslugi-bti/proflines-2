@@ -1314,4 +1314,30 @@ main {
     }
 }
 
+.faq {
+    margin: 0px 0px 120px 0px;
+    @media (max-width: 425px) {
+        margin: 0px 0px 90px 0px;
+    }
+    &__title {
+    }
+
+    &__body {
+    }
+
+    &__column {
+    }
+
+    &__item {
+    }
+}
+.faq-item {
+
+    &__title {
+    }
+
+    &__text {
+    }
+}
+
 @import "footer";
