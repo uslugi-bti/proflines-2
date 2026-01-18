@@ -1252,8 +1252,6 @@ main {
 
     &__badge {
         position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
         background-color: #242A36;
         padding: 16px;
         width: 177px;
@@ -1263,6 +1261,12 @@ main {
         visibility: hidden;
         transition: $transition;
         z-index: 2;
+        
+        &.right-aligned {
+            left: auto;
+            right: 0;
+        }
+        
         &.open {
             opacity: 1;
             visibility: visible;
