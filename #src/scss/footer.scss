@@ -81,10 +81,24 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
+    &.open {
+        p {
+            display: block;
+            overflow: auto;
+            -webkit-line-clamp: none;
+        }
+    }
 }
 .footer-bottom__button {
     text-align: center;
     margin: 0px 0px 32px 0px;
+    &.open {
+        button {
+            &::before {
+                transform: translate(0, -50%) rotate(180deg);
+            }
+        }
+    }
     button {
         background: none;
         font-size: 16px;

@@ -314,27 +314,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const footerButtonTextBefore = footerButton.innerHTML;
     const footerButtonTextAfter = footerButton.id;
 
-    function hideServices() {
-        for (let i = 3; i < servicesItems.length; i++) {
-            servicesItems[i].style.display = "none";
-        }
-    }
-
-    function showServices() {
-        for (let i = 0; i < servicesItems.length; i++) {
-            servicesItems[i].style.display = "block";
-        }
-    }
-    hideServices();
-    servicesButton.addEventListener("click", function () {
-        if (servicesButton.classList.contains("show")) {
-            hideServices();
-            servicesButton.innerHTML = servicesButtonTextBefore;
-            servicesButton.classList.remove("show");
+    footerButton.addEventListener("click", function () {
+        if (footerButton.classList.contains("open")) {
+            footerButton.classList.remove("open");
+            footerText.classList.remove("open");
+            footerButton.innerHTML = footerButtonTextBefore;
         } else {
-            showServices();
-            servicesButton.innerHTML = servicesButtonTextAfter;
-            servicesButton.classList.add("show");
+            footerButton.classList.add("open");
+            footerText.classList.add("open");
+            footerButton.innerHTML = footerButtonTextAfter;
         }
     });
 });
