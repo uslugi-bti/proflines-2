@@ -249,4 +249,62 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
     }
+
+    if (document.querySelector(".roi")) {
+        const budget = document.getElementById('budget');
+        const cpc = document.getElementById('cpc');
+        const cr = document.getElementById('cr');
+        const aov = document.getElementById('aov');
+
+        const budgetVal = document.getElementById('budgetVal');
+        const cpcVal = document.getElementById('cpcVal');
+        const crVal = document.getElementById('crVal');
+        const aovVal = document.getElementById('aovVal');
+
+        const clicksEl = document.getElementById('clicks');
+        const convEl = document.getElementById('conversions');
+        const revenueEl = document.getElementById('revenue');
+        const roiEl = document.getElementById('roi');
+
+        function updateRangeFill(range) {
+            const min = range.min ? range.min : 0;
+            const max = range.max ? range.max : 100;
+            const value = range.value;
+
+            const percent = ((value - min) / (max - min)) * 100;
+            range.style.backgroundSize = percent + '% 100%';
+        }
+
+        function calculate() {
+            const budgetValue = +budget.value;
+            const cpcValue = +cpc.value;
+            const crValue = +cr.value / 100;
+            const aovValue = +aov.value;
+
+            const clicks = Math.floor(budgetValue / cpcValue);
+            const conversions = Math.floor(clicks * crValue);
+            const revenue = conversions * aovValue;
+            const roi = ((revenue - budgetValue) / budgetValue) * 100;
+
+            budgetVal.textContent = `${budgetValue.toLocaleString()} €`;
+            cpcVal.textContent = `€${cpcValue.toFixed(2)}`;
+            crVal.textContent = `${cr.value}%`;
+            aovVal.textContent = `${aovValue.toLocaleString()} €`;
+
+            clicksEl.textContent = clicks.toLocaleString();
+            convEl.textContent = conversions.toLocaleString();
+            revenueEl.textContent = `${revenue.toLocaleString()} €`;
+            roiEl.textContent = `${roi >= 0 ? '+' : ''}${Math.round(roi)}%`;
+        }
+
+        document.querySelectorAll('.roi input[type="range"]').forEach(range => {
+            updateRangeFill(range);
+            range.addEventListener('input', () => {
+                updateRangeFill(range);
+                calculate();
+            });
+        });
+
+        calculate();
+    }
 });

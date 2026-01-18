@@ -1597,8 +1597,12 @@ main {
             appearance: none;
             height: 7px;
             border-radius: 10px;
-            background: #F8F8F8;
             margin: 0px 0px 8px 0px;
+
+            background:
+                linear-gradient(#242A36, #242A36) no-repeat,
+                #F8F8F8;
+            background-size: 0% 100%;
         }
 
         input[type=range]::-webkit-slider-thumb {
