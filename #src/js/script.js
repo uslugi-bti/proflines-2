@@ -232,4 +232,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         window.addEventListener('resize', initBadgePositions);
     }
+
+    if (document.querySelector(".faq__body")) {
+        const faqItemHead = document.querySelectorAll(".faq-item__title");
+        const faqItemBody = document.querySelectorAll(".faq-item__text");
+    }
 });
