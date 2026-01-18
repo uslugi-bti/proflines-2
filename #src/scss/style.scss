@@ -1161,4 +1161,44 @@ main {
     }
 }
 
+.team {
+    margin: 0px 0px 120px 0px;
+    @media (max-width: 425px) {
+        margin: 0px 0px 90px 0px;
+    }
+    &__body {
+        display: grid;
+    }
+
+    &__content {
+    }
+
+    &__img {
+    }
+}
+.container {
+}
+.team-content {
+
+    &__title {
+    }
+
+    &__qoute {
+    }
+}
+.team-img {
+
+    &__point {
+    }
+
+    &__badge {
+    }
+
+    &__title {
+    }
+
+    &__text {
+    }
+}
+
 @import "footer";
