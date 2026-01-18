@@ -179,15 +179,16 @@ document.addEventListener("DOMContentLoaded", function () {
         function checkBadgePosition(badge, point) {
             const imgRect = teamImg.getBoundingClientRect();
             const pointRect = point.getBoundingClientRect();
-            const badgeRect = badge.getBoundingClientRect();
             
-            const pointLeft = parseFloat(point.style.left);
-            const pointTop = parseFloat(point.style.top);
+            // Вычисляем позицию точки в пикселях
+            const pointLeftPercent = parseFloat(point.style.left);
+            const pointLeftPx = (pointLeftPercent / 100) * imgRect.width;
             
+            // Ширина плашки в пикселях
             const badgeWidth = teamPointBadges[0].clientWidth;
-            const spaceOnRight = 100 - pointLeft;
             
-            if (spaceOnRight < 25) {
+            // Проверяем, выходит ли плашка за правый край
+            if (pointLeftPx + badgeWidth > imgRect.width) {
                 badge.classList.add('right-aligned');
             } else {
                 badge.classList.remove('right-aligned');

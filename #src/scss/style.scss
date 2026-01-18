@@ -1254,6 +1254,10 @@ main {
             width: 20px;
             height: 20px;
             background: url('../img/team/icons/01.svg') center / contain no-repeat;
+            @media (max-width: 475px) {
+                width: 16px;
+                height: 16px;
+            }
         }
     }
 
@@ -1268,10 +1272,13 @@ main {
         visibility: hidden;
         transition: $transition;
         z-index: 2;
-        
+        @media (max-width: 475px) {
+            padding: 10px;
+        }
         &.right-aligned {
             left: auto;
             right: 0;
+            transform: translateX(0);
         }
         
         &.open {
@@ -1288,12 +1295,21 @@ main {
             font-weight: 600;
             color: #FFFFFF;
         }
+        @media (max-width: 475px) {
+            margin: 0px 0px 4px 0px;
+            h2 {
+                font-size: 13px;
+            }
+        }
     }
 
     &__text {
         p {
             font-size: 16px;
             color: #FFFFFF;
+            @media (max-width: 475px) {
+                font-size: 13px;
+            }
         }
     }
 }
