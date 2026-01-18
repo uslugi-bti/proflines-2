@@ -1374,6 +1374,13 @@ main {
         display: flex;
         align-items: center;
         gap: 15px;
+        &.open {
+            button {
+                &::after {
+                    transform: translate(-50%, 0) rotate(90deg);
+                }
+            }
+        }
         h2 {
             flex: 1 1 auto;
             font-size: 18px;
@@ -1406,17 +1413,24 @@ main {
                 top: 0;
                 transform: translate(-50%, 0);
                 background-color: #FFC721;
+                transition: $transition;
             }
         }
     }
 
     &__text {
-        padding: 0px 24px 32px 24px;
         max-height: 0;
         padding: 0;
-        font-size: 0;
         visibility: hidden;
         opacity: 0;
+        transition: $transition;
+        &.open {
+            height: auto;
+            max-height: auto;
+            padding: 0px 24px 32px 24px;
+            visibility: visible;
+            opacity: 1;
+        }
         p {
             font-size: 16px;
             color: #717580;
