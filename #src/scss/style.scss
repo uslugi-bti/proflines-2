@@ -861,12 +861,18 @@ main {
         letter-spacing: -1px;
         color: #242A36;
         text-align: center;
+        @media (max-width: 425px) {
+            font-size: 25px;
+        }
     }
 }
 .testimonials__body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
+    position: relative;
+    max-height: 406px;
+    overflow: hidden;
     @media (max-width: 970px) {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -925,7 +931,20 @@ main {
         color: #717580;
     }
 }
-.testimonials__cover {}
-.testimonials-cover__button {}
+.testimonials__cover {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 96px);
+    background: linear-gradient(180deg, rgba(248, 248, 248, 0) 0%, #F8F8F8 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.testimonials-cover__button {
+    position: relative;
+    bottom: 25px;
+}
 
 @import "footer";
