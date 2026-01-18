@@ -1331,11 +1331,26 @@ main {
 
 .faq {
     margin: 0px 0px 120px 0px;
+    position: relative;
+    overflow-x: clip;
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 264px;
+        right: 21.39%;
+        width: 293px;
+        height: 273px;
+        border-radius: 50%;
+        background-color: #FFC721;
+        filter: blur(215px);
+    }
     @media (max-width: 425px) {
         margin: 0px 0px 90px 0px;
     }
     &__title {
         margin: 0px 0px 40px 0px;
+        position: relative;
+        z-index: 3;
         h1 {
             font-size: 35px;
             letter-spacing: -1px;
@@ -1352,6 +1367,8 @@ main {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 32px;
+        position: relative;
+        z-index: 3;
         @media (max-width: 767px) {
             grid-template-columns: 1fr;
         }
