@@ -171,6 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (document.querySelector(".team")) {
+        const teamPoints = document.querySelectorAll(".team-img__point");
         const teamPointButtons = document.querySelectorAll(".team-img__point > button");
         const teamPointBadges = document.querySelectorAll(".team-img__badge");
 
@@ -178,11 +179,14 @@ document.addEventListener("DOMContentLoaded", function () {
             teamPointButtons[i].addEventListener("click", function () {
                 if (teamPointBadges[i].classList.contains("open")) {
                     teamPointBadges[i].classList.remove("open");
+                    teamPoints[i].style.zIndex = "2";
                 } else {
                     for (let i = 0; i < teamPointBadges.length; i++) {
                         teamPointBadges[i].classList.remove("open");
+                        teamPoints[i].style.zIndex = "2";
                     }
                     teamPointBadges[i].classList.add("open");
+                    teamPoints[i].style.zIndex = "5";
                 }
             });
         }
@@ -191,6 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!event.target.closest(".team-img__point > button") && !event.target.closest(".team-img__badge")) {
                 for (let i = 0; i < teamPointBadges.length; i++) {
                     teamPointBadges[i].classList.remove("open");
+                    teamPoints[i].style.zIndex = "2";
                 }
             }
         });
