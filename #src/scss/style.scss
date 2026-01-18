@@ -773,7 +773,7 @@ main {
         right: 17%;
         background-color: #FFC721;
         border-radius: 50%;
-        filter: blur(180px);
+        filter: blur(250px);
     }
     @media (max-width: 425px) {
         margin: 0px 0px 90px 0px;
@@ -951,6 +951,22 @@ main {
     padding: 64px 0px;
     border-top: 1px solid #E4E4E4;
     border-bottom: 1px solid #E4E4E4;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 95px;
+        width: 205px;
+        height: 191px;
+        right: 32%;
+        background-color: #FFC721;
+        border-radius: 50%;
+        filter: blur(215px);
+    }
+    .columns__body {
+        position: relative;
+        z-index: 2;
+    }
     @media (max-width: 425px) {
         margin: 0px 0px 90px 0px;
     }
