@@ -166,7 +166,7 @@ main {
                 letter-spacing: 0;
             }
             @media (max-width: 425px) {
-                font-size: 30px;
+                font-size: 25px;
             }
         }
     }
@@ -808,6 +808,9 @@ main {
         color: #242A36;
         font-weight: 700;
         text-align: center;
+        @media (max-width: 425px) {
+            font-size: 25px;
+        }
     }
 }
 
@@ -1168,10 +1171,13 @@ main {
         content: '';
         position: absolute;
         top: 50%;
-        left: 30%;
+        left: 40%;
         transform: translate(0, -50%);
         width: 309px;
         height: 288px;
+        background-color: #FFC721;
+        border-radius: 50%;
+        filter: blur(215px);
     }
     @media (max-width: 425px) {
         margin: 0px 0px 90px 0px;
@@ -1179,6 +1185,8 @@ main {
     &__body {
         display: grid;
         grid-template-columns: 1fr 2fr;
+        position: relative;
+        z-index: 2;
     }
 
     &__content {
@@ -1192,6 +1200,13 @@ main {
 .team-content {
 
     &__title {
+        margin: 0px 0px 16px 0px;
+        h1 {
+            font-size: 35px;
+            @media (max-width: 425px) {
+                font-size: 25px;
+            }
+        }
     }
 
     &__qoute {
