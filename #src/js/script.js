@@ -172,31 +172,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (document.querySelector(".team")) {
         const teamPoints = document.querySelectorAll(".team-img__point");
-        const teamPointButtons = document.querySelectorAll(".team-img__point > button");
-        const teamPointBadges = document.querySelectorAll(".team-img__badge");
 
-        for (let i = 0; i < teamPointBadges.length; i++) {
-            teamPointButtons[i].addEventListener("click", function () {
-                if (teamPointBadges[i].classList.contains("open")) {
-                    teamPointBadges[i].classList.remove("open");
-                    teamPoints[i].style.zIndex = "2";
+        teamPoints.forEach(point => {
+            const button = point.querySelector("button");
+            const badge = point.querySelector(".team-img__badge");
+
+            button.addEventListener("click", () => {
+                document.querySelectorAll(".team-img__badge.open").forEach(b => b.classList.remove("open"));
+
+                badge.classList.add("open");
+
+                const badgeRect = badge.getBoundingClientRect();
+                const parentRect = badge.parentElement.getBoundingClientRect();
+
+                if (badgeRect.right > parentRect.right) {
+                    badge.style.left = "auto";
+                    badge.style.right = "0";
                 } else {
-                    for (let i = 0; i < teamPointBadges.length; i++) {
-                        teamPointBadges[i].classList.remove("open");
-                        teamPoints[i].style.zIndex = "2";
-                    }
-                    teamPointBadges[i].classList.add("open");
-                    teamPoints[i].style.zIndex = "5";
+                    badge.style.left = "50%";
+                    badge.style.right = "auto";
+                    badge.style.transform = "translateX(-50%)";
                 }
             });
-        }
+        });
 
         document.addEventListener("click", function (event) {
-            if (!event.target.closest(".team-img__point > button") && !event.target.closest(".team-img__badge")) {
-                for (let i = 0; i < teamPointBadges.length; i++) {
-                    teamPointBadges[i].classList.remove("open");
-                    teamPoints[i].style.zIndex = "2";
-                }
+            if (!event.target.closest(".team-img__point")) {
+                document.querySelectorAll(".team-img__badge.open").forEach(b => b.classList.remove("open"));
             }
         });
     }
