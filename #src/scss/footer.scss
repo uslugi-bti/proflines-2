@@ -76,6 +76,10 @@
         color: #717580;
         text-align: center;
         line-height: 124%;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 }
 .footer-bottom__button {
