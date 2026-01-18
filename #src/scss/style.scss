@@ -1040,16 +1040,47 @@ main {
     }
 
     &__title {
+        margin: 0px 0px 8px 0px;
         h3 {
             font-size: 18px;
             letter-spacing: -1px;
+            font-weight: 500;
         }
     }
 
     &__description {
+        margin: 0px 0px 16px 0px;
+        p {
+            font-size: 16px;
+            color: #717580;
+            letter-spacing: 157%;
+        }
     }
 
     &__button {
+        a {
+            display: block;
+            text-align: center;
+            padding: 14.5px 20px;
+            border: 1px solid #00000026;
+            border-radius: 6px;
+            span {
+                position: relative;
+                padding: 0px 33.333px 0px 0px;
+                font-size: 16px;
+                color: #242A36;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translate(0, -50%);
+                    width: 13.333px;
+                    height: 11px;
+                    background: url('../img/portfolio/icons/01.svg') center / contain no-repeat;
+                }
+            }
+        }
     }
 }
 .portfolio-item-img {
