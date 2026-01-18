@@ -155,10 +155,18 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    if (document.querySelector(".portfolio__body.swiper")) {
+    if (document.querySelector('.portfolio__body.swiper')) {
         const swiper = new Swiper('.portfolio__body.swiper', {
             slidesPerView: 'auto',
-            spaceBetween: 16,
+            spaceBetween: 32,
+
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+
+            loop: true,
         });
     }
 });
