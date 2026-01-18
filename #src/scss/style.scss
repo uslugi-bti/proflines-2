@@ -1242,8 +1242,6 @@ main {
     &__point {
         position: absolute;
         z-index: 3;
-        top: 20%;
-        left: 30%;
         button {
             width: 20px;
             height: 20px;
@@ -1258,6 +1256,13 @@ main {
         width: 177px;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
+        opacity: 0;
+        visibility: hidden;
+        transition: $transition;
+        &.open {
+            opacity: 1;
+            visibility: visible;
+        }
     }
 
     &__title {
