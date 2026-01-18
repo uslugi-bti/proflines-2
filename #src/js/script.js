@@ -176,6 +176,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         for (let i = 0; i < teamPointBadges.length; i++) {
             teamPointButtons[i].addEventListener("click", function () {
+                for (let i = 0; i < teamPointBadges.length; i++) {
+                    teamPointBadges[i].classList.remove("open");
+                }
                 if (teamPointBadges[i].classList.contains("open")) {
                     teamPointBadges[i].classList.remove("open");
                 } else {
