@@ -1163,11 +1163,22 @@ main {
 
 .team {
     margin: 0px 0px 120px 0px;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        transform: translate(0, -50%);
+        width: 309px;
+        height: 288px;
+    }
     @media (max-width: 425px) {
         margin: 0px 0px 90px 0px;
     }
     &__body {
         display: grid;
+        grid-template-columns: 1fr 2fr;
     }
 
     &__content {
