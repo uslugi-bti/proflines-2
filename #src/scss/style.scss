@@ -1547,4 +1547,83 @@ main {
     }
 }
 
+.roi {
+    margin: 0px 0px 120px 0px;
+    @media (max-width: 425px) {
+        margin: 0px 0px 90px 0px;
+    }
+}
+.roi__title {
+    margin: 0px 0px 40px 0px;
+    h1 {
+        font-size: 35px;
+        letter-spacing: -1px;
+        color: #242A36;
+        text-align: center;
+        font-weight: 700;
+    }
+}
+.roi__text {
+    margin: 0px 0px 40px 0px;
+    p {
+        font-size: 18px;
+        color: #717580;
+        text-align: center;
+    }
+}
+.roi__body {
+    background-color: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+.roi__input {
+    .card {
+        padding: 16px;
+        border-radius: 10px;
+        border: 1px solid #E4E4E4;
+        margin: 0px 0px 32px 0px;
+        &:last-child {
+            margin: 0;
+        }
+    }
+    .input-card {}
+    .input-header {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        span {
+            &:first-child {
+                font-size: 18px;
+                color: #242A36;
+                font-weight: 500;
+                letter-spacing: -1px;
+            }
+            &:last-child {
+                color: #FFC721;
+                font-size: 22px;
+                font-weight: 700;
+                letter-spacing: -1px;
+            }
+        }
+    }
+    .value {}
+    .range-labels {}
+}
+.roi__result {}
+.roi__box {}
+.roi-box__head {}
+.roi-box__title {}
+.roi-box__text {}
+.stats {}
+.stat {}
+.stat__head {}
+.stat__title {}
+.span-two {}
+.stat__text {}
+.stat__button {}
+.note {}
+
 @import "footer";
