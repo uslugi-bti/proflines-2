@@ -176,12 +176,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
         for (let i = 0; i < teamPointBadges.length; i++) {
             teamPointButtons[i].addEventListener("click", function () {
-                if (teamPointButtons[i].classList.contains("open")) {
-                    teamPointButtons[i].classList.remove("open");
+                if (teamPointBadges[i].classList.contains("open")) {
+                    teamPointBadges[i].classList.remove("open");
                 } else {
-                    
+                    teamPointBadges[i].classList.add("open");
                 }
             });
         }
+
+        document.addEventListener("click", function (event) {
+            if (!event.target.closest(".team-img__point > button") && !event.target.closest(".team-img__badge")) {
+                for (let i = 0; i < teamPointBadges.length; i++) {
+                    teamPointBadges[i].classList.remove("open");
+                }
+            }
+        });
     }
 });
