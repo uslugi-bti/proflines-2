@@ -1242,15 +1242,38 @@ main {
     &__point {
         position: absolute;
         z-index: 3;
+        top: 20%;
+        left: 30%;
+        button {
+            width: 20px;
+            height: 20px;
+            background: url('../img/team/icons/01.svg') center / contain no-repeat;
+        }
     }
 
     &__badge {
+        position: absolute;
+        background-color: #242A36;
+        padding: 16px;
+        width: 177px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
     }
 
     &__title {
+        margin: 0px 0px 8px 0px;
+        h2 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #FFFFFF;
+        }
     }
 
     &__text {
+        p {
+            font-size: 16px;
+            color: #FFFFFF;
+        }
     }
 }
 

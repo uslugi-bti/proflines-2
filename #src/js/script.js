@@ -169,4 +169,9 @@ document.addEventListener("DOMContentLoaded", function () {
             loop: true,
         });
     }
+
+    if (document.querySelector(".team")) {
+        const teamPointButtons = document.querySelectorAll(".team-img__point > button");
+        const teamPointBadges = document.querySelectorAll(".team-img__badge");
+    }
 });
