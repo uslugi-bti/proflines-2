@@ -243,10 +243,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     faqItemHead[i].classList.remove("open");
                     faqItemBody[i].classList.remove("open");
                 } else {
-                    for (let i = 0; i < faqItemBody.length; i++) {
-                        faqItemHead[i].classList.remove("open");
-                        faqItemBody[i].classList.remove("open");
-                    }
                     faqItemHead[i].classList.add("open");
                     faqItemBody[i].classList.add("open");
                 }
