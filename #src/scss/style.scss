@@ -1261,7 +1261,6 @@ main {
         opacity: 0;
         visibility: hidden;
         transition: $transition;
-        z-index: 2;
         &.open {
             opacity: 1;
             visibility: visible;
