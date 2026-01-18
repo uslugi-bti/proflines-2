@@ -1588,6 +1588,24 @@ main {
         &:last-child {
             margin: 0;
         }
+
+        input[type=range] {
+            width: 100%;
+            appearance: none;
+            height: 7px;
+            border-radius: 10px;
+            background: #F8F8F8;
+            margin: 0px 0px 8px 0px;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            appearance: none;
+            width: 21px;
+            height: 21px;
+            background: #242A36;
+            border-radius: 50%;
+            cursor: pointer;
+        }
     }
     .input-card {}
     .input-header {
@@ -1610,7 +1628,16 @@ main {
         }
     }
     .value {}
-    .range-labels {}
+    .range-labels {
+        margin: 8px 0px 0px 0px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        span {
+            font-size: 16px;
+            color: #717580;
+        }
+    }
 }
 .roi__result {}
 .roi__box {}
