@@ -1244,7 +1244,6 @@ main {
         z-index: 2;
         button {
             position: relative;
-            z-index: 1;
             width: 20px;
             height: 20px;
             background: url('../img/team/icons/01.svg') center / contain no-repeat;
@@ -1261,6 +1260,7 @@ main {
         opacity: 0;
         visibility: hidden;
         transition: $transition;
+        z-index: 2;
         &.open {
             opacity: 1;
             visibility: visible;
