@@ -1320,6 +1320,16 @@ main {
         margin: 0px 0px 90px 0px;
     }
     &__title {
+        h1 {
+            font-size: 35px;
+            letter-spacing: -1px;
+            font-weight: 700;
+            text-align: center;
+            color: #242A36;
+            @media (max-width: 425px) {
+                font-size: 25px;
+            }
+        }
     }
 
     &__body {
