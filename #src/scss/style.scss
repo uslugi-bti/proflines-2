@@ -972,4 +972,61 @@ main {
     }
 }
 
+.portfolio {
+    margin: 0px 0px 120px 0px;
+    @media (max-width: 425px) {
+        margin: 0px 0px 90px 0px;
+    }
+    &__body {
+    }
+
+    &__wrapper {
+    }
+
+    &__item {
+    }
+}
+.portfolio-item {
+
+    &__img {
+    }
+
+    &__body {
+    }
+
+    &__head {
+    }
+
+    &__text {
+    }
+
+    &__title {
+    }
+
+    &__description {
+    }
+
+    &__button {
+    }
+}
+.portfolio-item-img {
+
+    &__badge {
+    }
+
+    &__result {
+    }
+
+    &__technologies {
+    }
+}
+.portfolio-item-head {
+
+    &__title {
+    }
+
+    &__badge {
+    }
+}
+
 @import "footer";
