@@ -154,4 +154,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
+    if (document.querySelector(".portfolio__body.swiper")) {
+        const swiper = new Swiper('.portfolio__body.swiper', {
+            slidesPerView: 'auto',
+            spaceBetween: 16,
+        });
+    }
 });
