@@ -10,6 +10,13 @@
     display: grid;
     grid-template-columns: 1fr 50%;
     gap: 150px;
+    @media (max-width: 970px) {
+        gap: 70px;
+    }
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
 }
 .footer-top__body {
 }
@@ -43,6 +50,9 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
+    @media (max-width: 425px) {
+        grid-template-columns: 1fr;
+    }
 }
 .footer-top__column {
     display: flex;
