@@ -1483,6 +1483,23 @@ main {
             width: 100%;
         }
     }
+    &.yellow {
+        .banner__body {
+            background: #FFC721;
+        }
+        .banner__container {
+            max-width: 790px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .banner__text p {
+            font-weight: 500;
+            color: #242A36;
+        }
+        .banner__button.button a:hover {
+            border: 1px solid #242A36;
+        }
+    }
 }
 .banner__body {
     padding: 32px 0px;
@@ -1513,5 +1530,21 @@ main {
     }
 }
 .banner__button {}
+
+.trust {
+    margin: 0px 0px 120px 0px;
+    padding: 64px 0px;
+    border-top: 1px solid #E4E4E4;
+    border-bottom: 1px solid #E4E4E4;
+    @media (max-width: 425px) {
+        margin: 0px 0px 90px 0px;
+    }
+    .columns__body {
+        margin: 0px 0px 32px 0px;
+    }
+    .banner {
+        margin: 0;
+    }
+}
 
 @import "footer";
