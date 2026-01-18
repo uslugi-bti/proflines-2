@@ -173,5 +173,15 @@ document.addEventListener("DOMContentLoaded", function () {
     if (document.querySelector(".team")) {
         const teamPointButtons = document.querySelectorAll(".team-img__point > button");
         const teamPointBadges = document.querySelectorAll(".team-img__badge");
+
+        for (let i = 0; i < teamPointBadges.length; i++) {
+            teamPointButtons[i].addEventListener("click", function () {
+                if (teamPointButtons[i].classList.contains("open")) {
+                    teamPointButtons[i].classList.remove("open");
+                } else {
+                    
+                }
+            });
+        }
     }
 });
