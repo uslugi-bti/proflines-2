@@ -1561,6 +1561,9 @@ main {
         color: #242A36;
         text-align: center;
         font-weight: 700;
+        @media (max-width: 425px) {
+            font-size: 25px;
+        }
     }
 }
 .roi__text {
@@ -1646,6 +1649,12 @@ main {
         gap: 32px;
     }
     .stat {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+        border-radius: 10px;
+        border: 1px solid #E4E4E4;
         &.span-two {
             grid-column: span 2;
         }
@@ -1655,13 +1664,51 @@ main {
             color: #717580;
             font-size: 16px;
             position: relative;
+            padding: 0px 0px 0px 40px;
+            span {
+                position: absolute;
+                content: '';
+                left: 0;
+                transform: translate(0, -50%);
+                top: 50%;
+                width: 24px;
+                height: 24px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
         }
     }
-    .stat__title {}
-    .span-two {}
-    .stat__text {}
-    .stat__button {}
-    .note {}
+    .stat__title {
+        h1 {
+            font-size: 35px;
+            letter-spacing: -1px;
+            color: #242A36;
+            font-weight: 700;
+            @media (max-width: 425px) {
+                font-size: 25px;
+            }
+        }
+    }
+    .stat__text {
+        p {
+            font-size: 16px;
+            color: #717580;
+        }
+    }
+    .stat__button {
+        a {
+            width: 100%;
+        }
+    }
+    .note {
+        grid-column: span 2;
+        p {
+            font-size: 14px;
+            color: #717580;
+            text-align: center;
+        }
+    }
 }
 .roi__box {
     padding: 16px;
