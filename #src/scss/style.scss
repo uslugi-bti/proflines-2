@@ -1022,7 +1022,12 @@ main {
         &:hover {
             img {
                 width: 110%;
-                height: 100%;
+                height: 110%;
+            }
+            .portfolio-item-img__badge {
+                opacity: 1;
+                transform: translate(0, 0);
+                visibility: visible;
             }
         }
         img {
@@ -1114,6 +1119,10 @@ main {
         border: 1px solid #E4E4E4;
         padding: 24px 16px;
         backdrop-filter: blur(67.0999984741211px);
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(0, -40px);
+        transition: $transition;
     }
 
     &__result {
@@ -1326,6 +1335,7 @@ main {
         margin: 0px 0px 90px 0px;
     }
     &__title {
+        margin: 0px 0px 40px 0px;
         h1 {
             font-size: 35px;
             letter-spacing: -1px;
@@ -1339,20 +1349,79 @@ main {
     }
 
     &__body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
     }
 
     &__column {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
     }
 
     &__item {
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        border: 1px solid #E4E4E4;
     }
 }
 .faq-item {
 
     &__title {
+        cursor: pointer;
+        padding: 32px 24px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        h2 {
+            flex: 1 1 auto;
+            font-size: 18px;
+            color: #242A36;
+            letter-spacing: -1px;
+            font-weight: 500;
+        }
+        button {
+            flex: 0 0 auto;
+            width: 18px;
+            height: 18px;
+            background: none;
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: #FFC721;
+                top: 50%;
+                transform: translate(0, -50%);
+                left: 0;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                width: 2px;
+                height: 100%;
+                left: 50%;
+                top: 0;
+                transform: translate(-50%, 0);
+                background-color: #FFC721;
+            }
+        }
     }
 
     &__text {
+        padding: 0px 24px 32px 24px;
+        max-height: 0;
+        padding: 0;
+        font-size: 0;
+        visibility: hidden;
+        opacity: 0;
+        p {
+            font-size: 16px;
+            color: #717580;
+            line-height: 157%;
+        }
     }
 }
 
