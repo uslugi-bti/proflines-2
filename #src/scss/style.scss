@@ -1466,4 +1466,52 @@ main {
     }
 }
 
+.banner {
+    margin: 0px 0px 120px 0px;
+    @media (max-width: 425px) {
+        margin: 0px 0px 90px 0px;
+    }
+    &.gradient {
+        .banner__body {
+            background: linear-gradient(0deg, #E9E9E9, #E9E9E9),
+                        radial-gradient(120% 50% at 100% 100%, #D8EAFF 0%, rgba(216, 234, 255, 0) 70%),
+                        radial-gradient(120% 50% at 0% 0%, #D8EAFF 0%, rgba(216, 234, 255, 0) 70%);
+        }
+        .banner__container {
+            max-width: 582px;
+            margin: 0 auto;
+            width: 100%;
+        }
+    }
+}
+.banner__body {
+    padding: 32px 0px;
+    border-radius: 10px;
+}
+.banner__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 0px 16px;
+}
+.banner__title {
+    h1 {
+        font-size: 35px;
+        letter-spacing: -1px;
+        text-align: center;
+        font-weight: 700;
+        color: #242A36;
+    }
+}
+.banner__text {
+    p {
+        color: #717580;
+        font-size: 16px;
+        line-height: 157%;
+        text-align: center;
+    }
+}
+.banner__button {}
+
 @import "footer";
