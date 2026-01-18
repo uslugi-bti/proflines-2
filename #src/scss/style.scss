@@ -1187,9 +1187,11 @@ main {
         grid-template-columns: 1fr 2fr;
         position: relative;
         z-index: 2;
+        gap: 32px;
     }
 
     &__content {
+        padding: 23% 0px 0px 0px;
     }
 
     &__img {
@@ -1211,6 +1213,14 @@ main {
     }
 
     &__qoute {
+        padding: 16px;
+        border-left: 3px solid #FFC721;
+        p {
+            font-size: 16px;
+            line-height: 157%;
+            color: #242A36;
+            font-weight: 600;
+        }
     }
 }
 .team-img {
