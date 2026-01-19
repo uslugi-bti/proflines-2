@@ -328,6 +328,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (document.querySelector(".services")) {
         const servicesImg = document.querySelector(".services__img");
+        const servicesImgWrapper = document.querySelector(".services-img__parallax-container");
 
         function servicesImgPadding() {
             let headerHeight = header.clientHeight;
