@@ -467,6 +467,15 @@
     grid-template-columns: 3fr 1fr;
     gap: 24px;
     overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(0, -40px);
+    transition: $transition;
+    &.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0, 0);
+    }
     @media (max-width: 1150px) {
         padding: 16px;
     }

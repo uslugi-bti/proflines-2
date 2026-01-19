@@ -17,13 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const openSubMenu = document.querySelector(".header-bottom__item>span");
     const heightServices = document.querySelector(".header-bottom__services");
 
-    document.addEventListener("click", function (event) {
-        if (!event.target.closest(".header-bottom__subitems") && !event.target.closest(".header-bottom__item>span")) {
-            for (let i = 0; i < subMenu.length; i++) {
-                openSubMenu[i].classList.remove("open");
-                subMenu[i].classList.remove("open");
-            }
-        }
+    openSubMenu.addEventListener("click", function () {
+        heightServices.classList.add("open");
     });
 
     const searchBody = document.querySelector(".header-bottom-search__body");
