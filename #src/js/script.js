@@ -18,7 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const heightServices = document.querySelector(".header-bottom__services");
 
     openSubMenu.addEventListener("click", function () {
-        heightServices.classList.add("open");
+        if (heightServices.classList.contains("open")) {
+            heightServices.classList.remove("open");
+        } else {
+            heightServices.classList.add("open");
+        }
     });
 
     const searchBody = document.querySelector(".header-bottom-search__body");
