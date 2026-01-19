@@ -331,7 +331,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function servicesImgPadding() {
             let headerHeight = header.clientHeight;
-            servicesImg.style.paddingTop = headerHeight - 50 + "px";
+            servicesImg.style.marginTop = headerHeight - 50 + "px";
         }
 
         servicesImgPadding();

@@ -742,12 +742,23 @@ main {
         object-fit: contain;
     }
     &.--1 {
+        top: 35.38%;
+        left: 2.91%;
+        transform: rotate(-10deg);
         background: radial-gradient(106.75% 98.19% at 55.99% 51.38%, #FFB121 0%, #F9F5E7 100%);
         box-shadow: 1px 1px 5px 0px #FFE09E8A,
                     6px 6px 8px 0px #FFE09E78,
                     13px 13px 11px 0px #FFE09E47,
                     24px 24px 13px 0px #FFE09E14,
                     37px 37px 15px 0px #FFE09E03;
+    }
+    &.--2 {
+        top: 27.3%;
+        left: 70.55%;
+        transform: rotate(15deg);
+    }
+    &.--3 {
+
     }
 }
 .services__body {
