@@ -14,12 +14,12 @@ $transition: 0.3s ease 0s;
         font-size: 16px;
         line-height: 157%;
         background: radial-gradient(52.01% 257.68% at 57.62% -157.68%, #68799C 0%, #242A36 100%);
-        box-shadow: 0px 2px 5px 0px #0000001A;
+        box-shadow: 0px 2px 5px 0px #00000073;
         border-radius: 6px;
         transition: $transition;
         &:hover {
             background: #FFC721;
-            box-shadow: 0px 2px 5px 0px #FFC7211A;
+            box-shadow: 0px 2px 5px 0px #ffc72169;
             color: #242A36;
         }
     }
@@ -1759,9 +1759,9 @@ main {
 }
 .roi__box {
     padding: 16px;
-    background: linear-gradient(0deg, #E9E9E9, #E9E9E9),
-                radial-gradient(120% 50% at 100% 100%, #D8EAFF 0%, rgba(216, 234, 255, 0) 70%),
-                radial-gradient(120% 50% at 0% 0%, #D8EAFF 0%, rgba(216, 234, 255, 0) 70%);
+    background: radial-gradient(120% 50% at 100% 100%, #D8EAFF 0%, rgba(216, 234, 255, 0) 70%),
+                radial-gradient(120% 50% at 0% 0%, #D8EAFF 0%, rgba(216, 234, 255, 0) 70%),
+                linear-gradient(0deg, #E9E9E9, #E9E9E9);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
