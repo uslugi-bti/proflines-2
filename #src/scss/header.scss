@@ -479,6 +479,10 @@
     display: flex;
     align-items: center;
     gap: 16px;
+    transition: $transition;
+    &:hover {
+        outline: 1px solid #E4E4E4;
+    }
 }
 .header-bottom-services-item__img {
     flex: 0 0 auto;
@@ -527,12 +531,12 @@
     }
 }
 .header-bottom-services-blog__badge {
-    padding: 9.5px 12px;
-    border-radius: 9999px;
-    border: 1px solid #E4E4E4;
-    display: inline-block;
     margin: 0px 0px 8px 0px;
     span {
+        padding: 9.5px 12px;
+        border-radius: 9999px;
+        border: 1px solid #E4E4E4;
+        display: inline-block;
         font-size: 13px;
         color: #717580;
     }
