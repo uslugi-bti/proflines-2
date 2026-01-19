@@ -25,6 +25,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    document.addEventListener("click", function (event) {
+        if (!event.target.closest(".header-bottom__item>span") && !event.target.closest(".header-bottom__services")) {
+            heightServices.classList.remove("open");
+        }
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.which == 27) {
+            heightServices.classList.remove("open");
+        }
+    });
+
     const searchBody = document.querySelector(".header-bottom-search__body");
     const searchButton = document.querySelector(".header-bottom__search>button");
 
