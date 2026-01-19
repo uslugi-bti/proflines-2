@@ -331,10 +331,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function servicesImgPadding() {
             let headerHeight = header.clientHeight;
-            servicesImg.style.marginTop = headerHeight - 50 + "px";
+            servicesImg.style.paddingTop = headerHeight - 60 + "px";
         }
 
         servicesImgPadding();
         window.addEventListener("resize", servicesImgPadding);
+    
+        if (servicesImg) {
+            let mouseX = 0;
+            let mouseY = 0;
+            let currentX = 0;
+            let currentY = 0;
+            
+            function animateParallax() {
+                currentX += (mouseX - currentX) * 0.1;
+                currentY += (mouseY - currentY) * 0.1;
+                
+                const icons = servicesImg.querySelectorAll('.services-img__icon');
+                
+                if (icons.length >= 3) {
+                    icons[0].style.transform = `translate(${currentX * 10}px, ${currentY * 10}px) rotate(-10deg)`;
+                    icons[1].style.transform = `translate(${currentX * -8}px, ${currentY * 8}px) rotate(15deg)`;
+                    icons[2].style.transform = `translate(${currentX * 6}px, ${currentY * -6}px) rotate(-10deg)`;
+                }
+                
+                requestAnimationFrame(animateParallax);
+            }
+            
+            servicesImg.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                
+                mouseX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+                mouseY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+            });
+            
+            servicesImg.addEventListener('mouseleave', function() {
+                mouseX = 0;
+                mouseY = 0;
+            });
+            
+            animateParallax();
+        }
     }
 });
