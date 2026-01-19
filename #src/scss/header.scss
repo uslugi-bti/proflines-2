@@ -467,6 +467,12 @@
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: 24px;
+    @media (max-width: 1150px) {
+        padding: 16px;
+    }
+    @media (max-width: 970px) {
+        grid-template-columns: 1fr;
+    }
 }
 .header-bottom-services__items {
     display: grid;
@@ -482,6 +488,9 @@
     transition: $transition;
     &:hover {
         outline: 1px solid #E4E4E4;
+    }
+    @media (max-width: 1150px) {
+        padding: 10px;
     }
 }
 .header-bottom-services-item__img {
@@ -507,7 +516,11 @@
         font-weight: 500;
     }
 }
-.header-bottom-services__info {}
+.header-bottom-services__info {
+    @media (max-width: 970px) {
+        display: none;
+    }
+}
 .header-bottom-services__blog {
     display: flex;
     flex-direction: column;
