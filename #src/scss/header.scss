@@ -623,5 +623,21 @@
 }
 .header-bottom-services-badge__text {
     margin: 0px 0px 12px 0px;
+    p {
+        font-size: 16px;
+        color: #242A36;
+        line-height: 157%;
+        padding: 0px 0px 0px 26px;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 0;
+            width: 15px;
+            height: 15px;
+            background: url('../img/header/05.svg') center / contain no-repeat;
+        }
+    }
 }
 .header-bottom-services-badge__button {}
