@@ -94,23 +94,21 @@ main {
 
 @import "header";
 
-@keyframes wideOrbit {
+@keyframes floatMovement {
     0% {
-        transform: translate(-50%, -50%) translate(-150px, -80px) rotate(0deg);
+        transform: translate(-50%, -50%) translate(-100px, -80px);
     }
     25% {
-        transform: translate(-50%, -50%) translate(150px, -80px) rotate(90deg);
-        filter: blur(350px) brightness(1.3);
+        transform: translate(-50%, -50%) translate(120px, -60px);
     }
     50% {
-        transform: translate(-50%, -50%) translate(150px, 100px) rotate(180deg);
+        transform: translate(-50%, -50%) translate(80px, 100px);
     }
     75% {
-        transform: translate(-50%, -50%) translate(-150px, 100px) rotate(270deg);
-        filter: blur(350px) brightness(1.3);
+        transform: translate(-50%, -50%) translate(-150px, 60px);
     }
     100% {
-        transform: translate(-50%, -50%) translate(-150px, -80px) rotate(360deg);
+        transform: translate(-50%, -50%) translate(-100px, -80px);
     }
 }
 
@@ -126,7 +124,7 @@ main {
         background-color: #FFC721;
         border-radius: 50%;
         filter: blur(350px);
-        animation: wideOrbit 15s ease-in-out infinite;
+        animation: floatMovement 15s ease-in-out infinite alternate;
     }
     &__body {
         padding: 49px 0px 144px 0px;
@@ -689,7 +687,7 @@ main {
         background-color: #FFC721;
         border-radius: 50%;
         filter: blur(200px);
-        animation: wideOrbit 15s ease-in-out infinite;
+        animation: floatMovement 15s ease-in-out infinite alternate;
     }
     @media (max-width: 425px) {
         margin: 0px 0px 90px 0px;
@@ -797,7 +795,7 @@ main {
         background-color: #FFC721;
         border-radius: 50%;
         filter: blur(250px);
-        animation: wideOrbit 15s ease-in-out infinite;
+        animation: floatMovement 15s ease-in-out infinite alternate;
     }
     @media (max-width: 425px) {
         margin: 0px 0px 90px 0px;
@@ -989,7 +987,7 @@ main {
         background-color: #FFC721;
         border-radius: 50%;
         filter: blur(215px);
-        animation: wideOrbit 15s ease-in-out infinite;
+        animation: floatMovement 15s ease-in-out infinite alternate;
     }
     .columns__body {
         position: relative;
@@ -1210,7 +1208,7 @@ main {
         background-color: #FFC721;
         border-radius: 50%;
         filter: blur(215px);
-        animation: wideOrbit 15s ease-in-out infinite;
+        animation: floatMovement 15s ease-in-out infinite alternate;
     }
     @media (max-width: 425px) {
         margin: 0px 0px 90px 0px;
@@ -1360,7 +1358,7 @@ main {
         border-radius: 50%;
         background-color: #FFC721;
         filter: blur(215px);
-        animation: wideOrbit 15s ease-in-out infinite;
+        animation: floatMovement 15s ease-in-out infinite alternate;
     }
     @media (max-width: 425px) {
         margin: 0px 0px 90px 0px;
