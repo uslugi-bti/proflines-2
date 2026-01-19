@@ -1251,20 +1251,30 @@ main {
         a {
             display: block;
             text-align: right;
+            &:hover {
+                span {
+                    color: #242A36;
+                    &::before {
+                        background: url('../img/portfolio/icons/01.svg') center / contain no-repeat;
+                    }
+                }
+            }
             span {
                 position: relative;
                 padding: 0px 33.333px 0px 0px;
                 font-size: 16px;
-                color: #242A36;
+                color: #717580;
+                transition: $transition;
                 &::before {
                     content: '';
                     position: absolute;
                     top: 50%;
-                    right: 0;
+                    right: 4px;
                     transform: translate(0, -50%);
                     width: 13.333px;
                     height: 11px;
-                    background: url('../img/portfolio/icons/01.svg') center / contain no-repeat;
+                    background: url('../img/portfolio/icons/02.svg') center / contain no-repeat;
+                    transition: $transition;
                 }
             }
         }
