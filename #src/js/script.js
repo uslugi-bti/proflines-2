@@ -382,7 +382,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const heightServices = document.querySelector(".header-bottom__services");
         let currentHeight = header.clientHeight + 15;
 
-        heightServices.style.height = "calc(100% - " + currentHeight + "px)";
+        heightServices.style.height = "calc(100vh - " + currentHeight + "px)";
     }
 
     heightServicesHeight();
