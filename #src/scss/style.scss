@@ -1473,9 +1473,9 @@ main {
     }
     &.gradient {
         .banner__body {
-            background: linear-gradient(0deg, #E9E9E9, #E9E9E9),
-                        radial-gradient(120% 50% at 100% 100%, #D8EAFF 0%, rgba(216, 234, 255, 0) 70%),
-                        radial-gradient(120% 50% at 0% 0%, #D8EAFF 0%, rgba(216, 234, 255, 0) 70%);
+            background: radial-gradient(120% 50% at 100% 100%, #D8EAFF 0%, rgba(216, 234, 255, 0) 70%),
+                        radial-gradient(120% 50% at 0% 0%, #D8EAFF 0%, rgba(216, 234, 255, 0) 70%),
+                        linear-gradient(0deg, #E9E9E9, #E9E9E9);
         }
         .banner__container {
             max-width: 582px;
