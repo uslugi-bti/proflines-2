@@ -459,7 +459,7 @@
     z-index: 100;
     background-color: #FFFFFF;
     border: 1px solid #E4E4E4;
-    top: 0;
+    top: calc(100% + 30px);
     left: 0;
     width: 100%;
     padding: 32px;
@@ -467,6 +467,7 @@
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: 24px;
+    overflow-y: auto;
     @media (max-width: 1150px) {
         padding: 16px;
     }
@@ -478,6 +479,12 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
+    @media (max-width: 767px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 450px) {
+        grid-template-columns: 1fr;
+    }
 }
 .header-bottom-services__item {
     padding: 16px;
@@ -517,6 +524,7 @@
     }
 }
 .header-bottom-services__info {
+    overflow-y: auto;
     @media (max-width: 970px) {
         display: none;
     }
