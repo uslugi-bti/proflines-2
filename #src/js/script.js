@@ -380,5 +380,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function heightServicesHeight() {
         const heightServices = document.querySelector(".header-bottom__services");
+        let currentHeight = header.clientHeight + 15;
+
+        heightServices.style.height = "calc(100% - " + currentHeight + "px)";
     }
+
+    heightServicesHeight();
+    window.addEventListener("resize", heightServicesHeight);
 });
