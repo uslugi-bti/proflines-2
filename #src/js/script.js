@@ -377,4 +377,8 @@ document.addEventListener("DOMContentLoaded", function () {
             animateParallax();
         }
     }
+
+    function heightServicesHeight() {
+        const heightServices = document.querySelector(".header-bottom__services");
+    }
 });
