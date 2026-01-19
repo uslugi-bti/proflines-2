@@ -726,6 +726,30 @@ main {
         width: 100%;
     }
 }
+.services-img__icon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #242A36;
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 58%;
+        height: 58%;
+        object-fit: contain;
+    }
+    &.--1 {
+        background: radial-gradient(106.75% 98.19% at 55.99% 51.38%, #FFB121 0%, #F9F5E7 100%);
+        box-shadow: 1px 1px 5px 0px #FFE09E8A,
+                    6px 6px 8px 0px #FFE09E78,
+                    13px 13px 11px 0px #FFE09E47,
+                    24px 24px 13px 0px #FFE09E14,
+                    37px 37px 15px 0px #FFE09E03;
+    }
+}
 .services__body {
     .columns__body {
         grid-template-columns: 1fr;
