@@ -448,6 +448,10 @@ main {
     background-color: #FFFFFF;
     border: 1px solid #E4E4E4;
     border-radius: 10px;
+    transition: $transition;
+    &:hover {
+        box-shadow: 0px 20px 95px 0px #C9CBCC4D;
+    }
     &.choose {
         border: none;
         background: radial-gradient(120% 50% at 100% 100%, #D8EAFF 0%, rgba(216, 234, 255, 0) 70%),
@@ -527,7 +531,8 @@ main {
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-    &.dark {
+    transition: $transition;
+    &:hover {
         background-color: #242A36;
         border: none;
         .packages-item__plan {
@@ -574,7 +579,7 @@ main {
     right: 0;
     width: 100%;
     transform: rotate(45deg) translate(50%, 130%);
-    transform-origin: top right; /* ключ */
+    transform-origin: top right;
     background-color: #FFC721;
     padding: 5px 15px;
     text-align: center;
@@ -598,6 +603,7 @@ main {
         font-size: 13px;
         color: #242A36;
         text-transform: uppercase;
+        transition: $transition;
     }
 }
 .packages-item__description {
@@ -606,6 +612,7 @@ main {
         color: #242A36;
         font-size: 14px;
         text-align: center;
+        transition: $transition;
     }
 }
 .packages-item__price {
@@ -616,6 +623,7 @@ main {
     padding: 0px 24px 24px 24px;
     border-bottom: 1px solid #E4E4E4;
     gap: 20px;
+    transition: $transition;
 }
 
 .packages-item__price:has(.packages-item-price__period) {
@@ -632,18 +640,21 @@ main {
         font-weight: 700;
         color: #242A36;
         letter-spacing: -1px;
+        transition: $transition;
     }
     span {
         font-size: 22px;
         color: #242A36;
         font-weight: 500;
         margin: 0px 4px 0px 0px;
+        transition: $transition;
     }
 }
 .packages-item-price__period {
     span {
         color: #242A36;
         font-size: 14px;
+        transition: $transition;
     }
 }
 .packages-item__text {
@@ -653,6 +664,7 @@ main {
         font-size: 16px;
         padding: 16px;
         line-height: 157%;
+        transition: $transition;
         @media (max-width: 425px) {
             padding: 16px 0px;
         }
@@ -663,12 +675,14 @@ main {
     margin: 0px 0px 16px 0px;
     a {
         width: 100%;
+        transition: $transition;
     }
 }
 .packages-item__inscription {
     span {
         font-size: 14px;
         color: #717580;
+        transition: $transition;
     }
 }
 
@@ -1536,10 +1550,6 @@ main {
         background-color: #FFFFFF;
         border-radius: 10px;
         border: 1px solid #E4E4E4;
-        transition: $transition;
-        &:hover {
-            box-shadow: 0px 20px 95px 0px #C9CBCC4D;
-        }
     }
 }
 .faq-item {
