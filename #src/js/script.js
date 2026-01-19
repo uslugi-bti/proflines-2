@@ -14,24 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    const openSubMenu = document.querySelectorAll(".header-bottom__item>span");
-    const subMenu = document.querySelectorAll(".header-bottom__subitems");
-
-    for (let i = 0; i < subMenu.length; i++) {
-        openSubMenu[i].addEventListener("click", function () {
-            if (openSubMenu[i].classList.contains("open")) {
-                openSubMenu[i].classList.remove("open");
-                subMenu[i].classList.remove("open");
-            } else {
-                for (let i = 0; i < subMenu.length; i++) {
-                    openSubMenu[i].classList.remove("open");
-                    subMenu[i].classList.remove("open");
-                }
-                openSubMenu[i].classList.add("open");
-                subMenu[i].classList.add("open");
-            }
-        });
-    }
+    const openSubMenu = document.querySelector(".header-bottom__item>span");
+    const heightServices = document.querySelector(".header-bottom__services");
 
     document.addEventListener("click", function (event) {
         if (!event.target.closest(".header-bottom__subitems") && !event.target.closest(".header-bottom__item>span")) {
@@ -379,7 +363,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function heightServicesHeight() {
-        const heightServices = document.querySelector(".header-bottom__services");
         let currentHeight = header.clientHeight + 15;
 
         heightServices.style.height = "calc(100vh - " + currentHeight + "px)";
