@@ -67,6 +67,7 @@
 .header-bottom {
     display: flex;
     align-items: center;
+    position: relative;
     & > *:last-child {
         margin: 0;
     }
@@ -452,3 +453,31 @@
         }
     }
 }
+
+.header-bottom__services {
+    position: absolute;
+    z-index: 100;
+    background-color: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 32px;
+    border-radius: 10px;
+}
+.header-bottom-services__items {}
+.header-bottom-services__item {}
+.header-bottom-services-item__img {}
+.header-bottom-services-item__text {}
+.header-bottom-services__info {}
+.header-bottom-services__blog {}
+.header-bottom-services-blog__img {}
+.header-bottom-services-blog__badge {}
+.header-bottom-services-blog__title {}
+.header-bottom-services-blog__bottom {}
+.header-bottom-services-blog__date {}
+.header-bottom-services-blog__button {}
+.header-bottom-services__badge {}
+.header-bottom-services-badge__title {}
+.header-bottom-services-badge__text {}
+.header-bottom-services-badge__button {}
