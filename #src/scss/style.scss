@@ -94,23 +94,37 @@ main {
 
 @import "header";
 
+@keyframes orbitEllipse {
+    0% {
+        transform: translate(-50%, -50%) translate(0px, 35px) rotate(0deg);
+    }
+    25% {
+        transform: translate(-50%, -50%) translate(50px, 0px) rotate(90deg);
+    }
+    50% {
+        transform: translate(-50%, -50%) translate(0px, -35px) rotate(180deg);
+    }
+    75% {
+        transform: translate(-50%, -50%) translate(-50px, 0px) rotate(270deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) translate(0px, 35px) rotate(360deg);
+    }
+}
+
 .hero {
     position: relative;
+    overflow-x: clip;
     &::before {
         content: '';
-        position: absolute;
-        top: 50%;
+        position: absolute;        top: 50%;
         left: 50%;
-        transform: translate(-50%, calc(-50% + 35px));
         width: 354px;
         height: 354px;
         background-color: #FFC721;
         border-radius: 50%;
         filter: blur(350px);
-        @media (max-width: 425px) {
-            width: 280px;
-            height: 280px;
-        }
+        animation: orbitEllipse 25s ease-in-out infinite;
     }
     &__body {
         padding: 49px 0px 144px 0px;
@@ -673,6 +687,7 @@ main {
         background-color: #FFC721;
         border-radius: 50%;
         filter: blur(200px);
+        animation: orbitEllipse 25s ease-in-out infinite;
     }
     @media (max-width: 425px) {
         margin: 0px 0px 90px 0px;
@@ -780,6 +795,7 @@ main {
         background-color: #FFC721;
         border-radius: 50%;
         filter: blur(250px);
+        animation: orbitEllipse 25s ease-in-out infinite;
     }
     @media (max-width: 425px) {
         margin: 0px 0px 90px 0px;
@@ -971,6 +987,7 @@ main {
         background-color: #FFC721;
         border-radius: 50%;
         filter: blur(215px);
+        animation: orbitEllipse 25s ease-in-out infinite;
     }
     .columns__body {
         position: relative;
@@ -1191,6 +1208,7 @@ main {
         background-color: #FFC721;
         border-radius: 50%;
         filter: blur(215px);
+        animation: orbitEllipse 25s ease-in-out infinite;
     }
     @media (max-width: 425px) {
         margin: 0px 0px 90px 0px;
@@ -1340,6 +1358,7 @@ main {
         border-radius: 50%;
         background-color: #FFC721;
         filter: blur(215px);
+        animation: orbitEllipse 25s ease-in-out infinite;
     }
     @media (max-width: 425px) {
         margin: 0px 0px 90px 0px;
