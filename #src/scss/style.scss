@@ -1536,6 +1536,10 @@ main {
         background-color: #FFFFFF;
         border-radius: 10px;
         border: 1px solid #E4E4E4;
+        transition: $transition;
+        &:hover {
+            box-shadow: 0px 20px 95px 0px #C9CBCC4D;
+        }
     }
 }
 .faq-item {
