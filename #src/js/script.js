@@ -325,4 +325,16 @@ document.addEventListener("DOMContentLoaded", function () {
             footerButton.innerHTML = footerButtonTextAfter;
         }
     });
+
+    if (document.querySelector(".services")) {
+        const servicesImg = document.querySelector(".services__img");
+
+        function servicesImgPadding() {
+            let headerHeight = header.clientHeight;
+            servicesImg.style.paddingTop = headerHeight - 50 + "px";
+        }
+
+        servicesImgPadding();
+        window.addEventListener("resize", servicesImgPadding);
+    }
 });
