@@ -430,4 +430,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     heightServicesHeight();
     window.addEventListener("resize", heightServicesHeight);
+
+    if (document.querySelector(".portfolio__cover")) {
+        const portfolioCover = document.querySelector(".portfolio__cover");
+        const container = document.querySelector(".container");
+
+        function portfolioCoverWidth() {
+            let width = (window.innerWidth - container.clientWidth) / 2;
+            portfolioCover.style.width = width + "px";
+        }
+
+        portfolioCoverWidth();
+        window.addEventListener("resize", portfolioCoverWidth);
+    }
 });

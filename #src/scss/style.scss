@@ -1126,6 +1126,7 @@ main {
     border-top: 1px solid #E4E4E4;
     border-bottom: 1px solid #E4E4E4;
     position: relative;
+    z-index: 4;
     overflow-x: clip;
     &::before {
         content: '';
@@ -1157,18 +1158,13 @@ main {
         margin: 0px 0px 90px 0px;
     }
 
-    .container {
-        position: relative;
-        padding-left: 20px;
-        padding-right: 0;
-        max-width: 1280px;
-        margin: 0 auto;
-        
-        @media (max-width: 767px) {
-            padding-left: 15px;
-            padding-right: 15px;
-            overflow-x: visible;
-        }
+    &__cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: #f8f8f8;
+        z-index: 3;
     }
 
     &__body {
@@ -1187,11 +1183,10 @@ main {
         border: 0.5px solid #E4E4E4;
         border-radius: 10px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        transform: translate(-16px, 0);
+        transform: translate(-20px, 0);
         
         @media (max-width: 767px) {
             width: 100% !important;
-            transform: translate(0, 0);
             
             &.swiper-slide-next {
                 transform: none;
@@ -1390,6 +1385,7 @@ main {
 .team {
     margin: 0px 0px 120px 0px;
     position: relative;
+    z-index: 4;
     overflow-x: clip;
     &::before {
         content: '';
