@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             },
             
-            on: {
+            /*on: {
                 init: function () {
                     this.update();
                 },
@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
                     });
                 }
-            }
+            }*/
         });
         
         const swiperContainer = document.querySelector('.portfolio__body');
