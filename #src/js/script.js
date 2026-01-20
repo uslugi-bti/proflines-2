@@ -425,7 +425,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function heightServicesHeight() {
         let currentHeight = header.clientHeight + 15;
 
-        heightServices.style.height = "calc(100vh - " + currentHeight + "px)";
+        heightServices.style.maxHeight = "calc(100vh - " + currentHeight + "px)";
     }
 
     heightServicesHeight();
