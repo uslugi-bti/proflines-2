@@ -1176,7 +1176,8 @@ main {
         overflow: visible !important;
     }
 
-    &__wrapper {}
+    &__wrapper {
+    }
 
     &__item {
         width: 584px !important;
@@ -1186,10 +1187,11 @@ main {
         border: 0.5px solid #E4E4E4;
         border-radius: 10px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        transform: translate(-16px, 0);
         
         @media (max-width: 767px) {
-            width: calc(100vw - 60px) !important;
-            margin-right: 32px;
+            width: 100% !important;
+            transform: translate(0, 0);
             
             &.swiper-slide-next {
                 transform: none;
