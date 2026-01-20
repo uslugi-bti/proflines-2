@@ -1151,18 +1151,33 @@ main {
 .portfolio {
     margin: 0px 0px 120px 0px;
     position: relative;
+    overflow: hidden; // Скрываем горизонтальную прокрутку
+    
     @media (max-width: 425px) {
         margin: 0px 0px 90px 0px;
     }
 
+    .container {
+        position: relative;
+        padding-left: 20px; // Отступ слева
+        padding-right: 0; // Без отступа справа
+        max-width: 1280px;
+        margin: 0 auto;
+        
+        @media (max-width: 767px) {
+            padding-left: 15px;
+            padding-right: 15px;
+            overflow-x: visible;
+        }
+    }
+
     &__body {
         position: relative;
-        overflow: visible !important;
-        padding: 0 32px 0 0;
+        overflow: visible !important; // Слайдер не должен обрезать контент
     }
 
     &__wrapper {
-        transition-timing-function: ease-out !important;
+        // Контейнер для слайдов
     }
 
     &__item {
@@ -1173,36 +1188,32 @@ main {
         border: 0.5px solid #E4E4E4;
         border-radius: 10px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s ease, opacity 0.3s ease;
+        
+        // Делаем следующий слайд немного меньше и с тенью
         &.swiper-slide-next {
-            opacity: 0.6;
+            transform: scale(0.95);
+            opacity: 0.9;
+            transition: transform 0.3s ease, opacity 0.3s ease;
         }
+        
+        // Активный слайд нормального размера
+        &.swiper-slide-active {
+            transform: scale(1);
+            opacity: 1;
+        }
+        
         @media (max-width: 767px) {
             width: calc(100vw - 60px) !important;
             margin-right: 32px;
+            
+            &.swiper-slide-next {
+                transform: none; // На мобильных убираем эффект
+                opacity: 1;
+            }
         }
     }
 }
-.portfolio__next-peek {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 150px;
-    height: 100%;
-    pointer-events: none;
-    z-index: 10;
-    background: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.9) 50%,
-        rgba(255, 255, 255, 1) 100%
-    );
-    display: none;
-    
-    @media (min-width: 768px) {
-        display: block;
-    }
-}
+
 .portfolio-item {
     &__img {
         width: 100%;
@@ -1212,12 +1223,14 @@ main {
         border-radius: 10px;
         overflow: hidden;
         margin: 0px 0px 16px 0px;
+        
         @media (max-width: 575px) {
             padding: 0px 0px 70% 0px;
         }
         @media (max-width: 425px) {
             padding: 0px 0px 100% 0px;
         }
+        
         &:hover {
             img {
                 width: 110%;
@@ -1229,6 +1242,7 @@ main {
                 visibility: visible;
             }
         }
+        
         img {
             position: absolute;
             top: 50%;
@@ -1313,8 +1327,8 @@ main {
         }
     }
 }
-.portfolio-item-img {
 
+.portfolio-item-img {
     &__badge {
         position: absolute;
         top: 16px;
@@ -1362,8 +1376,8 @@ main {
         }
     }
 }
-.portfolio-item-head {
 
+.portfolio-item-head {
     &__title {
         h2 {
             color: #242A36;
