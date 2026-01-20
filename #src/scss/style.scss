@@ -2003,4 +2003,90 @@ main {
     }
 }
 
+.blog {
+    margin: 0px 0px 120px 0px;
+    @media (max-width: 425px) {
+        margin: 0px 0px 90px 0px;
+    }
+    &__content {
+        padding: 67px 0px 0px 0px;
+        max-width: 652px;
+        margin: 0 auto 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &__items {
+    }
+
+    &__item {
+    }
+}
+.blog-content {
+
+    &__badge {
+        span {
+            display: inline-block;
+            text-align: center;
+            background-color: #FFFFFF;
+            border: 1px solid #E4E4E4;
+            border-radius: 9999px;
+            padding: 9.5px 12px;
+            font-size: 13px;
+            color: #717580;
+        }
+    }
+
+    &__title {
+        h1 {
+            color: #242A36;
+            font-size: 52px;
+            text-align: center;
+            font-weight: 500;
+            line-height: 87%;
+            letter-spacing: -2.6px;
+        }
+    }
+
+    &__date {
+        p {
+            font-size: 13px;
+            color: #717580;
+            text-align: center;
+        }
+    }
+}
+.blog-item {
+
+    &__img {
+    }
+
+    &__head {
+    }
+
+    &__text {
+    }
+
+    &__bottom {
+    }
+}
+.blog-item-head {
+
+    &__title {
+    }
+
+    &__badge {
+    }
+}
+.blog-item-bottom {
+
+    &__date {
+    }
+
+    &__button {
+    }
+}
+
 @import "footer";
