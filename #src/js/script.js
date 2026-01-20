@@ -162,11 +162,9 @@ document.addEventListener("DOMContentLoaded", function () {
             loop: true,
             speed: 600,
             grabCursor: true,
-            
             resistance: false,
             resistanceRatio: 0,
             watchOverflow: false,
-            
             touchRatio: 1,
             touchAngle: 45,
             simulateTouch: true,
@@ -174,13 +172,11 @@ document.addEventListener("DOMContentLoaded", function () {
             longSwipes: true,
             longSwipesRatio: 0.3,
             longSwipesMs: 300,
-            
             autoplay: {
                 delay: 5000,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
             },
-            
             breakpoints: {
                 320: {
                     spaceBetween: 16,
@@ -197,27 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     slidesOffsetBefore: 20,
                     slidesOffsetAfter: 300,
                 }
-            },
-            
-            /*on: {
-                init: function () {
-                    this.update();
-                },
-                slideChange: function () {
-                    this.slides.forEach((slide, index) => {
-                        if (index === this.activeIndex) {
-                            slide.style.transform = 'scale(1)';
-                            slide.style.opacity = '1';
-                        } else if (index === this.activeIndex + 1) {
-                            slide.style.transform = 'scale(0.95)';
-                            slide.style.opacity = '0.9';
-                        } else {
-                            slide.style.transform = 'scale(1)';
-                            slide.style.opacity = '1';
-                        }
-                    });
-                }
-            }*/
+            }
         });
         
         const swiperContainer = document.querySelector('.portfolio__body');

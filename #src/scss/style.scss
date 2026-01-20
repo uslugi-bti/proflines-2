@@ -1151,7 +1151,7 @@ main {
 .portfolio {
     margin: 0px 0px 120px 0px;
     position: relative;
-    overflow: hidden; // Скрываем горизонтальную прокрутку
+    overflow: hidden;
     
     @media (max-width: 425px) {
         margin: 0px 0px 90px 0px;
@@ -1159,8 +1159,8 @@ main {
 
     .container {
         position: relative;
-        padding-left: 20px; // Отступ слева
-        padding-right: 0; // Без отступа справа
+        padding-left: 20px;
+        padding-right: 0;
         max-width: 1280px;
         margin: 0 auto;
         
@@ -1173,12 +1173,10 @@ main {
 
     &__body {
         position: relative;
-        overflow: visible !important; // Слайдер не должен обрезать контент
+        overflow: visible !important;
     }
 
-    &__wrapper {
-        // Контейнер для слайдов
-    }
+    &__wrapper {}
 
     &__item {
         width: 584px !important;
@@ -1189,25 +1187,12 @@ main {
         border-radius: 10px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         
-        // Делаем следующий слайд немного меньше и с тенью
-        &.swiper-slide-next {
-            transform: scale(0.95);
-            opacity: 0.9;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-        
-        // Активный слайд нормального размера
-        &.swiper-slide-active {
-            transform: scale(1);
-            opacity: 1;
-        }
-        
         @media (max-width: 767px) {
             width: calc(100vw - 60px) !important;
             margin-right: 32px;
             
             &.swiper-slide-next {
-                transform: none; // На мобильных убираем эффект
+                transform: none;
                 opacity: 1;
             }
         }
