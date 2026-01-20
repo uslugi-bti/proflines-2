@@ -330,7 +330,9 @@
         border-bottom: 1px solid #E4E4E4;
         padding: 4px 8px;
         gap: 8px;
-        //background-color: #F8F8F8;
+        &:focus-within {
+            background-color: #F8F8F8;
+        }
         @media (max-width: 525px) {
             position: absolute;
             top: calc(100% + 8px);
