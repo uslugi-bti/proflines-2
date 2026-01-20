@@ -2026,6 +2026,10 @@ main {
             grid-template-columns: repeat(2, 1fr);
             gap: 16px;
         }
+        @media (max-width: 475px) {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
     }
 
     &__item {
@@ -2056,6 +2060,14 @@ main {
             font-weight: 500;
             line-height: 87%;
             letter-spacing: -2.6px;
+            @media (max-width: 575px) {
+                font-size: 35px;
+                line-height: 100%;
+                letter-spacing: 0;
+            }
+            @media (max-width: 425px) {
+                font-size: 25px;
+            }
         }
     }
 
@@ -2106,6 +2118,7 @@ main {
             flex-direction: column;
             justify-content: flex-start;
             gap: 8px;
+            margin: 0px 0px 8px 0px;
         }
     }
 
@@ -2125,7 +2138,6 @@ main {
         @media (max-width: 575px) {
             flex-direction: column;
             justify-content: flex-start;
-            gap: 16px;
         }
     }
 }
