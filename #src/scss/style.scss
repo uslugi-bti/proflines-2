@@ -1150,13 +1150,19 @@ main {
 
 .portfolio {
     margin: 0px 0px 120px 0px;
+    position: relative;
     @media (max-width: 425px) {
         margin: 0px 0px 90px 0px;
     }
+
     &__body {
+        position: relative;
+        overflow: visible !important;
+        padding: 0 32px 0 0;
     }
 
     &__wrapper {
+        transition-timing-function: ease-out !important;
     }
 
     &__item {
@@ -1166,9 +1172,35 @@ main {
         background-color: #FFFFFF;
         border: 0.5px solid #E4E4E4;
         border-radius: 10px;
-        @media (max-width: 767px) {
-            width: 100% !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        &.swiper-slide-next {
+            opacity: 0.6;
         }
+        @media (max-width: 767px) {
+            width: calc(100vw - 60px) !important;
+            margin-right: 32px;
+        }
+    }
+}
+.portfolio__next-peek {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.9) 50%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    display: none;
+    
+    @media (min-width: 768px) {
+        display: block;
     }
 }
 .portfolio-item {

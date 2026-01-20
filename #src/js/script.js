@@ -158,15 +158,98 @@ document.addEventListener("DOMContentLoaded", function () {
         const swiper = new Swiper('.portfolio__body.swiper', {
             slidesPerView: 'auto',
             spaceBetween: 32,
-
+            centeredSlides: false,
+            loop: true,
+            speed: 600,
+            grabCursor: true,
+            
+            resistance: false,
+            resistanceRatio: 0,
+            watchOverflow: false,
+            
+            touchRatio: 1,
+            touchAngle: 45,
+            simulateTouch: true,
+            
             autoplay: {
                 delay: 5000,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
             },
-
-            loop: true,
+            
+            slideToClickedSlide: true,
+            
+            breakpoints: {
+                320: {
+                    spaceBetween: 16,
+                    slidesOffsetBefore: 20,
+                    slidesOffsetAfter: 20,
+                },
+                768: {
+                    spaceBetween: 32,
+                    slidesOffsetBefore: 0,
+                    slidesOffsetAfter: 150,
+                },
+                1200: {
+                    spaceBetween: 32,
+                    slidesOffsetAfter: 200,
+                }
+            },
+            
+            on: {
+                init: function () {
+                    this.slides.forEach(slide => {
+                        if (slide.classList.contains('swiper-slide-active')) {
+                            slide.classList.add('active');
+                        }
+                    });
+                },
+                slideChange: function () {
+                    this.slides.forEach(slide => {
+                        slide.classList.remove('active');
+                    });
+                    this.slides[this.activeIndex].classList.add('active');
+                },
+                transitionStart: function () {
+                    const nextSlide = this.slides[this.activeIndex + 1];
+                    if (nextSlide) {
+                        nextSlide.style.opacity = '0.3';
+                    }
+                },
+                transitionEnd: function () {
+                    this.slides.forEach((slide, index) => {
+                        if (index === this.activeIndex + 1) {
+                            slide.style.opacity = '0.6';
+                        } else if (index !== this.activeIndex) {
+                            slide.style.opacity = '1';
+                        }
+                    });
+                }
+            }
         });
+        
+        const wrapper = document.querySelector('.portfolio__wrapper');
+        let isScrolling = false;
+        
+        wrapper.addEventListener('wheel', (e) => {
+            if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+                e.preventDefault();
+                
+                if (!isScrolling) {
+                    isScrolling = true;
+                    
+                    if (e.deltaX > 0) {
+                        swiper.slideNext();
+                    } else {
+                        swiper.slidePrev();
+                    }
+                    
+                    setTimeout(() => {
+                        isScrolling = false;
+                    }, 600);
+                }
+            }
+        }, { passive: false });
     }
 
     if (document.querySelector(".team")) {
