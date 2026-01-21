@@ -2609,13 +2609,17 @@ main {
                         0px 2px 5px 0px #0000001A,
                         0px 10px 10px 0px #00000017,
                         0px 22px 13px 0px #0000000D;
-            color: #F8F8F8;
-            font-size: 16px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 16px;
+                height: 25px;
+                background: url('../img/single/icons/01.svg') center / contain no-repeat;
+            }
         }
     }
 }
