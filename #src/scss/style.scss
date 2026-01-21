@@ -2249,6 +2249,12 @@ main {
         display: grid;
         grid-template-columns: 2fr 1fr;
         gap: 24px 32px;
+        @media (max-width: 970px) {
+            gap: 24px 16px;
+        }
+        @media (max-width: 767px) {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__head {
@@ -2256,6 +2262,13 @@ main {
         display: grid;
         grid-template-columns: 2fr 1fr;
         gap: 24px 32px;
+        @media (max-width: 970px) {
+            gap: 24px 16px;
+        }
+        @media (max-width: 767px) {
+            grid-template-columns: 1fr;
+            grid-column: span 1;
+        }
     }
 
     &__content {
@@ -2269,6 +2282,9 @@ main {
         align-self: start;
         position: sticky;
         top: 120px;
+        @media (max-width: 767px) {
+            display: none;
+        }
     }
 }
 .single-head {
