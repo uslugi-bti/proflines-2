@@ -2588,9 +2588,35 @@ main {
     }
 
     &__text {
+        p {
+            font-size: 16px;
+            color: #717580;
+        }
     }
 
     &__button {
+        a {
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: #242A36;
+            box-shadow: 0px 59px 131px 0px #F9C7320A,
+                        0px 238px 238px 0px #F9C73208,
+                        0px 535px 250px 0px #F9C73205,
+                        1px 951px 250px 0px #F9C73203,
+                        1px 1485px 250px 0px #F9C73200,
+                        0px 2px 5px 0px #0000001A,
+                        0px 10px 10px 0px #00000017,
+                        0px 22px 13px 0px #0000000D;
+            color: #F8F8F8;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
     }
 }
 .single-side {
