@@ -2918,6 +2918,9 @@ main {
                         &:checked ~ span {
                             background-color: #242A36;
                             outline: 1px solid #242A36;
+                            &::before {
+                                opacity: 1;
+                            }
                         }
                     }
                     & > span {
@@ -2927,6 +2930,19 @@ main {
                         outline: 1px solid #E4E4E4;
                         border-radius: 2px;
                         transition: $transition;
+                        position: relative;
+                        &::before {
+                            opacity: 0;
+                            content: '';
+                            position: absolute;
+                            width: 11px;
+                            height: 7.33px;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            background: url('../img/briff/icons/01.svg') center / contain no-repeat;
+                            transition: $transition;
+                        }
                     }
                     p {
                         color: #717580;
@@ -2968,10 +2984,21 @@ main {
             line-height: 124%;
         }
     }
-    .checkbox {}
-    .form-button {}
-    .button {}
-    .form-caption {}
+    .form-button {
+        button {
+            width: 100%;
+            display: block;
+        }
+    }
+    .form-caption {
+        text-align: center;
+        span {
+            font-size: 13px;
+            text-align: center;
+            line-height: 124%;
+            color: #717580;
+        }
+    }
 }
 
 @import "footer";
