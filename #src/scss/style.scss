@@ -2773,6 +2773,9 @@ main {
     gap: 32px;
     position: relative;
     z-index: 2;
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+    }
 }
 .briff__content {
     align-self: start;
@@ -2781,6 +2784,9 @@ main {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    @media (max-width: 767px) {
+        position: static;
+    }
 }
 .briff-content__title {
     h1 {
@@ -2789,6 +2795,17 @@ main {
         font-weight: 500;
         line-height: 87%;
         letter-spacing: -2.6px;
+        @media (max-width: 970px) {
+            font-size: 45px;
+            line-height: 100%;
+            letter-spacing: -1.6px;
+        }
+        @media (max-width: 575px) {
+            font-size: 35px;
+        }
+        @media (max-width: 425px) {
+            font-size: 25px;
+        }
     }
 }
 .briff-content__subtitle {
@@ -2810,15 +2827,41 @@ main {
     border: 1px solid #E4E4E4;
     border-radius: 10px;
     padding: 40px 32px;
+    @media (max-width: 425px) {
+        padding: 20px 16px;
+    }
 
     form {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 32px;
+        @media (max-width: 970px) {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        @media (max-width: 767px) {
+            gap: 32px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: 650px) {
+            grid-template-columns: 1fr;
+        }
+        @media (max-width: 425px) {
+            gap: 20px;
+        }
     }
 
     .span-two {
         grid-column: span 2;
+        @media (max-width: 970px) {
+            grid-column: span 1;
+        }
+        @media (max-width: 767px) {
+            grid-column: span 2;
+        }
+        @media (max-width: 650px) {
+            grid-column: span 1;
+        }
     }
 
     .form-head {}
@@ -2876,6 +2919,7 @@ main {
                 align-items: center;
                 flex-wrap: wrap;
                 gap: 20px;
+                gap: 10px 20px;
                 label {
                     display: flex;
                     align-items: center;
