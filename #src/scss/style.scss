@@ -3045,4 +3045,23 @@ main {
     }
 }
 
+.technical {
+    margin: 0px 0px 120px 0px;
+    @media (max-width: 425px) {
+        margin: 0px 0px 90px 0px;
+    }
+}
+.technical__body {}
+.technical__content {}
+.technical-content__head {}
+.technical-content__title {}
+.technical-content__text {}
+.technical-content__body {}
+.technical-content__banner {}
+.technical-content-banner__title {}
+.technical-content-banner__button {}
+.button {}
+.technical__list {}
+.technical-list__items {}
+
 @import "footer";
