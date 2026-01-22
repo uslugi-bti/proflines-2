@@ -2845,6 +2845,11 @@ main {
             font-size: 16px;
             color: #242A36;
         }
+        & > h4 {
+            color: #242A36;
+            font-size: 18px;
+            font-weight: 500;
+        }
         input[type=text],
         textarea {
             width: 100%;
@@ -2877,17 +2882,59 @@ main {
                     gap: 8px;
                     input {
                         display: none;
+                        &:checked ~ span {
+                            background-color: #242A36;
+                            outline: 1px solid #242A36;
+                        }
                     }
-                    span {
+                    & > span {
+                        flex: 0 0 auto;
                         width: 16px;
                         height: 16px;
-                        border: 1px solid #E4E4E4;
+                        outline: 1px solid #E4E4E4;
                         border-radius: 50%;
+                        transition: $transition;
                     }
                     p {
                         color: #242A36;
                         font-size: 16px;
                         line-height: 157%;
+                    }
+                }
+            }
+        }
+
+        &.checkbox {
+            .form-group__body {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                label {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    input {
+                        display: none;
+                        &:checked ~ span {
+                            background-color: #242A36;
+                            outline: 1px solid #242A36;
+                        }
+                    }
+                    & > span {
+                        flex: 0 0 auto;
+                        width: 16px;
+                        height: 16px;
+                        outline: 1px solid #E4E4E4;
+                        border-radius: 2px;
+                        transition: $transition;
+                    }
+                    p {
+                        color: #717580;
+                        font-size: 16px;
+                        line-height: 157%;
+                        span {
+                            color: #242A36;
+                        }
                     }
                 }
             }
