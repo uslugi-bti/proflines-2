@@ -2810,21 +2810,44 @@ main {
     border: 1px solid #E4E4E4;
     border-radius: 10px;
     padding: 40px 32px;
+
+    form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    .span-two {
+        grid-column: span 2;
+    }
+
+    .form-head {}
+    .form-head__title {
+        margin: 0px 0px 8px 0px;
+        h3 {
+            font-size: 22px;
+            letter-spacing: -1px;
+            color: #242A36;
+            font-weight: 500;
+        }
+    }
+    .form-head__text {
+        p {
+            font-size: 16px;
+            color: #242A36;
+        }
+    }
+    .form-group {}
+    .radio {}
+    .form-group__body {}
+    .form-content {}
+    .form-content__title {}
+    .form-content__text {}
+    .form-badge {}
+    .checkbox {}
+    .form-button {}
+    .button {}
+    .form-caption {}
 }
-.form-head {}
-.span-two {}
-.form-head__title {}
-.form-head__text {}
-.form-group {}
-.radio {}
-.form-group__body {}
-.form-content {}
-.form-content__title {}
-.form-content__text {}
-.form-badge {}
-.checkbox {}
-.form-button {}
-.button {}
-.form-caption {}
 
 @import "footer";
