@@ -3045,18 +3045,74 @@ main {
     }
 }
 
+.technical-page {
+    .breadcrump {
+        margin: 0px 0px 40px 0px;
+    }
+}
+
 .technical {
     margin: 0px 0px 120px 0px;
     @media (max-width: 425px) {
         margin: 0px 0px 90px 0px;
     }
 }
-.technical__body {}
-.technical__content {}
-.technical-content__head {}
-.technical-content__title {}
-.technical-content__text {}
-.technical-content__body {}
+.technical__body {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 32px;
+}
+.technical__content {
+    background-color: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    border-radius: 10px;
+}
+.technical-content__head {
+    padding: 40px 32px 32px 32px;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: calc(100% - 64px);
+        height: 1px;
+        background-color: #E4E4E4;
+    }
+}
+.technical-content__title {
+    margin: 0px 0px 32px 0px;
+    h1 {
+        font-size: 52px;
+        line-height: 87%;
+        letter-spacing: -2.6px;
+        font-weight: 500;
+        color: #242A36;
+        @media (max-width: 970px) {
+            font-size: 45px;
+            letter-spacing: -1.6px;
+            line-height: 100%;
+        }
+        @media (max-width: 575px) {
+            font-size: 35px;
+        }
+        @media (max-width: 425px) {
+            font-size: 25px;
+        }
+    }
+}
+.technical-content__text {
+    p {
+        font-size: 13px;
+        color: #242A36;
+        line-height: 124%;
+    }
+}
+.technical-content__body {
+    padding: 32px;
+    border-bottom: 1px solid #E4E4E4;
+}
 .technical-content__banner {}
 .technical-content-banner__title {}
 .technical-content-banner__button {}
