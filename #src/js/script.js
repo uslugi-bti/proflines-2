@@ -443,4 +443,57 @@ document.addEventListener("DOMContentLoaded", function () {
         portfolioCoverWidth();
         window.addEventListener("resize", portfolioCoverWidth);
     }
+
+    if (document.querySelector(".technical")) {
+        const listItems = document.querySelectorAll('.technical-list__item');
+        const contentSections = document.querySelectorAll('.technical-content__body');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                const id = entry.target.getAttribute('id');
+                const correspondingItem = document.querySelector(`.technical-list__item a[href="#${id}"]`)?.parentElement;
+
+                if (correspondingItem) {
+                    if (entry.isIntersecting) {
+                        listItems.forEach(item => item.classList.remove('active'));
+                        correspondingItem.classList.add('active');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        contentSections.forEach(section => observer.observe(section));
+
+        const handleScroll = function() {
+            const scrollPosition = window.scrollY + 100;
+
+            let currentSection = null;
+            contentSections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    currentSection = section;
+                }
+            });
+
+            if (currentSection) {
+                const id = currentSection.getAttribute('id');
+                const correspondingItem = document.querySelector(`.technical-list__item a[href="#${id}"]`)?.parentElement;
+
+                if (correspondingItem) {
+                    listItems.forEach(item => item.classList.remove('active'));
+                    correspondingItem.classList.add('active');
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+    }
 });
