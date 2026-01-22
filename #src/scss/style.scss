@@ -3061,6 +3061,12 @@ main {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 32px;
+    @media (max-width: 970px) {
+        gap: 16px;
+    }
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+    }
 }
 .technical__content {
     background-color: #FFFFFF;
@@ -3071,6 +3077,15 @@ main {
 .technical-content__head {
     padding: 40px 32px 32px 32px;
     position: relative;
+    @media (max-width: 970px) {
+        padding: 20px 16px 32px 16px;
+    }
+    @media (max-width: 767px) {
+        padding: 40px 32px 32px 32px;
+    }
+    @media (max-width: 550px) {
+        padding: 20px 16px 32px 16px;
+    }
     &::before {
         content: '';
         position: absolute;
@@ -3080,10 +3095,22 @@ main {
         width: calc(100% - 64px);
         height: 1px;
         background-color: #E4E4E4;
+        @media (max-width: 970px) {
+            width: calc(100% - 32px);
+        }
+        @media (max-width: 767px) {
+            width: calc(100% - 64px)
+        }
+        @media (max-width: 550px) {
+            width: calc(100% - 32px);
+        }
     }
 }
 .technical-content__title {
     margin: 0px 0px 32px 0px;
+    @media (max-width: 425px) {
+        margin: 0px 0px 16px 0px;
+    }
     h1 {
         font-size: 52px;
         line-height: 87%;
@@ -3113,6 +3140,15 @@ main {
 .technical-content__body {
     padding: 32px;
     border-bottom: 1px solid #E4E4E4;
+    @media (max-width: 970px) {
+        padding: 32px 16px;
+    }
+    @media (max-width: 767px) {
+        padding: 32px;
+    }
+    @media (max-width: 550px) {
+        padding: 32px 16px;
+    }
     & > *:last-child {
         margin-bottom: 0;
     }
@@ -3311,6 +3347,16 @@ main {
     flex-direction: column;
     gap: 24px;
     position: relative;
+    @media (max-width: 970px) {
+        padding: 32px 16px 40px 16px;
+    }
+    @media (max-width: 767px) {
+        padding: 32px 32px 40px 32px;
+        gap: 18px;
+    }
+    @media (max-width: 550px) {
+        padding: 32px 16px 40px 16px;
+    }
 }
 .technical-content-banner__logo {
     position: absolute;
@@ -3319,6 +3365,9 @@ main {
     right: -50px;
     width: 194px;
     height: 68px;
+    @media (max-width: 970px) {
+        display: none;
+    }
     img {
         position: absolute;
         top: 50%;
@@ -3336,6 +3385,16 @@ main {
         font-weight: 700;
         text-align: center;
         color: #242A36;
+        @media (max-width: 1024px) {
+            font-size: 30px;
+            letter-spacing: 0;
+        }
+        @media (max-width: 767px) {
+            font-size: 26px;
+        }
+        @media (max-width: 480px) {
+            font-size: 22px;
+        }
     }
 }
 .technical-content-banner__button {
@@ -3361,6 +3420,9 @@ main {
     align-self: start;
     position: sticky;
     top: 120px;
+    @media (max-width: 767px) {
+        display: none;
+    }
 }
 .technical-list__item {
     &.active {
