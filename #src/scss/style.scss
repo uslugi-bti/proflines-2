@@ -2845,8 +2845,54 @@ main {
             font-size: 16px;
             color: #242A36;
         }
+        input[type=text],
+        textarea {
+            width: 100%;
+            padding: 12.5px 16px;
+            outline: 1px solid #E4E4E4;
+            transition: $transition;
+            border-radius: 6px;
+            line-height: 157%;
+            &::placeholder {
+                color: #0A0A0A80;
+                transition: $transition;
+            }
+            &:focus {
+                outline: 1px solid #242A36;
+                &::placeholder {
+                    opacity: 0;
+                }
+            }
+        }
+
+        &.radio {
+            .form-group__body {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 20px;
+                label {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    input {
+                        display: none;
+                    }
+                    span {
+                        width: 16px;
+                        height: 16px;
+                        border: 1px solid #E4E4E4;
+                        border-radius: 50%;
+                    }
+                    p {
+                        color: #242A36;
+                        font-size: 16px;
+                        line-height: 157%;
+                    }
+                }
+            }
+        }
     }
-    .radio {}
     .form-group__body {}
     .form-content {}
     .form-content__title {}
