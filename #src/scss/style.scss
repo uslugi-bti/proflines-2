@@ -2743,4 +2743,73 @@ main {
     }
 }
 
+.briff-page {
+    .breadcrump {
+        margin: 0px 0px 40px 0px;
+    }
+}
+.briff {
+    margin: 0px 0px 120px 0px;
+    @media (max-width: 425px) {
+        margin: 0px 0px 90px 0px;
+    }
+}
+.briff__body {
+    display: grid;
+    grid-template-columns: 23fr 27fr;
+    gap: 32px;
+}
+.briff__content {
+    align-self: start;
+    position: sticky;
+    top: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.briff-content__title {
+    h1 {
+        color: #242A36;
+        font-size: 52px;
+        font-weight: 500;
+        line-height: 87%;
+        letter-spacing: -2.6px;
+    }
+}
+.briff-content__subtitle {
+    p {
+        font-size: 20px;
+        color: #242A36;
+        letter-spacing: 174%;
+    }
+}
+.briff-content__text {
+    p {
+        font-size: 16px;
+        color: #717580;
+        line-height: 157%;
+    }
+}
+.briff__form {
+    background-color: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    border-radius: 10px;
+    padding: 40px 32px;
+}
+.form-head {}
+.span-two {}
+.form-head__title {}
+.form-head__text {}
+.form-group {}
+.radio {}
+.form-group__body {}
+.form-content {}
+.form-content__title {}
+.form-content__text {}
+.form-badge {}
+.checkbox {}
+.form-button {}
+.button {}
+.form-caption {}
+
 @import "footer";
