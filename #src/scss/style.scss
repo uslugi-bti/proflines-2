@@ -2750,6 +2750,19 @@ main {
 }
 .briff {
     margin: 0px 0px 120px 0px;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        right: 2.15%;
+        width: 292px;
+        height: 292px;
+        border-radius: 50%;
+        background-color: #FFC721;
+        filter: blur(215px);
+        animation: floatMovement 15s ease-in-out infinite alternate;
+    }
     @media (max-width: 425px) {
         margin: 0px 0px 90px 0px;
     }
@@ -2758,6 +2771,8 @@ main {
     display: grid;
     grid-template-columns: 23fr 27fr;
     gap: 32px;
+    position: relative;
+    z-index: 2;
 }
 .briff__content {
     align-self: start;
