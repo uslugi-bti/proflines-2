@@ -2837,7 +2837,15 @@ main {
             color: #242A36;
         }
     }
-    .form-group {}
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        & > label{
+            font-size: 16px;
+            color: #242A36;
+        }
+    }
     .radio {}
     .form-group__body {}
     .form-content {}
