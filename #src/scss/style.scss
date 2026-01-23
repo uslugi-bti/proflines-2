@@ -3448,6 +3448,9 @@ main {
     .breadcrump {
         margin: 0px 0px 66px 0px;
     }
+    .mission {
+        margin: 0px 0px 50px 0px;
+    }
 }
 .contact {
     margin: 0px 0px 24px 0px;
@@ -3456,11 +3459,17 @@ main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 47px;
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+    }
 }
 .contact__content {
     align-self: start;
     position: sticky;
     top: 120px;
+    @media (max-width: 767px) {
+        position: static;
+    }
 }
 .contact-content__title {
     margin: 0px 0px 16px 0px;
@@ -3489,6 +3498,9 @@ main {
     flex-direction: column;
     gap: 12px;
     margin: 0px 0px 150px 0px;
+    @media (max-width: 767px) {
+        margin: 0px 0px 32px 0px;
+    }
 }
 .contact-content__item {
     span, a {
