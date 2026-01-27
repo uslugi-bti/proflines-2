@@ -3872,4 +3872,15 @@ main {
     }
 }
 
+.initiative {
+    .mission-hero__body {
+        grid-template-columns: 1fr 40%;
+    }
+}
+.initiative__img {}
+.initiative-img__img {}
+.initiative__content {}
+.initiative__title {}
+.initiative__text {}
+
 @import "footer";
