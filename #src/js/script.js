@@ -614,7 +614,7 @@ document.addEventListener("DOMContentLoaded", function () {
         };
     }
 
-    function initParallaxBlock(block, settings) {
+    function initParallaxBlockPrinciples(block, settings) {
         if (!block) return;
         
         const elements = block.querySelectorAll(settings.elementsSelector);
@@ -665,8 +665,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     document.querySelectorAll('.principles').forEach(block => {
-        initParallaxBlock(block, {
-            elementsSelector: '.principles__badge, .principles__content',
+        initParallaxBlockPrinciples(block, {
+            elementsSelector: '.principles__badge',
             intensity: 0.15,
             maxMovement: 30,
             transition: 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)'
