@@ -613,4 +613,65 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         };
     }
+
+    function initParallaxBlock(block, settings) {
+        if (!block) return;
+        
+        const elements = block.querySelectorAll(settings.elementsSelector);
+        
+        function handleMouseMove(e) {
+            const rect = block.getBoundingClientRect();
+            
+            const mouseX = (e.clientX - rect.left) / rect.width * 2 - 1;
+            const mouseY = (e.clientY - rect.top) / rect.height * 2 - 1;
+            
+            const clampedX = Math.max(-1, Math.min(1, mouseX));
+            const clampedY = Math.max(-1, Math.min(1, mouseY));
+            
+            elements.forEach((element, index) => {
+                const intensity = settings.intensity * (0.8 + (index * 0.1));
+                const directionX = index % 2 === 0 ? 1 : -1;
+                const directionY = index % 3 === 0 ? 1 : -1;
+                
+                const moveX = clampedX * settings.maxMovement * intensity * directionX;
+                const moveY = clampedY * settings.maxMovement * intensity * directionY;
+                
+                element.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
+            });
+        }
+        
+        function handleMouseLeave() {
+            elements.forEach(element => {
+                element.style.transform = 'translate3d(0, 0, 0)';
+                element.style.transition = 'transform 0.7s cubic-bezier(0.23, 1, 0.32, 1)';
+            });
+            
+            setTimeout(() => {
+                elements.forEach(element => {
+                    element.style.transition = settings.transition;
+                });
+            }, 700);
+        }
+        
+        block.addEventListener('mousemove', handleMouseMove);
+        block.addEventListener('mouseleave', handleMouseLeave);
+        
+        block.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+            if (e.touches.length > 0) {
+                handleMouseMove(e.touches[0]);
+            }
+        }, { passive: false });
+    }
+
+    if (document.querySelector(".principles")) {
+        document.querySelectorAll('.principles').forEach(block => {
+            initParallaxBlock(block, {
+                elementsSelector: '.principles__badge, .principles__content',
+                intensity: 0.15,
+                maxMovement: 30,
+                transition: 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)'
+            });
+        });
+    }
 });
