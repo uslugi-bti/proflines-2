@@ -3544,6 +3544,9 @@ main {
 
 .mission-hero {
     margin: 0px 0px 120px 0px;
+    @media (max-width: 425px) {
+        margin: 0px 0px 90px 0px;
+    }
     &__body {
         padding: 64px 0px;
         display: grid;
@@ -3585,6 +3588,7 @@ main {
     }
 
     &__img {
+        align-self: start;
         position: relative;
         img {
             display: block;
@@ -3597,6 +3601,7 @@ main {
         position: absolute;
         max-width: 370px;
         max-height: 270px;
+        box-shadow: 0px 20px 95px 0px #C9CBCC4D;
         img {
             width: auto;
             max-width: 100%;
@@ -3612,8 +3617,12 @@ main {
             top: -63px;
         }
         &.--3 {
-            left: 73%;
+            right: -15.56%;
             top: 64.35%;
+        }
+        &.--4 {
+            bottom: -28.97%;
+            left: 16.41%;
         }
     }
 }
