@@ -299,7 +299,6 @@ form {
     }
 }
 .block-head__text {
-    max-width: 380px;
     @media (max-width: 970px) {
         max-width: none;
         p {
@@ -3547,6 +3546,9 @@ main {
 .mission-page {
     .breadcrump {
         margin: 0px 0px 10px 0px;
+    }
+    .block-head__text {
+        max-width: 380px;
     }
 }
 
