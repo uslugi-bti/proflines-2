@@ -299,13 +299,17 @@ form {
     }
 }
 .block-head__text {
+    max-width: 380px;
+    @media (max-width: 970px) {
+        max-width: none;
+        p {
+            text-align: center;
+        }
+    }
     p {
         font-size: 18px;
         letter-spacing: -1px;
         color: #717580;
-        @media (max-width: 970px) {
-            text-align: center;
-        }
     }
 }
 
