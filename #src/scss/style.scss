@@ -3921,6 +3921,9 @@ main {
     @media (max-width: 970px) {
         padding: 100px 0px;
     }
+    @media (max-width: 560px) {
+        padding: 120px 0px 160px 0px;
+    }
     img {
         display: block;
         width: 100%;
@@ -3928,26 +3931,56 @@ main {
 }
 .principles__badge {
     padding: 10.5px 12px;
-    font-size: 18px;
-    letter-spacing: -1px;
     border: 1px solid #E4E4E4;
     background-color: #FFFFFF;
     border-radius: 9999px;
     display: inline-block;
     position: absolute;
-    span {
-        position: relative;
-        padding: 0px 0px 0px 32px;
-        &::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translate(0, -50%);
-            width: 24px;
-            height: 24px;
-            background: url('../img/principles/01.svg') center / contain no-repeat;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    &.--1 {
+        top: 5.16%;
+        left: 18.5%;
+        @media (max-width: 560px) {
+            left: -5px;
         }
+    }
+    &.--2 {
+        top: 0;
+        left: 67.08%;
+        @media (max-width: 560px) {
+            left: auto;
+            right: -5px;
+            top: -10%;
+        }
+    }
+    &.--3 {
+        top: 86.94%;
+        left: 44.67%;
+        @media (max-width: 560px) {
+            left: -5px;
+        }
+    }
+    &.--4 {
+        top: 68.47%;
+        left: 82.83%;
+        @media (max-width: 767px) {
+            left: auto;
+            right: -5px;
+            top: 80%;
+        }
+    }
+    img {
+        display: block;
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+    }
+    span {
+        font-size: 18px;
+        letter-spacing: -1px;
+        font-weight: 500;
     }
 }
 .principles__content {
