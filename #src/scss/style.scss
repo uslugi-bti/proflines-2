@@ -4029,7 +4029,7 @@ main {
 }
 
 .google-hero {
-
+    margin: 0px 0px 216px 0px;
     &__body {
         display: grid;
         grid-template-columns: 1fr 40%;
@@ -4076,6 +4076,30 @@ main {
     }
 
     &__img {
+        position: relative;
+        img {
+            border-radius: 10px;
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+.google-hero-img {
+    &__img {
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        max-width: 365px;
+        max-height: 365px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        bottom: -12.44%;
+        img {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+        }
     }
 }
 
