@@ -3585,13 +3585,22 @@ main {
     }
 
     &__img {
+        img {
+            display: block;
+            width: 100%;
+        }
     }
 }
-.container {
-}
 .mission-hero-img {
-
     &__img {
+        position: absolute;
+        max-width: 370px;
+        max-height: 270px;
+        img {
+            width: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
     }
 }
 
