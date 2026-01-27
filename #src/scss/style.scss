@@ -1696,6 +1696,12 @@ main {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 40px 32px;
+        @media (max-width: 970px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: 575px) {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__item {
