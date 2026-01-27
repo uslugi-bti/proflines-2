@@ -3585,6 +3585,7 @@ main {
     }
 
     &__img {
+        position: relative;
         img {
             display: block;
             width: 100%;
@@ -3600,6 +3601,19 @@ main {
             width: auto;
             max-width: 100%;
             max-height: 100%;
+        }
+
+        &.--1 {
+            top: 22.56%;
+            left: -8.21%;
+        }
+        &.--2 {
+            left: 58.8%;
+            top: -63px;
+        }
+        &.--3 {
+            left: 73%;
+            top: 64.35%;
         }
     }
 }
