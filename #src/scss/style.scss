@@ -3544,6 +3544,7 @@ main {
 
 .mission-hero {
     margin: 0px 0px 120px 0px;
+    overflow-x: clip;
     @media (max-width: 425px) {
         margin: 0px 0px 90px 0px;
     }
@@ -3552,6 +3553,12 @@ main {
         display: grid;
         grid-template-columns: 40% 1fr;
         gap: 135px;
+        @media (max-width: 1400px) {
+            gap: 70px;
+        }
+        @media (max-width: 970px) {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__content {
@@ -3602,6 +3609,14 @@ main {
         max-width: 370px;
         max-height: 270px;
         box-shadow: 0px 20px 95px 0px #C9CBCC4D;
+        @media (max-width: 550px) {
+            max-width: 250px;
+            max-height: 220px;
+        }
+        @media (max-width: 475px) {
+            max-width: 150px;
+            max-height: 120px;
+        }
         img {
             width: auto;
             max-width: 100%;
@@ -3611,6 +3626,9 @@ main {
         &.--1 {
             top: 22.56%;
             left: -8.21%;
+            @media (max-width: 970px) {
+                left: 0;
+            }
         }
         &.--2 {
             left: 58.8%;
@@ -3619,6 +3637,15 @@ main {
         &.--3 {
             right: -15.56%;
             top: 64.35%;
+            @media (max-width: 1400px) {
+                right: -15px;
+            }
+            @media (max-width: 575px) {
+                top: 70%;
+            }
+            @media (max-width: 474px) {
+                top: 80%;
+            }
         }
         &.--4 {
             bottom: -28.97%;
