@@ -3689,6 +3689,16 @@ main {
                 font-size: 25px;
             }
         }
+        h2 {
+            line-height: 112.00000000000001%;
+            font-size: 35px;
+            letter-spacing: -1px;
+            color: #242A36;
+            font-weight: 700;
+            @media (max-width: 425px) {
+                font-size: 25px;
+            }
+        }
     }
 
     &__text {
