@@ -3553,11 +3553,35 @@ main {
 
     &__content {
     }
-
     &__title {
+        margin: 0px 0px 24px 0px;
+        h1 {
+            font-size: 52px;
+            line-height: 87%;
+            letter-spacing: -2.6px;
+            color: #242A36;
+            font-weight: 500;
+            @media (max-width: 970px) {
+                font-size: 45px;
+                line-height: 100%;
+                letter-spacing: -1.6px;
+            }
+            @media (max-width: 575px) {
+                font-size: 35px;
+                letter-spacing: 0;
+            }
+            @media (max-width: 425px) {
+                font-size: 25px;
+            }
+        }
     }
 
     &__text {
+        p {
+            color: #717580;
+            font-size: 16px;
+            line-height: 157%;
+        }
     }
 
     &__img {
