@@ -2073,6 +2073,9 @@ main {
         text-align: center;
         font-weight: 700;
         color: #242A36;
+        @media (max-width: 425px) {
+            font-size: 25px;
+        }
     }
 }
 .banner__text {
@@ -2334,6 +2337,9 @@ main {
         font-weight: 700;
         text-align: center;
         color: #242A36;
+        @media (max-width: 425px) {
+            font-size: 25px;
+        }
     }
 }
 .roi-box__text {
@@ -3887,10 +3893,56 @@ main {
         grid-template-columns: 1fr 40%;
     }
 }
-.initiative__img {}
-.initiative-img__img {}
-.initiative__content {}
-.initiative__title {}
-.initiative__text {}
+
+.principles {
+    margin: 0px 0px 120px 0px;
+    @media (max-width: 425px) {
+        margin: 0px 0px 90px 0px;
+    }
+}
+.principles__body {
+    position: relative;
+    img {
+        display: block;
+        width: 100%;
+    }
+}
+.principles__badge {}
+.principles__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30px 15px;
+}
+.principles__container {
+    max-width: 510px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.principles__title {
+    margin: 0px 0px 16px 0px;
+    h2 {
+        font-size: 35px;
+        font-weight: 700;
+        text-align: center;
+        letter-spacing: -1px;
+        line-height: 112.00000000000001%;
+        @media (max-width: 425px) {
+            font-size: 25px;
+        }
+    }
+}
+.principles__text {
+    p {
+        font-size: 16px;
+        color: #717580;
+        line-height: 157%;
+        text-align: center;
+    }
+}
 
 @import "footer";
