@@ -3696,6 +3696,12 @@ main {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 32px;
+        @media (max-width: 970px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: 575px) {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__item {
@@ -3710,12 +3716,19 @@ main {
                     0px 535px 250px 0px #F9C73205,
                     1px 951px 250px 0px #F9C73203,
                     1px 1485px 250px 0px #F9C73200;
+
+        @media (max-width: 1100px) {
+            padding: 30px 24px;
+        }
         &.span-two {
             grid-column: span 2;
             box-shadow: none;
             background: #1059B91C;
             border: none;
             border-left: 3px solid #1059B9;
+            @media (max-width: 575px) {
+                grid-column: span 1;
+            }
             &::before {
                 flex: 0 0 auto;
                 content: '';
