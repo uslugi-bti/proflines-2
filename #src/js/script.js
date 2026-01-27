@@ -128,6 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const servicesButton = document.querySelector(".services__button > button");
         const servicesButtonTextBefore = servicesButton.innerHTML;
         const servicesButtonTextAfter = servicesButton.id;
+        const servicesCount = 
 
         function hideServices() {
             for (let i = 3; i < servicesItems.length; i++) {
