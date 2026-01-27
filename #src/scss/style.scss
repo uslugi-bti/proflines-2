@@ -4022,4 +4022,34 @@ main {
     }
 }
 
+.google-page {
+    .breadcrump {
+        margin: 0px 0px 81px 0px;
+    }
+}
+
+.google-hero {
+
+    &__body {
+        display: grid;
+        grid-template-columns: 1fr 40%;
+        gap: 33px;
+    }
+
+    &__content {
+    }
+
+    &__title {
+    }
+
+    &__text {
+    }
+
+    &__button {
+    }
+
+    &__img {
+    }
+}
+
 @import "footer";
