@@ -3536,30 +3536,35 @@ main {
     }
 }
 
+.mission-page {
+    .breadcrump {
+        margin: 0px 0px 10px 0px;
+    }
+}
+
 .mission-hero {
 
-		&__body {
-		}
+    &__body {
+    }
 
-		&__content {
-		}
+    &__content {
+    }
 
-		&__title {
-		}
+    &__title {
+    }
 
-		&__text {
-		}
+    &__text {
+    }
 
-		&__img {
-		}
+    &__img {
+    }
 }
 .container {
 }
 .mission-hero-img {
 
-		&__img {
-		}
+    &__img {
+    }
 }
-
 
 @import "footer";
