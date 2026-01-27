@@ -3758,6 +3758,7 @@ main {
         &.--3 {
             right: -15.56%;
             top: 64.35%;
+            z-index: 4;
             @media (max-width: 1400px) {
                 right: -15px;
             }
@@ -3889,19 +3890,37 @@ main {
 }
 
 .initiative {
+    overflow-x: clip;
     .mission-hero__body {
         grid-template-columns: 1fr 40%;
+        @media (max-width: 970px) {
+            grid-template-columns: 1fr;
+        }
+    }
+    .mission-hero__img {
+        @media (max-width: 970px) {
+            order: 2;
+        }
+    }
+    .mission-hero__content {
+        @media (max-width: 970px) {
+            order: 1;
+        }
     }
 }
 
 .principles {
     margin: 0px 0px 120px 0px;
+    overflow-x: clip;
     @media (max-width: 425px) {
         margin: 0px 0px 90px 0px;
     }
 }
 .principles__body {
     position: relative;
+    @media (max-width: 970px) {
+        padding: 100px 0px;
+    }
     img {
         display: block;
         width: 100%;
@@ -3945,6 +3964,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
+    justify-content: center;
 }
 .principles__title {
     margin: 0px 0px 16px 0px;
