@@ -664,14 +664,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }, { passive: false });
     }
 
-    if (document.querySelector(".principles")) {
-        document.querySelectorAll('.principles').forEach(block => {
-            initParallaxBlock(block, {
-                elementsSelector: '.principles__badge, .principles__content',
-                intensity: 0.15,
-                maxMovement: 30,
-                transition: 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)'
-            });
+    document.querySelectorAll('.principles').forEach(block => {
+        initParallaxBlock(block, {
+            elementsSelector: '.principles__badge, .principles__content',
+            intensity: 0.15,
+            maxMovement: 30,
+            transition: 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)'
         });
-    }
+    });
 });
