@@ -128,10 +128,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const servicesButton = document.querySelector(".services__button > button");
         const servicesButtonTextBefore = servicesButton.innerHTML;
         const servicesButtonTextAfter = servicesButton.id;
-        const servicesCount = 
+        const servicesCount = Number(document.querySelector(".services__body").dataset.count);
 
         function hideServices() {
-            for (let i = 3; i < servicesItems.length; i++) {
+            for (let i = servicesCount; i < servicesItems.length; i++) {
                 servicesItems[i].style.display = "none";
             }
         }
@@ -371,7 +371,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    if (document.querySelector(".services")) {
+    if (document.querySelector(".services__img")) {
         const servicesImg = document.querySelector(".services__img");
         const servicesImgWrapper = document.querySelector(".services-img__parallax-container");
 
