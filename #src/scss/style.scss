@@ -4125,4 +4125,23 @@ main {
     max-width: 790px;
 }
 
+.assessment .banner__body {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    &::before {
+        content: '';
+        position: absolute;
+        top: -1.9%;
+        right: -5%;
+        width: 400px;
+        height: 432px;
+        background: url('../img/assessment/01.svg') center / contain no-repeat;
+        z-index: -1;
+        @media (max-width: 970px) {
+            top: -10%;
+        }
+    }
+}
+
 @import "footer";
