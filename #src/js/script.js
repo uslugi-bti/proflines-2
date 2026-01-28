@@ -672,4 +672,109 @@ document.addEventListener("DOMContentLoaded", function () {
             transition: 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)'
         });
     });
+
+    class HeroAnimation {
+        constructor() {
+            this.heroSection = document.querySelector('.google-hero');
+            this.graphElement = document.querySelector('.google-hero-img__img');
+            this.mainImage = document.querySelector('.google-hero__img img');
+            this.isAnimationComplete = false;
+            this.isAnimating = false;
+            this.animationDuration = 1200;
+            this.scrollThreshold = 100;
+            
+            this.init();
+        }
+
+        init() {
+            if (!this.heroSection || !this.graphElement) return;
+
+            this.checkScrollPosition();
+            
+            window.addEventListener('scroll', this.handleScroll.bind(this), { passive: false });
+            
+            this.graphElement.addEventListener('transitionend', () => {
+                this.onAnimationComplete();
+            });
+        }
+
+        checkScrollPosition() {
+            const heroRect = this.heroSection.getBoundingClientRect();
+            
+            if (heroRect.top < window.innerHeight - this.scrollThreshold) {
+                this.startAnimation();
+            }
+        }
+
+        handleScroll(event) {
+            if (this.isAnimationComplete || this.isAnimating) {
+                if (!this.isAnimationComplete) return;
+            }
+
+            const heroRect = this.heroSection.getBoundingClientRect();
+            
+            if (heroRect.top < window.innerHeight - this.scrollThreshold) {
+                event.preventDefault();
+                event.stopPropagation();
+                
+                const delta = event.deltaY || event.detail || (-event.wheelDelta);
+                
+                if (!this.isAnimating && !this.isAnimationComplete) {
+                    this.startAnimation();
+                    return;
+                }
+                
+                if (this.isAnimating) {
+                    event.preventDefault();
+                    return;
+                }
+            }
+        }
+
+        startAnimation() {
+            if (this.isAnimating || this.isAnimationComplete) return;
+            
+            this.isAnimating = true;
+            
+            document.body.classList.add('body-scroll-lock');
+            
+            setTimeout(() => {
+                this.graphElement.classList.add('active');
+            }, 50);
+            
+            setTimeout(() => {
+                if (this.isAnimating) {
+                    this.onAnimationComplete();
+                }
+            }, this.animationDuration + 500);
+        }
+
+        onAnimationComplete() {
+            this.isAnimating = false;
+            this.isAnimationComplete = true;
+            
+            document.body.classList.remove('body-scroll-lock');
+            
+            window.removeEventListener('scroll', this.handleScroll);
+            
+            window.addEventListener('wheel', this.allowScroll.bind(this), { passive: true });
+            window.addEventListener('touchmove', this.allowScroll.bind(this), { passive: true });
+        }
+
+        allowScroll(event) {
+            return true;
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        new HeroAnimation();
+    });
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            new HeroAnimation();
+        });
+    } else {
+        new HeroAnimation();
+    }
 });
