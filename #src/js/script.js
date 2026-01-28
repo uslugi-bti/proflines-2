@@ -680,10 +680,10 @@ document.addEventListener("DOMContentLoaded", function () {
             this.isAnimationComplete = false;
             this.isAnimating = false;
             
-            this.animationDuration = 1200;
+            this.animationDuration = 1800;
             this.scrollThreshold = 100;
             this.currentProgress = 0;
-            this.scrollStep = 10;
+            this.scrollStep = 8;
             this.lastScrollTime = 0;
             this.scrollDelay = 50;
             
@@ -817,7 +817,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    document.addEventListener("DOMContentLoaded", function () {
-        new HeroAnimation();
-    });
+    new HeroAnimation();
 });
