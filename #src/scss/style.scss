@@ -4288,6 +4288,25 @@ main {
         &::before {
             display: none;
         }
+
+        .columns__item {
+            &:last-child {
+                overflow: hidden;
+                position: relative;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 170px;
+                    height: 33px;
+                    background: url('../img/process/01.svg') center / contain no-repeat;
+                    transform: translate(50%, 0) rotate(-45deg);
+                    transform: rotate(-45deg) translate(50%, -130%);
+                    transform-origin: bottom right;
+                }
+            }
+        }
     }
 }
 
