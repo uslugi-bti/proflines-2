@@ -4283,4 +4283,12 @@ main {
     }
 }
 
+.google-page {
+    .process {
+        &::before {
+            display: none;
+        }
+    }
+}
+
 @import "footer";
