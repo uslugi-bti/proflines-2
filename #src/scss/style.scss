@@ -3921,9 +3921,12 @@ main {
     @media (max-width: 970px) {
         padding: 100px 0px;
     }
+<<<<<<< HEAD
     @media (max-width: 560px) {
         padding: 120px 0px 160px 0px;
     }
+=======
+>>>>>>> 10e7db9aa41c182ca5d4e0cfe2dda75155491195
     img {
         display: block;
         width: 100%;
@@ -3985,8 +3988,9 @@ main {
 }
 .principles__content {
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 0;
+    transform: translate(0, -50%);
     width: 100%;
     height: 100%;
     padding: 30px 15px;
@@ -3996,9 +4000,13 @@ main {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     height: 100%;
+<<<<<<< HEAD
     justify-content: center;
+=======
+>>>>>>> 10e7db9aa41c182ca5d4e0cfe2dda75155491195
 }
 .principles__title {
     margin: 0px 0px 16px 0px;
