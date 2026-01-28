@@ -677,11 +677,15 @@ document.addEventListener("DOMContentLoaded", function () {
         constructor() {
             this.heroSection = document.querySelector('.google-hero');
             this.graphElement = document.querySelector('.google-hero-img__img');
-            this.mainImage = document.querySelector('.google-hero__img img');
             this.isAnimationComplete = false;
             this.isAnimating = false;
+            
             this.animationDuration = 1200;
             this.scrollThreshold = 100;
+            this.currentProgress = 0;
+            this.scrollStep = 10;
+            this.lastScrollTime = 0;
+            this.scrollDelay = 50;
             
             this.init();
         }
@@ -691,90 +695,129 @@ document.addEventListener("DOMContentLoaded", function () {
 
             this.checkScrollPosition();
             
-            window.addEventListener('scroll', this.handleScroll.bind(this), { passive: false });
+            window.addEventListener('wheel', this.handleWheel.bind(this), { passive: false });
+            window.addEventListener('touchmove', this.handleTouch.bind(this), { passive: false });
             
-            this.graphElement.addEventListener('transitionend', () => {
-                this.onAnimationComplete();
+            this.createIntersectionObserver();
+        }
+
+        createIntersectionObserver() {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !this.isAnimationComplete) {
+                            document.body.classList.add('body-scroll-lock');
+                            this.isAnimating = true;
+                        }
+                    });
+                },
+                { threshold: 0.1 }
+            );
+            
+            observer.observe(this.heroSection);
+        }
+
+        handleWheel(event) {
+            const now = Date.now();
+            if (now - this.lastScrollTime < this.scrollDelay) return;
+            
+            const heroRect = this.heroSection.getBoundingClientRect();
+            const isHeroVisible = heroRect.top < window.innerHeight - this.scrollThreshold && 
+                                heroRect.bottom > 0;
+            
+            if (!isHeroVisible || this.isAnimationComplete) return;
+            
+            event.preventDefault();
+            
+            const delta = Math.sign(event.deltaY);
+            
+            this.currentProgress += delta * this.scrollStep;
+            this.currentProgress = Math.max(0, Math.min(100, this.currentProgress));
+            
+            this.applySmoothAnimation();
+            
+            if (this.currentProgress >= 100) {
+                this.completeAnimation();
+            }
+            
+            this.lastScrollTime = now;
+        }
+
+        handleTouch(event) {
+            if (this.isAnimationComplete) return;
+            
+            const heroRect = this.heroSection.getBoundingClientRect();
+            const isHeroVisible = heroRect.top < window.innerHeight - this.scrollThreshold && 
+                                heroRect.bottom > 0;
+            
+            if (!isHeroVisible) return;
+            
+            event.preventDefault();
+            
+            if (event.touches.length === 1) {
+                const touch = event.touches[0];
+                const currentY = touch.clientY;
+                
+                if (!this.lastTouchY) {
+                    this.lastTouchY = currentY;
+                    return;
+                }
+                
+                const deltaY = this.lastTouchY - currentY;
+                const delta = Math.sign(deltaY);
+                
+                this.currentProgress += delta * this.scrollStep;
+                this.currentProgress = Math.max(0, Math.min(100, this.currentProgress));
+                
+                this.applySmoothAnimation();
+                
+                if (this.currentProgress >= 100) {
+                    this.completeAnimation();
+                }
+                
+                this.lastTouchY = currentY;
+            }
+        }
+
+        applySmoothAnimation() {
+            const startY = 120;
+            const endY = 0;
+            const currentY = startY + (endY - startY) * (this.currentProgress / 100);
+            
+            requestAnimationFrame(() => {
+                this.graphElement.style.transform = `translate(-50%, ${currentY}%)`;
+                this.graphElement.style.transition = 'transform 0.05s ease-out';
             });
+        }
+
+        completeAnimation() {
+            this.isAnimationComplete = true;
+            this.isAnimating = false;
+            
+            this.graphElement.style.transform = 'translate(-50%, 0%)';
+            this.graphElement.style.transition = 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+            
+            setTimeout(() => {
+                document.body.classList.remove('body-scroll-lock');
+                this.graphElement.classList.add('active');
+                
+                window.removeEventListener('wheel', this.handleWheel);
+                window.removeEventListener('touchmove', this.handleTouch);
+            }, 300);
         }
 
         checkScrollPosition() {
             const heroRect = this.heroSection.getBoundingClientRect();
             
-            if (heroRect.top < window.innerHeight - this.scrollThreshold) {
-                this.startAnimation();
+            if (heroRect.top < window.innerHeight - this.scrollThreshold && 
+                heroRect.bottom > 0) {
+                document.body.classList.add('body-scroll-lock');
+                this.isAnimating = true;
             }
-        }
-
-        handleScroll(event) {
-            if (this.isAnimationComplete || this.isAnimating) {
-                if (!this.isAnimationComplete) return;
-            }
-
-            const heroRect = this.heroSection.getBoundingClientRect();
-            
-            if (heroRect.top < window.innerHeight - this.scrollThreshold) {
-                event.preventDefault();
-                event.stopPropagation();
-                
-                const delta = event.deltaY || event.detail || (-event.wheelDelta);
-                
-                if (!this.isAnimating && !this.isAnimationComplete) {
-                    this.startAnimation();
-                    return;
-                }
-                
-                if (this.isAnimating) {
-                    event.preventDefault();
-                    return;
-                }
-            }
-        }
-
-        startAnimation() {
-            if (this.isAnimating || this.isAnimationComplete) return;
-            
-            this.isAnimating = true;
-            
-            document.body.classList.add('body-scroll-lock');
-            
-            setTimeout(() => {
-                this.graphElement.classList.add('active');
-            }, 50);
-            
-            setTimeout(() => {
-                if (this.isAnimating) {
-                    this.onAnimationComplete();
-                }
-            }, this.animationDuration + 500);
-        }
-
-        onAnimationComplete() {
-            this.isAnimating = false;
-            this.isAnimationComplete = true;
-            
-            document.body.classList.remove('body-scroll-lock');
-            
-            window.removeEventListener('scroll', this.handleScroll);
-            
-            window.addEventListener('wheel', this.allowScroll.bind(this), { passive: true });
-            window.addEventListener('touchmove', this.allowScroll.bind(this), { passive: true });
-        }
-
-        allowScroll(event) {
-            return true;
         }
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener("DOMContentLoaded", function () {
         new HeroAnimation();
     });
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
-            new HeroAnimation();
-        });
-    } else {
-        new HeroAnimation();
-    }
 });
