@@ -4322,6 +4322,11 @@ main {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 32px;
+        @media (max-width: 970px) {
+            grid-template-columns: 1fr;
+            max-width: 400px;
+            margin: 0 auto;
+        }
     }
 
     &__item {
