@@ -757,6 +757,7 @@ document.addEventListener("DOMContentLoaded", function () {
             this.graphElement.style.transition = 'transform 0.3s ease-out';
             this.graphElement.style.transform = 'translate(-50%, 0%)';
             this.graphElement.classList.add('active');
+            document.querySelector(".google-hero__img").classList.add("active");
             
             setTimeout(() => {
                 document.body.classList.remove('body-scroll-lock');

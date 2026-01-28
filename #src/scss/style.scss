@@ -4086,6 +4086,10 @@ main {
 
     &__img {
         position: relative;
+        overflow: hidden;
+        &.active {
+            overflow: visible;
+        }
         img {
             border-radius: 10px;
             display: block;
@@ -4102,7 +4106,7 @@ main {
         max-width: 365px;
         max-height: 365px;
         left: 50%;
-        transform: translate(-50%, 190%);
+        transform: translate(-50%, 120%);
         bottom: -12.44%;
         will-change: transform;
         img {
@@ -4115,6 +4119,10 @@ main {
             transform: translate(-50%, 0);
         }
     }
+}
+
+.assessment.banner.gradient .banner__container {
+    max-width: 790px;
 }
 
 @import "footer";
