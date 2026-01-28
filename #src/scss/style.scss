@@ -4043,6 +4043,9 @@ main {
         display: grid;
         grid-template-columns: 1fr 40%;
         gap: 33px;
+        @media (max-width: 970px) {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__content {
@@ -4087,6 +4090,7 @@ main {
     &__img {
         position: relative;
         overflow: hidden;
+        align-self: start;
         &.active {
             overflow: visible;
         }
@@ -4164,6 +4168,9 @@ main {
         display: flex;
         gap: 16px;
         border-radius: 10px;
+        @media (max-width: 425px) {
+            padding: 20px 16px;
+        }
         &.red {
             background-color: #E53E3E1C;
             border-left: 3px solid #E53E3E;
