@@ -4246,4 +4246,35 @@ main {
     }
 }
 
+.segments {
+    margin: 0px 0px 120px 0px;
+    padding: 64px 0px;
+    border-top: 1px solid #E4E4E4;
+    border-bottom: 1px solid #E4E4E4;
+    @media (max-width: 425px) {
+        margin: 0px 0px 90px 0px;
+    }
+
+    .columns__body {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .columns__item {
+        padding: 32px 32px 51px 32px;
+    }
+}
+
+.audit {
+    margin: 0px 0px 120px 0px;
+    @media (max-width: 425px) {
+        margin: 0px 0px 90px 0px;
+    }
+
+    .columns__body {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .columns__item {
+        padding: 32px 32px 51px 32px;
+    }
+}
+
 @import "footer";
