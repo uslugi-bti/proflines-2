@@ -1,4 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+    
+    if (isTouchDevice) {
+        document.querySelectorAll('.mission-hero, .services__img, .principles').forEach(el => {
+            el.style.pointerEvents = 'none';
+        });
+        document.querySelectorAll('.mission-hero__img, .mission-hero-img__img, .services-img__icon, .principles__badge').forEach(el => {
+            el.style.transform = 'none';
+            el.style.transition = 'none';
+        });
+    }
+
     function testWebP(callback) {
         var webP = new Image();
         webP.onload = webP.onerror = function () {
@@ -386,7 +398,7 @@ document.addEventListener("DOMContentLoaded", function () {
         servicesImgPadding();
         window.addEventListener("resize", servicesImgPadding);
     
-        if (servicesImg) {
+        if (servicesImg && !isTouchDevice) {
             let mouseX = 0;
             let mouseY = 0;
             let currentX = 0;
@@ -500,7 +512,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const missionHeroBlocks = document.querySelectorAll('.mission-hero');
 
-    if (missionHeroBlocks.length) {
+    if (missionHeroBlocks.length && !isTouchDevice) {
         function initParallaxBlock(missionHero) {
             const mainImage = missionHero.querySelector('.mission-hero__img');
             const parallaxImages = missionHero.querySelectorAll('.mission-hero-img__img');
@@ -564,18 +576,10 @@ document.addEventListener("DOMContentLoaded", function () {
             missionHero.addEventListener('mousemove', handleMouseMove);
             missionHero.addEventListener('mouseleave', handleMouseLeave);
             
-            missionHero.addEventListener('touchmove', function(e) {
-                e.preventDefault();
-                if (e.touches.length > 0) {
-                    handleMouseMove(e.touches[0]);
-                }
-            }, { passive: false });
-            
             return {
                 destroy: function() {
                     missionHero.removeEventListener('mousemove', handleMouseMove);
                     missionHero.removeEventListener('mouseleave', handleMouseLeave);
-                    missionHero.removeEventListener('touchmove', handleMouseMove);
                     
                     if (mainImage) {
                         mainImage.style.transform = 'translate3d(0, 0, 0)';
@@ -615,7 +619,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function initParallaxBlockPrinciples(block, settings) {
-        if (!block) return;
+        if (!block || isTouchDevice) return;
         
         const elements = block.querySelectorAll(settings.elementsSelector);
         
@@ -655,23 +659,18 @@ document.addEventListener("DOMContentLoaded", function () {
         
         block.addEventListener('mousemove', handleMouseMove);
         block.addEventListener('mouseleave', handleMouseLeave);
-        
-        block.addEventListener('touchmove', function(e) {
-            e.preventDefault();
-            if (e.touches.length > 0) {
-                handleMouseMove(e.touches[0]);
-            }
-        }, { passive: false });
     }
 
-    document.querySelectorAll('.principles').forEach(block => {
-        initParallaxBlockPrinciples(block, {
-            elementsSelector: '.principles__badge',
-            intensity: 0.15,
-            maxMovement: 30,
-            transition: 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)'
+    if (!isTouchDevice) {
+        document.querySelectorAll('.principles').forEach(block => {
+            initParallaxBlockPrinciples(block, {
+                elementsSelector: '.principles__badge',
+                intensity: 0.15,
+                maxMovement: 30,
+                transition: 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)'
+            });
         });
-    });
+    }
 
     class HeroAnimation {
         constructor() {
@@ -679,13 +678,7 @@ document.addEventListener("DOMContentLoaded", function () {
             this.graphElement = document.querySelector('.google-hero-img__img');
             this.isAnimationComplete = false;
             this.isAnimating = false;
-            
-            this.animationDuration = 1800;
-            this.scrollThreshold = 100;
-            this.currentProgress = 0;
-            this.scrollStep = 8;
-            this.lastScrollTime = 0;
-            this.scrollDelay = 50;
+            this.currentY = 120;
             
             this.init();
         }
@@ -693,127 +686,84 @@ document.addEventListener("DOMContentLoaded", function () {
         init() {
             if (!this.heroSection || !this.graphElement) return;
 
-            this.checkScrollPosition();
+            this.graphElement.style.transform = `translate(-50%, ${this.currentY}%)`;
+            this.graphElement.style.transition = 'none';
             
-            window.addEventListener('wheel', this.handleWheel.bind(this), { passive: false });
-            window.addEventListener('touchmove', this.handleTouch.bind(this), { passive: false });
+            window.addEventListener('wheel', this.onWheel.bind(this), { passive: false });
+            window.addEventListener('touchmove', this.onTouch.bind(this), { passive: false });
             
-            this.createIntersectionObserver();
+            this.checkVisibility();
+            window.addEventListener('scroll', this.checkVisibility.bind(this));
         }
 
-        createIntersectionObserver() {
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting && !this.isAnimationComplete) {
-                            document.body.classList.add('body-scroll-lock');
-                            this.isAnimating = true;
-                        }
-                    });
-                },
-                { threshold: 0.1 }
-            );
+        checkVisibility() {
+            const rect = this.heroSection.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight - 100 && rect.bottom > 100;
             
-            observer.observe(this.heroSection);
-        }
-
-        handleWheel(event) {
-            const now = Date.now();
-            if (now - this.lastScrollTime < this.scrollDelay) return;
-            
-            const heroRect = this.heroSection.getBoundingClientRect();
-            const isHeroVisible = heroRect.top < window.innerHeight - this.scrollThreshold && 
-                                heroRect.bottom > 0;
-            
-            if (!isHeroVisible || this.isAnimationComplete) return;
-            
-            event.preventDefault();
-            
-            const delta = Math.sign(event.deltaY);
-            
-            this.currentProgress += delta * this.scrollStep;
-            this.currentProgress = Math.max(0, Math.min(100, this.currentProgress));
-            
-            this.applySmoothAnimation();
-            
-            if (this.currentProgress >= 100) {
-                this.completeAnimation();
+            if (isVisible && !this.isAnimationComplete && !this.isAnimating) {
+                this.isAnimating = true;
+                document.body.classList.add('body-scroll-lock');
             }
-            
-            this.lastScrollTime = now;
         }
 
-        handleTouch(event) {
-            if (this.isAnimationComplete) return;
+        onWheel(e) {
+            if (!this.isAnimating || this.isAnimationComplete) return;
             
-            const heroRect = this.heroSection.getBoundingClientRect();
-            const isHeroVisible = heroRect.top < window.innerHeight - this.scrollThreshold && 
-                                heroRect.bottom > 0;
+            e.preventDefault();
+            e.stopPropagation();
             
-            if (!isHeroVisible) return;
-            
-            event.preventDefault();
-            
-            if (event.touches.length === 1) {
-                const touch = event.touches[0];
-                const currentY = touch.clientY;
+            if (e.deltaY > 0) {
+                this.currentY -= 5;
+                this.currentY = Math.max(0, this.currentY);
                 
-                if (!this.lastTouchY) {
-                    this.lastTouchY = currentY;
-                    return;
+                this.graphElement.style.transform = `translate(-50%, ${this.currentY}%)`;
+                
+                if (this.currentY <= 0) {
+                    this.finishAnimation();
                 }
+            }
+        }
+
+        onTouch(e) {
+            if (!this.isAnimating || this.isAnimationComplete) return;
+            
+            e.preventDefault();
+            
+            if (e.touches.length === 1 && this.lastTouchY) {
+                const currentY = e.touches[0].clientY;
+                const delta = this.lastTouchY - currentY;
                 
-                const deltaY = this.lastTouchY - currentY;
-                const delta = Math.sign(deltaY);
-                
-                this.currentProgress += delta * this.scrollStep;
-                this.currentProgress = Math.max(0, Math.min(100, this.currentProgress));
-                
-                this.applySmoothAnimation();
-                
-                if (this.currentProgress >= 100) {
-                    this.completeAnimation();
+                if (delta > 0) {
+                    this.currentY -= 3;
+                    this.currentY = Math.max(0, this.currentY);
+                    
+                    this.graphElement.style.transform = `translate(-50%, ${this.currentY}%)`;
+                    
+                    if (this.currentY <= 0) {
+                        this.finishAnimation();
+                    }
                 }
                 
                 this.lastTouchY = currentY;
+            } else if (e.touches.length === 1) {
+                this.lastTouchY = e.touches[0].clientY;
             }
         }
 
-        applySmoothAnimation() {
-            const startY = 120;
-            const endY = 0;
-            const currentY = startY + (endY - startY) * (this.currentProgress / 100);
-            
-            requestAnimationFrame(() => {
-                this.graphElement.style.transform = `translate(-50%, ${currentY}%)`;
-                this.graphElement.style.transition = 'transform 0.05s ease-out';
-            });
-        }
-
-        completeAnimation() {
+        finishAnimation() {
             this.isAnimationComplete = true;
             this.isAnimating = false;
             
+            this.graphElement.style.transition = 'transform 0.3s ease-out';
             this.graphElement.style.transform = 'translate(-50%, 0%)';
-            this.graphElement.style.transition = 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+            this.graphElement.classList.add('active');
             
             setTimeout(() => {
                 document.body.classList.remove('body-scroll-lock');
-                this.graphElement.classList.add('active');
-                
-                window.removeEventListener('wheel', this.handleWheel);
-                window.removeEventListener('touchmove', this.handleTouch);
+                window.removeEventListener('wheel', this.onWheel);
+                window.removeEventListener('touchmove', this.onTouch);
+                window.removeEventListener('scroll', this.checkVisibility);
             }, 300);
-        }
-
-        checkScrollPosition() {
-            const heroRect = this.heroSection.getBoundingClientRect();
-            
-            if (heroRect.top < window.innerHeight - this.scrollThreshold && 
-                heroRect.bottom > 0) {
-                document.body.classList.add('body-scroll-lock');
-                this.isAnimating = true;
-            }
         }
     }
 
