@@ -5116,9 +5116,6 @@ main {
     }
 
     thead th {
-        position: sticky;
-        top: 0; /* Прилипание к верху окна при скролле страницы */
-        z-index: 100;
     }
 
     thead th {
@@ -5126,7 +5123,10 @@ main {
         color: #242A36;
         background-color: #fff;
         border-bottom: 2px solid #f0f0f0;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Легкая тень для эффекта отделения */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        position: sticky;
+        top: 120px; /* Прилипание к верху окна при скролле страницы */
+        z-index: 100;
     }
 
     /* Специальные стили для третьей колонки в шапке */
