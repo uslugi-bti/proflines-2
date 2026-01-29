@@ -5091,28 +5091,29 @@ main {
     margin-bottom: 41px;
 
     &__body {
+        width: 100%;
         overflow-x: auto;
     }
 
     &__table {
         width: 100%;
+        min-width: 900px;
         border-collapse: collapse;
     }
 
     th,
     td {
         padding: 16px;
-        text-align: center;
         font-size: 16px;
         line-height: 157%;
         color: #717580;
         vertical-align: middle;
     }
 
-    th {
+    thead th {
         font-weight: 600;
         color: #242A36;
-        background: #fff;
+        text-align: center;
     }
 
     td:first-child {
@@ -5124,7 +5125,7 @@ main {
         color: #242A36;
     }
 
-    tbody tr:nth-child(even) {
+    tbody tr:nth-child(odd) {
         background: #0000000A;
     }
 
