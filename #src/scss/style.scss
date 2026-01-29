@@ -4554,9 +4554,17 @@ main {
                 font-weight: 600;
                 color: #242A36;
             }
-            span {
-                width: 24px;
-                height: 24px;
+        }
+        span {
+            margin: 11px auto 11px;
+            display: block;
+            width: 24px;
+            height: 24px;
+            &.true {
+                background: url('../img/tables/01.svg') center / contain no-repeat;
+            }
+            &.false {
+                background: url('../img/tables/02.svg') center / contain no-repeat;
             }
         }
         &.column {
