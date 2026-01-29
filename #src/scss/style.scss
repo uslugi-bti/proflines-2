@@ -5093,18 +5093,14 @@ main {
     &__body {
         width: 100%;
         overflow-x: auto;
+        border-radius: 16px;
+        overflow: hidden;
     }
 
     &__table {
         width: 100%;
         min-width: 900px;
         border-collapse: collapse;
-        col {
-            &:nth-child(3) {
-                background-color: #242A36;
-                border-radius: 10px;
-            }
-        }
     }
 
     th,
@@ -5115,6 +5111,7 @@ main {
         color: #717580;
         vertical-align: middle;
         text-align: center;
+        background-clip: padding-box;
     }
 
     thead th {
@@ -5133,7 +5130,35 @@ main {
     }
 
     tbody tr:nth-child(odd) {
-        background: #0000000A;
+        td {
+            background: #0000000A;
+
+            &:first-child {
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+
+            &:last-child {
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+        }
+    }
+
+    th:nth-child(3),
+    td:nth-child(3) {
+        background: #242A36;
+        color: #fff;
+    }
+
+    thead th:nth-child(3) {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    tbody tr:last-child td:nth-child(3) {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 
     &__icon {
