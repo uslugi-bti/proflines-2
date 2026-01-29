@@ -4535,7 +4535,7 @@ main {
 }
 
 .table {
-
+    margin: 0px 0px 41px 0px;
     &__body {
         width: 100%;
         overflow-x: auto;
@@ -4545,6 +4545,12 @@ main {
 
     &__item {
         padding: 16px;
+        &:nth-child(8n + 5),
+        &:nth-child(8n + 6),
+        &:nth-child(8n + 7),
+        &:nth-child(8n + 8) {
+            background: #0000000A;
+        }
         p {
             text-align: center;
             font-size: 16px;
@@ -4581,6 +4587,5 @@ main {
         }
     }
 }
-
 
 @import "footer";
