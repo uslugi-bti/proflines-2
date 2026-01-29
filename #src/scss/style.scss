@@ -2128,6 +2128,8 @@ main {
 .banner__container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    height: 100%;
     align-items: center;
     gap: 16px;
     padding: 0px 16px;
@@ -4470,6 +4472,65 @@ main {
     .packages {
         padding: 0;
         border: none;
+    }
+}
+
+.banners {
+    margin: 0px 0px 120px 0px;
+    padding: 64px 0px;
+    border-top: 1px solid #E4E4E4;
+    border-bottom: 1px solid #E4E4E4;
+    @media (max-width: 425px) {
+        margin: 0px 0px 90px 0px;
+    }
+}
+
+.banners__body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+    }
+
+    .banner__body.span-two {
+        grid-column: span 2;
+        @media (max-width: 767px) {
+            grid-column: span 1;
+        }
+    }
+
+    .banner__body.red ul {
+        padding: 24px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        li {
+            font-size: 16px;
+            line-height: 157%;
+            color: #717580;
+            position: relative;
+            padding: 0px 0px 0px 26px;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translate(0, -50%);
+                width: 14px;
+                height: 25.5px;
+                background: url('../img/banners/03.svg') center / contain no-repeat;
+            }
+            strong {
+                color: #242A36;
+                font-weight: 600;
+            }
+        }
+    }
+    .banner__body.white .banner__container {
+        @media (max-width: 970px) {
+            padding: 0px 16px;
+        }
     }
 }
 
