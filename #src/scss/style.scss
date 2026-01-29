@@ -4545,11 +4545,31 @@ main {
 
     &__item {
         padding: 16px;
+        p {
+            text-align: center;
+            font-size: 16px;
+            line-height: 157%;
+            color: #717580;
+            strong {
+                font-weight: 600;
+                color: #242A36;
+            }
+            span {
+                width: 24px;
+                height: 24px;
+            }
+        }
         &.column {
             grid-column: span 2;
+            p {
+                text-align: left;
+            }
         }
         &.head {
-
+            p {
+                font-weight: 600;
+                color: #242A36;
+            }
         }
     }
 }
