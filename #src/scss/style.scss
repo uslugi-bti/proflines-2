@@ -4534,4 +4534,25 @@ main {
     }
 }
 
+.table {
+
+    &__body {
+        width: 100%;
+        overflow-x: auto;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    &__item {
+        padding: 16px;
+        &.column {
+            grid-column: span 2;
+        }
+        &.head {
+
+        }
+    }
+}
+
+
 @import "footer";
