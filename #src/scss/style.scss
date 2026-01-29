@@ -5099,6 +5099,11 @@ main {
         width: 100%;
         min-width: 900px;
         border-collapse: collapse;
+        col {
+            &:nth-child(3) {
+                background-color: #242A36;
+            }
+        }
     }
 
     th,
