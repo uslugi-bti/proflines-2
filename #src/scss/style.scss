@@ -5094,7 +5094,6 @@ main {
         width: 100%;
         overflow-x: auto;
         border-radius: 16px;
-        overflow: hidden;
         position: relative;
     }
 
@@ -5116,7 +5115,7 @@ main {
         position: relative;
     }
 
-    thead {
+    thead th {
         position: sticky;
         top: 0; /* Прилипание к верху окна при скролле страницы */
         z-index: 100;
