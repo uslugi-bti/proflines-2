@@ -5095,6 +5095,9 @@ main {
         overflow-x: auto;
         border-radius: 16px;
         overflow: hidden;
+        position: relative;
+        max-height: 600px; /* Ограничиваем высоту для вертикального скролла */
+        overflow-y: auto; /* Добавляем вертикальный скролл */
     }
 
     &__table {
@@ -5115,9 +5118,17 @@ main {
         position: relative;
     }
 
+    thead {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
     thead th {
         font-weight: 600;
         color: #242A36;
+        background-color: #fff; /* Добавляем фон для липкой шапки */
+        border-bottom: 2px solid #f0f0f0; /* Добавляем разделитель */
     }
 
     th:first-child,
@@ -5148,8 +5159,16 @@ main {
         border-bottom-right-radius: 10px;
     }
 
+    /* Особый стиль для третьей колонки в шапке */
+    thead th:nth-child(3) {
+        background: #242A36 !important;
+        color: #fff;
+        z-index: 11; /* Выше, чем остальная шапка */
+        border-bottom: 2px solid #242A36; /* Чтобы разделитель совпадал с фоном */
+    }
+
     td:nth-child(3),
-    th:nth-child(3) {
+    tbody th:nth-child(3) {
         background: #242A36 !important;
         color: #fff;
         z-index: 2;
