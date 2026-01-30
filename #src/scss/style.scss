@@ -5169,8 +5169,10 @@ main {
     &__body.table-container {
         width: 100%;
         overflow-x: auto;
+        overflow-y: visible !important;
         border-radius: 16px;
         position: relative;
+        z-index: 4;
     }
 
     &__table {
@@ -5209,8 +5211,8 @@ main {
         }
         .table-info {
             position: absolute;
-            top: calc(100% + 4px);
-            right: 0;
+            bottom: 0;
+            left: clac(100% + 4px);
             width: 250px;
             padding: 16px;
             background-color: #FFFFFF;
@@ -5316,6 +5318,15 @@ main {
     tbody tr:last-child td:nth-child(3) {
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
+    }
+
+    tr {
+        &:last-child {
+            .table-info {
+                bottom: 0;
+                top: auto;
+            }
+        }
     }
 
     &__icon {
