@@ -5202,7 +5202,7 @@ main {
             background: url('../img/tables/04.svg') center / contain no-repeat;
             z-index: 2;
             &.active {
-                z-index: 3;
+                z-index: 5;
             }
         }
         .table-info {
