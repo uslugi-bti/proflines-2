@@ -5099,7 +5099,6 @@ main {
     }
 
     &__table {
-        width: 100%;
         min-width: 900px;
         border-collapse: collapse;
     }
@@ -5120,6 +5119,7 @@ main {
         position: absolute;
         left: 0;
         width: 100%;
+        min-width: 900px;
         z-index: 30;
         transform: translateY(0);
         will-change: transform;
