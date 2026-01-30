@@ -5118,9 +5118,8 @@ main {
 
     .table-header {
         position: absolute;
-        top: 0;
         left: 0;
-        right: 0;
+        width: 100%;
         z-index: 30;
         transform: translateY(0);
         will-change: transform;
