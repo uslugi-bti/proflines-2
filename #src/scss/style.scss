@@ -5094,7 +5094,7 @@ main {
         width: 100%;
         overflow-x: auto;
         border-radius: 16px;
-        overflow: hidden;
+        overflow-y: visible;
         position: relative;
         background: #fff;
     }
@@ -5116,12 +5116,16 @@ main {
         background-clip: padding-box;
         position: relative;
     }
-    
+
     .table-header {
-        position: sticky;
+        position: absolute;
         top: 0;
+        left: 0;
+        right: 0;
         z-index: 100;
-        background-color: #fff;
+        background: #fff;
+        transform: translateY(0);
+        will-change: transform;
     }
 
     .table-header th {
