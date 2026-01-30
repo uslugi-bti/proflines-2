@@ -5164,12 +5164,12 @@ main {
 }
 
 .table {
-    margin-bottom: 41px;
+    margin: 0px 0px 41px 0px;
+    height: max-content;
 
     &__body.table-container {
         width: 100%;
         overflow-x: auto;
-        overflow-y: auto;
         border-radius: 16px;
         position: relative;
     }
