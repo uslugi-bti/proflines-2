@@ -2421,6 +2421,25 @@ main {
             text-align: left;
         }
     }
+
+    .refund-terminal {
+        width: 100%;
+        padding: 10px 13px;
+        background-color: #F8F8F8;
+        border: 0.65px solid #E4E4E4;
+        border-radius: 8px;
+        .line {
+            font-size: 16px;
+            line-height: 157%;
+            color: #242A36;
+        }
+        .prompt {
+            color: #D47032;
+            &.blue {
+                color: #2ADDD4;
+            }
+        }
+    }
 }
 
 .banner__icon {

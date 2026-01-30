@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
-    
+
     if (isTouchDevice) {
         document.querySelectorAll('.mission-hero, .services__img, .principles').forEach(el => {
             el.style.pointerEvents = 'none';
@@ -208,13 +208,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
         });
-        
+
         const swiperContainer = document.querySelector('.portfolio__body');
-        
+
         swiperContainer.addEventListener('wheel', (e) => {
             if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
                 e.preventDefault();
-                
+
                 if (e.deltaX > 0) {
                     swiper.slideNext();
                 } else {
@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
         }, { passive: false });
-        
+
         swiperContainer.addEventListener('touchmove', (e) => {
             if (Math.abs(e.touches[0].clientX - e.touches[1]?.clientX || 0) > 10) {
                 e.preventDefault();
@@ -239,12 +239,12 @@ document.addEventListener("DOMContentLoaded", function () {
         function checkBadgePosition(badge, point) {
             const imgRect = teamImg.getBoundingClientRect();
             const pointRect = point.getBoundingClientRect();
-            
+
             const pointLeftPercent = parseFloat(point.style.left);
             const pointLeftPx = (pointLeftPercent / 100) * imgRect.width;
-            
+
             const badgeWidth = teamPointBadges[0].clientWidth;
-            
+
             if (pointLeftPx + badgeWidth > imgRect.width) {
                 badge.classList.add('right-aligned');
             } else {
@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     teamPoints[i].style.zIndex = "2";
                 } else {
                     checkBadgePosition(teamPointBadges[i], teamPoints[i]);
-                    
+
                     for (let i = 0; i < teamPointBadges.length; i++) {
                         teamPointBadges[i].classList.remove("open");
                         teamPoints[i].style.zIndex = "2";
@@ -365,7 +365,7 @@ document.addEventListener("DOMContentLoaded", function () {
         calculate();
     }
 
-    
+
     const footerText = document.querySelector(".footer-bottom__text");
     const footerButton = document.querySelector(".footer-bottom__button > button");
     const footerButtonTextBefore = footerButton.innerHTML;
@@ -390,47 +390,47 @@ document.addEventListener("DOMContentLoaded", function () {
         function servicesImgPadding() {
             let headerHeight = header.clientHeight;
             let paddingValue = headerHeight - 40;
-            
+
             servicesImg.style.paddingTop = paddingValue + "px";
             servicesImgWrapper.style.height = "calc(100% - " + paddingValue + "px)";
         }
 
         servicesImgPadding();
         window.addEventListener("resize", servicesImgPadding);
-    
+
         if (servicesImg && !isTouchDevice) {
             let mouseX = 0;
             let mouseY = 0;
             let currentX = 0;
             let currentY = 0;
-            
+
             function animateParallax() {
                 currentX += (mouseX - currentX) * 0.1;
                 currentY += (mouseY - currentY) * 0.1;
-                
+
                 const icons = servicesImg.querySelectorAll('.services-img__icon');
-                
+
                 if (icons.length >= 3) {
                     icons[0].style.transform = `translate(${currentX * 10}px, ${currentY * 10}px) rotate(-10deg)`;
                     icons[1].style.transform = `translate(${currentX * -8}px, ${currentY * 8}px) rotate(15deg)`;
                     icons[2].style.transform = `translate(${currentX * 6}px, ${currentY * -6}px) rotate(-10deg)`;
                 }
-                
+
                 requestAnimationFrame(animateParallax);
             }
-            
-            servicesImg.addEventListener('mousemove', function(e) {
+
+            servicesImg.addEventListener('mousemove', function (e) {
                 const rect = this.getBoundingClientRect();
-                
+
                 mouseX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
                 mouseY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
             });
-            
-            servicesImg.addEventListener('mouseleave', function() {
+
+            servicesImg.addEventListener('mouseleave', function () {
                 mouseX = 0;
                 mouseY = 0;
             });
-            
+
             animateParallax();
         }
     }
@@ -467,7 +467,7 @@ document.addEventListener("DOMContentLoaded", function () {
             threshold: 0.5
         };
 
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver(function (entries) {
             entries.forEach(entry => {
                 const id = entry.target.getAttribute('id');
                 const correspondingItem = document.querySelector(`.technical-list__item a[href="#${id}"]`)?.parentElement;
@@ -483,7 +483,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         contentSections.forEach(section => observer.observe(section));
 
-        const handleScroll = function() {
+        const handleScroll = function () {
             const scrollPosition = window.scrollY + 100;
 
             let currentSection = null;
@@ -516,53 +516,53 @@ document.addEventListener("DOMContentLoaded", function () {
         function initParallaxBlock(missionHero) {
             const mainImage = missionHero.querySelector('.mission-hero__img');
             const parallaxImages = missionHero.querySelectorAll('.mission-hero-img__img');
-        
+
             const settings = {
                 mainImageIntensity: 0.05,
                 elementsIntensity: 0.15,
                 maxMovement: 30
             };
-            
+
             function handleMouseMove(e) {
                 const rect = missionHero.getBoundingClientRect();
-                
+
                 const mouseX = (e.clientX - rect.left) / rect.width * 2 - 1;
                 const mouseY = (e.clientY - rect.top) / rect.height * 2 - 1;
-                
+
                 const clampedX = Math.max(-1, Math.min(1, mouseX));
                 const clampedY = Math.max(-1, Math.min(1, mouseY));
-                
+
                 if (mainImage) {
                     const moveX = clampedX * settings.maxMovement * settings.mainImageIntensity;
                     const moveY = clampedY * settings.maxMovement * settings.mainImageIntensity;
                     mainImage.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
                 }
-                
+
                 parallaxImages.forEach((img, index) => {
                     const intensityMultiplier = 0.8 + (index * 0.1);
                     const elementIntensity = settings.elementsIntensity * intensityMultiplier;
-                    
+
                     const directionX = index % 2 === 0 ? 1 : -1;
                     const directionY = index % 3 === 0 ? 1 : -1;
-                    
+
                     const moveX = clampedX * settings.maxMovement * elementIntensity * directionX;
                     const moveY = clampedY * settings.maxMovement * elementIntensity * directionY;
-                    
+
                     img.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
                 });
             }
-            
+
             function handleMouseLeave() {
                 if (mainImage) {
                     mainImage.style.transform = 'translate3d(0, 0, 0)';
                     mainImage.style.transition = 'transform 0.7s cubic-bezier(0.23, 1, 0.32, 1)';
                 }
-                
+
                 parallaxImages.forEach(img => {
                     img.style.transform = 'translate3d(0, 0, 0)';
                     img.style.transition = 'transform 0.7s cubic-bezier(0.23, 1, 0.32, 1)';
                 });
-                
+
                 setTimeout(() => {
                     if (mainImage) {
                         mainImage.style.transition = 'transform 0.3s ease-out';
@@ -572,15 +572,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     });
                 }, 700);
             }
-            
+
             missionHero.addEventListener('mousemove', handleMouseMove);
             missionHero.addEventListener('mouseleave', handleMouseLeave);
-            
+
             return {
-                destroy: function() {
+                destroy: function () {
                     missionHero.removeEventListener('mousemove', handleMouseMove);
                     missionHero.removeEventListener('mouseleave', handleMouseLeave);
-                    
+
                     if (mainImage) {
                         mainImage.style.transform = 'translate3d(0, 0, 0)';
                     }
@@ -590,26 +590,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             };
         }
-        
+
         const parallaxInstances = [];
-        
+
         missionHeroBlocks.forEach((block, index) => {
             const instance = initParallaxBlock(block);
             parallaxInstances.push(instance);
-            
+
             block.dataset.parallaxInitialized = 'true';
             block.dataset.parallaxIndex = index;
         });
-        
-        window.destroyAllParallax = function() {
+
+        window.destroyAllParallax = function () {
             parallaxInstances.forEach(instance => {
                 if (instance && typeof instance.destroy === 'function') {
                     instance.destroy();
                 }
             });
         };
-        
-        window.reinitParallax = function() {
+
+        window.reinitParallax = function () {
             destroyAllParallax();
             missionHeroBlocks.forEach((block, index) => {
                 const instance = initParallaxBlock(block);
@@ -620,43 +620,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function initParallaxBlockPrinciples(block, settings) {
         if (!block || isTouchDevice) return;
-        
+
         const elements = block.querySelectorAll(settings.elementsSelector);
-        
+
         function handleMouseMove(e) {
             const rect = block.getBoundingClientRect();
-            
+
             const mouseX = (e.clientX - rect.left) / rect.width * 2 - 1;
             const mouseY = (e.clientY - rect.top) / rect.height * 2 - 1;
-            
+
             const clampedX = Math.max(-1, Math.min(1, mouseX));
             const clampedY = Math.max(-1, Math.min(1, mouseY));
-            
+
             elements.forEach((element, index) => {
                 const intensity = settings.intensity * (0.8 + (index * 0.1));
                 const directionX = index % 2 === 0 ? 1 : -1;
                 const directionY = index % 3 === 0 ? 1 : -1;
-                
+
                 const moveX = clampedX * settings.maxMovement * intensity * directionX;
                 const moveY = clampedY * settings.maxMovement * intensity * directionY;
-                
+
                 element.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
             });
         }
-        
+
         function handleMouseLeave() {
             elements.forEach(element => {
                 element.style.transform = 'translate3d(0, 0, 0)';
                 element.style.transition = 'transform 0.7s cubic-bezier(0.23, 1, 0.32, 1)';
             });
-            
+
             setTimeout(() => {
                 elements.forEach(element => {
                     element.style.transition = settings.transition;
                 });
             }, 700);
         }
-        
+
         block.addEventListener('mousemove', handleMouseMove);
         block.addEventListener('mouseleave', handleMouseLeave);
     }
@@ -679,7 +679,7 @@ document.addEventListener("DOMContentLoaded", function () {
             this.isAnimationComplete = false;
             this.isAnimating = false;
             this.currentY = 120;
-            
+
             this.init();
         }
 
@@ -688,10 +688,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             this.graphElement.style.transform = `translate(-50%, ${this.currentY}%)`;
             this.graphElement.style.transition = 'none';
-            
+
             window.addEventListener('wheel', this.onWheel.bind(this), { passive: false });
             window.addEventListener('touchmove', this.onTouch.bind(this), { passive: false });
-            
+
             this.checkVisibility();
             window.addEventListener('scroll', this.checkVisibility.bind(this));
         }
@@ -699,7 +699,7 @@ document.addEventListener("DOMContentLoaded", function () {
         checkVisibility() {
             const rect = this.heroSection.getBoundingClientRect();
             const isVisible = rect.top < window.innerHeight - 100 && rect.bottom > 100;
-            
+
             if (isVisible && !this.isAnimationComplete && !this.isAnimating) {
                 this.isAnimating = true;
                 document.body.classList.add('body-scroll-lock');
@@ -708,16 +708,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         onWheel(e) {
             if (!this.isAnimating || this.isAnimationComplete) return;
-            
+
             e.preventDefault();
             e.stopPropagation();
-            
+
             if (e.deltaY > 0) {
                 this.currentY -= 5;
                 this.currentY = Math.max(0, this.currentY);
-                
+
                 this.graphElement.style.transform = `translate(-50%, ${this.currentY}%)`;
-                
+
                 if (this.currentY <= 0) {
                     this.finishAnimation();
                 }
@@ -726,24 +726,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
         onTouch(e) {
             if (!this.isAnimating || this.isAnimationComplete) return;
-            
+
             e.preventDefault();
-            
+
             if (e.touches.length === 1 && this.lastTouchY) {
                 const currentY = e.touches[0].clientY;
                 const delta = this.lastTouchY - currentY;
-                
+
                 if (delta > 0) {
                     this.currentY -= 3;
                     this.currentY = Math.max(0, this.currentY);
-                    
+
                     this.graphElement.style.transform = `translate(-50%, ${this.currentY}%)`;
-                    
+
                     if (this.currentY <= 0) {
                         this.finishAnimation();
                     }
                 }
-                
+
                 this.lastTouchY = currentY;
             } else if (e.touches.length === 1) {
                 this.lastTouchY = e.touches[0].clientY;
@@ -753,12 +753,12 @@ document.addEventListener("DOMContentLoaded", function () {
         finishAnimation() {
             this.isAnimationComplete = true;
             this.isAnimating = false;
-            
+
             this.graphElement.style.transition = 'transform 0.3s ease-out';
             this.graphElement.style.transform = 'translate(-50%, 0%)';
             this.graphElement.classList.add('active');
             document.querySelector(".service-hero__img").classList.add("active");
-            
+
             setTimeout(() => {
                 document.body.classList.remove('body-scroll-lock');
                 window.removeEventListener('wheel', this.onWheel);
@@ -853,5 +853,35 @@ document.addEventListener("DOMContentLoaded", function () {
         window.addEventListener('resize', updateHeaderPosition);
 
         updateHeaderPosition();
+    }
+
+    if (document.querySelector(".refund-terminal")) {
+        const lines = [
+            { el: "line-1", text: "refund create --order ORD-2026-0412 --full" },
+            { el: "line-2", text: "refund_id: RF-81273" },
+            { el: "line-3", text: "amount: 100.00 USD" }
+        ];
+
+        let lineIndex = 0;
+        let charIndex = 0;
+
+        function typeLine() {
+            if (lineIndex >= lines.length) return;
+
+            const current = lines[lineIndex];
+            const element = document.getElementById(current.el);
+
+            if (charIndex < current.text.length) {
+                element.textContent += current.text.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeLine, 40);
+            } else {
+                lineIndex++;
+                charIndex = 0;
+                setTimeout(typeLine, 500);
+            }
+        }
+
+        typeLine();
     }
 });
