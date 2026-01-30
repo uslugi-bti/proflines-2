@@ -830,14 +830,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         for (let i = 0; i < tableInfoBody.length; i++) {
             buttonTableInfo[i].addEventListener("click", function () {
-                for (let i = 0; i < tableInfoBody.length; i++) {
-                    buttonTableInfo[i].classList.remove("active");
-                    tableInfoBody[i].classList.remove("open");
-                }
                 if (buttonTableInfo[i].classList.contains("active")) {
                     buttonTableInfo[i].classList.remove("active");
                     tableInfoBody[i].classList.remove("open");
                 } else {
+                    for (let i = 0; i < tableInfoBody.length; i++) {
+                        buttonTableInfo[i].classList.remove("active");
+                        tableInfoBody[i].classList.remove("open");
+                    }
                     buttonTableInfo[i].classList.add("active");
                     tableInfoBody[i].classList.add("open");
                 }
