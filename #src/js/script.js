@@ -829,8 +829,6 @@ document.addEventListener("DOMContentLoaded", function () {
             const headerHeight = tableHeader.offsetHeight;
             const tableHeight = tableBody.offsetHeight;
 
-            tableHeader.style.top = headerHeight + "px";
-
             let offset = -rect.top;
 
             if (offset < 0) offset = 0;
@@ -842,8 +840,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (offset > 0 && offset < maxOffset) {
                 tableHeader.classList.add('sticky-active');
+                tableHeader.style.top = headerHeight + "px";
             } else {
                 tableHeader.classList.remove('sticky-active');
+                tableHeader.style.top = "0px";
             }
         }
 
