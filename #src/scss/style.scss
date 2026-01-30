@@ -5191,6 +5191,29 @@ main {
         position: relative;
     }
 
+    td {
+        &>span#info {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            width: 24px;
+            height: 24px;
+            background: url('../img/tables/04.svg') center / contain no-repeat;
+            z-index: 2;
+        }
+        .table-info {
+            position: absolute;
+            top: calc(100% + 4px);
+            right: 0;
+            width: 250px;
+            padding: 16px;
+            background-color: #FFFFFF;
+            border: 1px solid #E4E4E4;
+            border-radius: 10px;
+        }
+    }
+
     .table-header {
         position: absolute;
         left: 0;
