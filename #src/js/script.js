@@ -821,7 +821,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (document.querySelector('.table')) {
-        const tableBody = document.querySelector('.table-container');
+        const tableBody = document.querySelector('.table__table');
         const tableHeader = document.querySelector('.table-header');
 
         function updateHeaderPosition() {
