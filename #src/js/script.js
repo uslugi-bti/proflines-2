@@ -825,15 +825,16 @@ document.addEventListener("DOMContentLoaded", function () {
         const tableHeader = document.querySelector('.table-header');
 
         const buttonTableInfo = document.querySelectorAll(".table__table span#info");
+        console.log(buttonTableInfo);
         const tableInfoBody = document.querySelectorAll(".table__table .table-info");
 
         for (let i = 0; i < tableInfoBody.length; i++) {
             buttonTableInfo[i].addEventListener("click", function () {
                 for (let i = 0; i < tableInfoBody.length; i++) {
-                    buttonTableInfo[i].classList.add("active");
+                    buttonTableInfo[i].classList.remove("active");
                     tableInfoBody[i].classList.remove("open");
                 }
-                buttonTableInfo[i].classList.remove("active");
+                buttonTableInfo[i].classList.add("active");
                 tableInfoBody[i].classList.add("open");
             })
         }
