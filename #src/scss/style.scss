@@ -5284,6 +5284,12 @@ main {
         &--false {
             background: url('../img/tables/02.svg') center / contain no-repeat;
         }
+
+        &--true-false {
+            width: 48px;
+            height: 20px;
+            background: url('../img/tables/03.svg') center / contain no-repeat;
+        }
     }
 }
 
