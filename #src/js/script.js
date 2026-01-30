@@ -844,7 +844,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         document.addEventListener("click", function (event) {
-            if (!event.target.closest(".table__table span#info") && !event.target.closest(".table__table .table-info")) {
+            if (!event.target.closest(".table__table span#info")) {
                 for (let i = 0; i < tableInfoBody.length; i++) {
                     buttonTableInfo[i].classList.remove("active");
                     tableInfoBody[i].classList.remove("open");
