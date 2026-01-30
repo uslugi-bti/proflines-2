@@ -881,6 +881,36 @@ document.addEventListener("DOMContentLoaded", function () {
         window.addEventListener('resize', updateHeaderPosition);
 
         updateHeaderPosition();
+
+        const tableItems = document.querySelectorAll(".services .columns__item");
+        const tableButton = document.querySelector(".services__button > button");
+        const tableButtonTextBefore = servicesButton.innerHTML;
+        const tableButtonTextAfter = servicesButton.id;
+        const tableCount = 15;
+
+        function hideServices() {
+            for (let i = tableCount; i < tableItems.length; i++) {
+                tableItems[i].style.display = "none";
+            }
+        }
+
+        function showServices() {
+            for (let i = 0; i < tableItems.length; i++) {
+                tableItems[i].style.display = "block";
+            }
+        }
+        hideServices();
+        tableButton.addEventListener("click", function () {
+            if (tableButton.classList.contains("show")) {
+                hideServices();
+                tableButton.innerHTML = tableButtonTextBefore;
+                tableButton.classList.remove("show");
+            } else {
+                showServices();
+                tableButton.innerHTML = tableButtonTextAfter;
+                tableButton.classList.add("show");
+            }
+        });
     }
 
     if (document.querySelector(".refund-terminal")) {
