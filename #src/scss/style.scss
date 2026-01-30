@@ -5227,6 +5227,13 @@ main {
                 visibility: visible;
             }
         }
+
+        h3 {
+            font-size: 22px;
+            letter-spacing: -1px;
+            color: #242A36;
+            font-weight: 700;
+        }
     }
 
     .table-header {
@@ -5293,10 +5300,13 @@ main {
     td:nth-child(3),
     tbody th:nth-child(3) {
         background: #242A36 !important;
-        color: #fff;
+        color: #FFFFFF;
         z-index: 2;
         position: relative;
         isolation: isolate;
+        h3 {
+            color: #FFFFFF;
+        }
     }
 
     .table-header th:nth-child(3) {
