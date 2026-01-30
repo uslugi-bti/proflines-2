@@ -5201,6 +5201,12 @@ main {
         will-change: transform;
     }
 
+    .table-header tr {
+        display: block !important;
+        width: 100% !important;
+        min-width: 900px !important;
+    }
+
     .table-header th {
         font-weight: 600;
         color: #242A36;
