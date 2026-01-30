@@ -5119,7 +5119,7 @@ main {
     }
 
     .table-header {
-        position: relative;
+        position: absolute;
         top: 0;
         left: 0;
         right: 0;
@@ -5127,9 +5127,6 @@ main {
         background: #fff;
         transform: translateY(0);
         will-change: transform;
-        &.sticky-active {
-            position: absolute;
-        }
     }
 
     .table-header th {

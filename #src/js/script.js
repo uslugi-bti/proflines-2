@@ -831,6 +831,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let offset = -rect.top;
 
+            tableBody.style.paddingTop = headerHeight + "px";
+
             if (offset < 0) offset = 0;
 
             const maxOffset = tableHeight - headerHeight;
@@ -840,7 +842,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (offset > 0 && offset < maxOffset) {
                 tableHeader.classList.add('sticky-active');
-                tableHeader.style.top = headerHeight + "px";
             } else {
                 tableHeader.classList.remove('sticky-active');
                 tableHeader.style.top = "0px";
