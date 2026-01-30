@@ -865,8 +865,22 @@ document.addEventListener("DOMContentLoaded", function () {
         let lineIndex = 0;
         let charIndex = 0;
 
+        function resetTerminal() {
+            lines.forEach(line => {
+                document.getElementById(line.el).textContent = "";
+            });
+            lineIndex = 0;
+            charIndex = 0;
+        }
+
         function typeLine() {
-            if (lineIndex >= lines.length) return;
+            if (lineIndex >= lines.length) {
+                setTimeout(() => {
+                    resetTerminal();
+                    typeLine();
+                }, 2000);
+                return;
+            }
 
             const current = lines[lineIndex];
             const element = document.getElementById(current.el);
