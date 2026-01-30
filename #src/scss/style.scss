@@ -5208,7 +5208,10 @@ main {
     }
 
     .table-header tr th {
-        
+        min-width: 180px;
+        &:first-child {
+            min-width: 360px;
+        }
     }
 
     .table-header th {
