@@ -4627,8 +4627,14 @@ main {
     }
 }
 
-.google-hero {
+.service-hero {
     margin: 0px 0px 216px 0px;
+    &.ppc {
+        margin: 0px 0px 340px 0px;
+        .service-hero__body {
+            grid-template-columns: 40% 1fr;
+        }
+    }
 
     &__body {
         display: grid;
@@ -4698,7 +4704,7 @@ main {
     }
 }
 
-.google-hero-img {
+.service-hero-img {
     &__img {
         position: absolute;
         z-index: 2;
@@ -4865,7 +4871,7 @@ main {
     }
 }
 
-.google-page {
+.service-page {
     .process {
         &::before {
             display: none;
@@ -5014,7 +5020,7 @@ main {
     }
 }
 
-.google-page {
+.service-page {
     .packages {
         padding: 0;
         border: none;

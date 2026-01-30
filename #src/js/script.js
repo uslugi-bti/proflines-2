@@ -674,8 +674,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     class HeroAnimation {
         constructor() {
-            this.heroSection = document.querySelector('.google-hero');
-            this.graphElement = document.querySelector('.google-hero-img__img');
+            this.heroSection = document.querySelector('.service-hero');
+            this.graphElement = document.querySelector('.service-hero-img__img');
             this.isAnimationComplete = false;
             this.isAnimating = false;
             this.currentY = 120;
@@ -757,7 +757,7 @@ document.addEventListener("DOMContentLoaded", function () {
             this.graphElement.style.transition = 'transform 0.3s ease-out';
             this.graphElement.style.transform = 'translate(-50%, 0%)';
             this.graphElement.classList.add('active');
-            document.querySelector(".google-hero__img").classList.add("active");
+            document.querySelector(".service-hero__img").classList.add("active");
             
             setTimeout(() => {
                 document.body.classList.remove('body-scroll-lock');
