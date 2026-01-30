@@ -5053,6 +5053,13 @@ main {
             }
         }
     }
+    &.success {
+        li {
+            &::before {
+                background: url('../img/banners/04.svg') center / contain no-repeat;
+            }
+        }
+    }
 
     li {
         font-size: 16px;
