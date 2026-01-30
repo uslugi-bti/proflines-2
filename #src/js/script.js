@@ -824,6 +824,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const tableBody = document.querySelector('.table-container');
         const tableHeader = document.querySelector('.table-header');
 
+        const buttonTableInfo = document.querySelectorAll(".table__table span#info");
+        const tableInfoBody = document.querySelectorAll(".table__table .table-info");
+
         function updateHeaderPosition() {
             const rect = tableBody.getBoundingClientRect();
             const headerHeight = tableHeader.offsetHeight;
