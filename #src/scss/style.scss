@@ -5202,21 +5202,18 @@ main {
     }
 
     .table-header tr {
-        display: block !important;
+        display: flex !important;
         width: 100%;
         min-width: 900px !important;
     }
 
     .table-header tr th {
         min-width: 180px;
+        font-weight: 600;
+        color: #242A36;
         &:first-child {
             min-width: 360px;
         }
-    }
-
-    .table-header th {
-        font-weight: 600;
-        color: #242A36;
     }
 
     .table-header th:nth-child(3) {
