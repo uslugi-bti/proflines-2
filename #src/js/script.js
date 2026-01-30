@@ -820,49 +820,34 @@ document.addEventListener("DOMContentLoaded", function () {
         window.addEventListener("scroll", increment);
     }
 
-    if (document.querySelector(".table")) {
+    if (document.querySelector('.table')) {
         const tableBody = document.querySelector('.table-container');
         const tableHeader = document.querySelector('.table-header');
-        
-        function isTableInViewport() {
-            const rect = tableBody.getBoundingClientRect();
-            const tableTop = rect.top;
-            const tableBottom = rect.bottom;
-            
-            return tableTop < window.innerHeight && tableBottom >= 0;
-        }
-        
+
         function updateHeaderPosition() {
             const rect = tableBody.getBoundingClientRect();
-            const tableTop = rect.top;
-            const tableBottom = rect.bottom;
-            const windowHeight = window.innerHeight;
-            
-            if (tableTop >= 0 && tableBottom <= windowHeight) {
-                tableHeader.style.transform = 'translateY(0)';
-                tableHeader.classList.remove('sticky-active');
-            }
-            else if (tableTop < 0) {
-                const scrollOffset = -tableTop;
-                
-                const maxOffset = Math.min(scrollOffset, tableBody.scrollHeight - windowHeight);
-                tableHeader.style.transform = `translateY(${maxOffset}px)`;
+            const headerHeight = tableHeader.offsetHeight;
+            const tableHeight = tableBody.offsetHeight;
+
+            let offset = -rect.top;
+
+            if (offset < 0) offset = 0;
+
+            const maxOffset = tableHeight - headerHeight;
+            if (offset > maxOffset) offset = maxOffset;
+
+            tableHeader.style.transform = `translateY(${offset}px)`;
+
+            if (offset > 0 && offset < maxOffset) {
                 tableHeader.classList.add('sticky-active');
-            }
-            else if (tableBottom < 0) {
-                tableHeader.style.transform = 'translateY(0)';
+            } else {
                 tableHeader.classList.remove('sticky-active');
             }
         }
-        
+
         window.addEventListener('scroll', updateHeaderPosition);
-        
+        window.addEventListener('resize', updateHeaderPosition);
+
         updateHeaderPosition();
-        
-        let resizeTimeout;
-        window.addEventListener('resize', function() {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(updateHeaderPosition, 100);
-        });
     }
 });
