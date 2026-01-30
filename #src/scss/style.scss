@@ -5226,7 +5226,6 @@ main {
             visibility: hidden;
             z-index: 60;
             transition: $transition;
-            padding: 30px 15px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -5237,11 +5236,16 @@ main {
             }
 
             &__body {
+                width: 100%;
+                max-width: 250px;
+                margin: 0 auto;
+                padding: 30px 15px;
+            }
+
+            &__container {
                 padding: 16px;
                 background-color: #FFFFFF;
                 border: 1px solid #E4E4E4;
-                max-width: 250px;
-                margin: 0 auto;
             }
         }
 
