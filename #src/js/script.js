@@ -842,6 +842,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (offset > 0 && offset < maxOffset) {
                 tableHeader.classList.add('sticky-active');
+                tableHeader.style.top = (header.offsetHeight - 20) + "px";
             } else {
                 tableHeader.classList.remove('sticky-active');
                 tableHeader.style.top = "0px";
