@@ -825,7 +825,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const tableHeader = document.querySelector('.table-header');
 
         const buttonTableInfo = document.querySelectorAll(".table__table span#info");
-        console.log(buttonTableInfo);
         const tableInfoBody = document.querySelectorAll(".table__table .table-info");
 
         for (let i = 0; i < tableInfoBody.length; i++) {
@@ -843,6 +842,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             })
         }
+
+        document.addEventListener("click", function (event) {
+            if (!event.target.closest(".table__table span#info") && !event.target.closest(".table__table .table-info")) {
+                for (let i = 0; i < tableInfoBody.length; i++) {
+                    buttonTableInfo[i].classList.remove("active");
+                    tableInfoBody[i].classList.remove("open");
+                }
+            }
+        });
 
         function updateHeaderPosition() {
             const rect = tableBody.getBoundingClientRect();
