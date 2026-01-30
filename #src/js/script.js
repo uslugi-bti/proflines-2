@@ -843,14 +843,16 @@ document.addEventListener("DOMContentLoaded", function () {
             })
         }
 
-        document.addEventListener("click", function (event) {
-            if (!event.target.closest(".table__table span#info")) {
-                for (let i = 0; i < tableInfoBody.length; i++) {
-                    buttonTableInfo[i].classList.remove("active");
-                    tableInfoBody[i].classList.remove("open");
+        for (let i = 0; i < tableInfoBody.length; i++) {
+            tableInfoBody[i].addEventListener("click", function (event) {
+                if (!event.target.closest(".table-info__body")) {
+                    for (let i = 0; i < tableInfoBody.length; i++) {
+                        buttonTableInfo[i].classList.remove("active");
+                        tableInfoBody[i].classList.remove("open");
+                    }
                 }
-            }
-        });
+            });
+        }
 
         function updateHeaderPosition() {
             const rect = tableBody.getBoundingClientRect();

@@ -5174,7 +5174,7 @@ main {
         overflow-y: visible;
         border-radius: 16px;
         position: relative;
-        z-index: 4;
+        z-index: 200;
         margin: 0px 0px 40px 0px;
         &:last-child {
             margin: 0;
@@ -5216,22 +5216,32 @@ main {
             }
         }
         .table-info {
-            position: absolute;
-            top: calc(100% + 4px);
+            position: fixed;
+            top: 0;
             left: 0;
-            width: 250px;
-            padding: 16px;
-            background-color: #FFFFFF;
-            border: 1px solid #E4E4E4;
-            border-radius: 10px;
-            transform: translate(0, -40px);
+            width: 100%;
+            height: 100%;
+            background-color: #000000ab;
             opacity: 0;
             visibility: hidden;
+            z-index: 60;
             transition: $transition;
+            padding: 30px 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow-y: auto;
             &.open {
-                transform: translate(0, 0);
                 opacity: 1;
                 visibility: visible;
+            }
+
+            &__body {
+                padding: 16px;
+                background-color: #FFFFFF;
+                border: 1px solid #E4E4E4;
+                max-width: 250px;
+                margin: 0 auto;
             }
         }
 
