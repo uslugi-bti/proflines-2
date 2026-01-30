@@ -5090,11 +5090,13 @@ main {
 .table {
     margin-bottom: 41px;
 
-    &__body {
+    &__body.table-container {
         width: 100%;
         overflow-x: auto;
         border-radius: 16px;
+        overflow: hidden;
         position: relative;
+        background: #fff;
     }
 
     &__table {
@@ -5114,28 +5116,27 @@ main {
         background-clip: padding-box;
         position: relative;
     }
-
-    thead th {
+    
+    .table-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background-color: #fff;
     }
 
-    thead th {
+    .table-header th {
         font-weight: 600;
         color: #242A36;
         background-color: #fff;
         border-bottom: 2px solid #f0f0f0;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        position: sticky;
-        top: 120px; /* Прилипание к верху окна при скролле страницы */
-        z-index: 100;
     }
 
-    /* Специальные стили для третьей колонки в шапке */
-    thead th:nth-child(3) {
+    .table-header th:nth-child(3) {
         background: #242A36 !important;
         color: #fff;
-        z-index: 101; /* Выше, чем остальная шапка */
+        z-index: 101;
         border-bottom: 2px solid #242A36;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        position: relative;
     }
 
     th:first-child,
@@ -5175,7 +5176,7 @@ main {
         isolation: isolate;
     }
 
-    thead th:nth-child(3) {
+    .table-header th:nth-child(3) {
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
     }
