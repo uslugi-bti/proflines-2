@@ -5096,14 +5096,12 @@ main {
         border-radius: 16px;
         overflow-y: visible;
         position: relative;
-        background: #fff;
     }
 
     &__table {
         width: 100%;
         min-width: 900px;
         border-collapse: collapse;
-        //position: relative;
     }
 
     th,
@@ -5124,7 +5122,6 @@ main {
         left: 0;
         right: 0;
         z-index: 30;
-        background: #fff;
         transform: translateY(0);
         will-change: transform;
     }
@@ -5132,8 +5129,6 @@ main {
     .table-header th {
         font-weight: 600;
         color: #242A36;
-        background-color: #fff;
-        border-bottom: 2px solid #f0f0f0;
     }
 
     .table-header th:nth-child(3) {
