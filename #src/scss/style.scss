@@ -2401,6 +2401,26 @@ main {
     gap: 16px;
     padding: 0px 16px;
     margin: 0 auto;
+    &.left {
+        align-items: flex-start;
+        padding: 0px 32px 0px 80px;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 32px;
+            width: 32px;
+            height: 32px;
+            background: url('../img/banners/05.svg') center / contain no-repeat;
+        }
+        .banner__title h1,
+        .banner__title h2,
+        .banner__title h3,
+        .banner__text p {
+            text-align: left;
+        }
+    }
 }
 
 .banner__icon {
@@ -2430,6 +2450,12 @@ main {
         @media (max-width: 425px) {
             font-size: 25px;
         }
+    }
+    h3 {
+        font-size: 22px;
+        letter-spacing: -1px;
+        color: #242A36;
+        font-weight: 500;
     }
 }
 
@@ -5037,8 +5063,16 @@ main {
     }
 }
 
-.red {
+.banners__columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
 
+.banners__column {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 }
 
 .banner__body ul {
