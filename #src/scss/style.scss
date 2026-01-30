@@ -5230,4 +5230,14 @@ main {
     }
 }
 
+.important-notes-item__title p {
+    font-size: 16px;
+    line-height: 157%;
+    color: #717580;
+    strong {
+        font-weight: 600;
+        color: #242A36;
+    }
+}
+
 @import "footer";
