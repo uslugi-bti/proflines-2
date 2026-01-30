@@ -854,6 +854,15 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
 
+        document.addEventListener("keydown", function (event) {
+            if (event.which == 27) {
+                for (let i = 0; i < tableInfoBody.length; i++) {
+                    buttonTableInfo[i].classList.remove("active");
+                    tableInfoBody[i].classList.remove("open");
+                }
+            }
+        });
+
         function updateHeaderPosition() {
             const rect = tableBody.getBoundingClientRect();
             const headerHeight = tableHeader.offsetHeight;
@@ -884,10 +893,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         updateHeaderPosition();
 
-        const tableItems = document.querySelectorAll(".services .columns__item");
-        const tableButton = document.querySelector(".services__button > button");
-        const tableButtonTextBefore = servicesButton.innerHTML;
-        const tableButtonTextAfter = servicesButton.id;
+        const tableItems = document.querySelectorAll(".table__table tbody tr");
+        const tableButton = document.querySelector(".table__button > button");
+        const tableButtonTextBefore = tableButton.innerHTML;
+        const tableButtonTextAfter = tableButton.id;
         const tableCount = 15;
 
         function hideServices() {

@@ -5226,9 +5226,6 @@ main {
             visibility: hidden;
             z-index: 60;
             transition: $transition;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
             overflow-y: auto;
             &.open {
                 opacity: 1;
@@ -5237,15 +5234,20 @@ main {
 
             &__body {
                 width: 100%;
-                max-width: 250px;
+                max-width: 270px;
                 margin: 0 auto;
                 padding: 30px 15px;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
             }
 
             &__container {
                 padding: 16px;
                 background-color: #FFFFFF;
                 border: 1px solid #E4E4E4;
+                border-radius: 10px;
             }
         }
 
