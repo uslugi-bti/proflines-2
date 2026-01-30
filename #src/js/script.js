@@ -829,6 +829,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const headerHeight = tableHeader.offsetHeight;
             const tableHeight = tableBody.offsetHeight;
 
+            tableHeader.style.top = headerHeight + "px";
+
             let offset = -rect.top;
 
             if (offset < 0) offset = 0;
