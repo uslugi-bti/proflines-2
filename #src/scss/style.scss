@@ -5170,7 +5170,6 @@ main {
         width: 100%;
         overflow-x: auto;
         border-radius: 16px;
-        overflow-y: visible;
         position: relative;
     }
 
@@ -5201,6 +5200,9 @@ main {
             height: 24px;
             background: url('../img/tables/04.svg') center / contain no-repeat;
             z-index: 2;
+            &.active {
+                z-index: 3;
+            }
         }
         .table-info {
             position: absolute;
@@ -5211,6 +5213,15 @@ main {
             background-color: #FFFFFF;
             border: 1px solid #E4E4E4;
             border-radius: 10px;
+            transform: translate(0, -40px);
+            opacity: 0;
+            visibility: hidden;
+            transition: $transition;
+            &.open {
+                transform: translate(0, 0);
+                opacity: 1;
+                visibility: visible;
+            }
         }
     }
 

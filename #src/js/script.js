@@ -827,6 +827,17 @@ document.addEventListener("DOMContentLoaded", function () {
         const buttonTableInfo = document.querySelectorAll(".table__table span#info");
         const tableInfoBody = document.querySelectorAll(".table__table .table-info");
 
+        for (let i = 0; i < tableInfoBody.length; i++) {
+            buttonTableInfo[i].addEventListener("click", function () {
+                for (let i = 0; i < tableInfoBody.length; i++) {
+                    buttonTableInfo[i].classList.add("active");
+                    tableInfoBody[i].classList.remove("open");
+                }
+                buttonTableInfo[i].classList.remove("active");
+                tableInfoBody[i].classList.add("open");
+            })
+        }
+
         function updateHeaderPosition() {
             const rect = tableBody.getBoundingClientRect();
             const headerHeight = tableHeader.offsetHeight;
