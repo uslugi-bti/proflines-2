@@ -5192,9 +5192,12 @@ main {
     }
 
     td {
+        &:has( > span#info) {
+            padding: 16px 48px 16px 16px;
+        }
         &>span#info {
             position: absolute;
-            right: 0;
+            right: 16px;
             top: 50%;
             transform: translate(0, -50%);
             width: 24px;
