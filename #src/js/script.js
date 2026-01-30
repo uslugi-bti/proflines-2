@@ -834,8 +834,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     buttonTableInfo[i].classList.remove("active");
                     tableInfoBody[i].classList.remove("open");
                 }
-                buttonTableInfo[i].classList.add("active");
-                tableInfoBody[i].classList.add("open");
+                if (buttonTableInfo[i].classList.contains("active")) {
+                    buttonTableInfo[i].classList.remove("active");
+                    tableInfoBody[i].classList.remove("open");
+                } else {
+                    buttonTableInfo[i].classList.add("active");
+                    tableInfoBody[i].classList.add("open");
+                }
             })
         }
 
