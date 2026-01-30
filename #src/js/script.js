@@ -907,7 +907,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function showServices() {
             for (let i = 0; i < tableItems.length; i++) {
-                tableItems[i].style.display = "block";
+                tableItems[i].style.display = "table-row";
             }
         }
         hideServices();
