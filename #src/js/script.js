@@ -305,6 +305,40 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
         }
+
+        const showAllButton = document.querySelector('.faq__button button');
+        const allFaqItems = document.querySelectorAll('.faq__item');
+    
+        allFaqItems.forEach((item, index) => {
+            if (index >= 6) {
+                item.style.display = 'none';
+            }
+        });
+        
+        showAllButton.textContent = 'Zobraziť všetky otázky';
+        let isExpanded = false;
+        
+        function toggleFaqVisibility() {
+            if (!isExpanded) {
+                allFaqItems.forEach(item => {
+                    item.style.display = 'block';
+                });
+                showAllButton.textContent = 'Zobraziť menej';
+                isExpanded = true;
+            } else {
+                allFaqItems.forEach((item, index) => {
+                    if (index >= 6) {
+                        item.style.display = 'none';
+                    } else {
+                        item.style.display = 'block';
+                    }
+                });
+                showAllButton.textContent = 'Zobraziť všetky otázky';
+                isExpanded = false;
+            }
+        }
+        
+        showAllButton.addEventListener('click', toggleFaqVisibility);
     }
 
     if (document.querySelector(".roi")) {
