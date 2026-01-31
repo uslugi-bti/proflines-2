@@ -294,6 +294,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const showAllButton = document.querySelector('.faq__button button');
         const faqColumns = document.querySelectorAll('.faq__column');
         const allFaqItems = document.querySelectorAll('.faq__item');
+        const showAllButtonBefore = showAllButton.textContent;
+        const showAllButtonAfter = showAllButton.id;
 
         const itemsPerColumn = [];
         faqColumns.forEach(column => {
@@ -309,7 +311,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-        showAllButton.textContent = 'Zobraziť všetky otázky';
+        showAllButton.textContent = showAllButtonBefore;
         let isExpanded = false;
 
         function toggleFaqVisibility() {
@@ -317,7 +319,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 allFaqItems.forEach(item => {
                     item.style.display = 'block';
                 });
-                showAllButton.textContent = 'Zobraziť menej';
+                showAllButton.textContent = showAllButtonAfter;
                 isExpanded = true;
             } else {
                 itemsPerColumn.forEach(items => {
@@ -329,7 +331,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
                     });
                 });
-                showAllButton.textContent = 'Zobraziť všetky otázky';
+                showAllButton.textContent = showAllButtonBefore;
                 isExpanded = false;
             }
         }
