@@ -5080,6 +5080,32 @@ main {
     @media (max-width: 425px) {
         margin: 0px 0px 90px 0px;
     }
+
+    &.ppc {
+        .banners__body {
+            margin: 0px 0px 32px 0px;
+        }
+
+        .banner__body.gradient {
+            .banner__container {
+                max-width: none;
+                padding: 0px 32px;
+                align-items: center;
+                flex-direction: row;
+                gap: 32px;
+            }
+
+            .banner__content {
+                width: 100%;
+            }
+
+            .banner__button {
+                flex: 0 0 auto;
+                a {
+                }
+            }
+        }
+    }
 }
 
 .banners__columns {
