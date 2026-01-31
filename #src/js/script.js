@@ -291,53 +291,56 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (document.querySelector(".faq__body")) {
-        const faqItemHead = document.querySelectorAll(".faq-item__title");
-        const faqItemBody = document.querySelectorAll(".faq-item__text");
+        const showAllButton = document.querySelector('.faq__button button');
+        const faqColumns = document.querySelectorAll('.faq__column');
+        const allFaqItems = document.querySelectorAll('.faq__item');
 
-        for (let i = 0; i < faqItemBody.length; i++) {
-            faqItemHead[i].addEventListener("click", function () {
-                if (faqItemHead[i].classList.contains("open")) {
-                    faqItemHead[i].classList.remove("open");
-                    faqItemBody[i].classList.remove("open");
-                } else {
-                    faqItemHead[i].classList.add("open");
-                    faqItemBody[i].classList.add("open");
+        // Собираем FAQ элементы по колонкам
+        const itemsPerColumn = [];
+        faqColumns.forEach(column => {
+            const items = column.querySelectorAll('.faq__item');
+            itemsPerColumn.push(items);
+        });
+
+        // Скрываем лишние FAQ в каждой колонке (оставляем по 3)
+        itemsPerColumn.forEach(items => {
+            items.forEach((item, index) => {
+                if (index >= 3) {
+                    item.style.display = 'none';
                 }
             });
-        }
-
-        const showAllButton = document.querySelector('.faq__button button');
-        const allFaqItems = document.querySelectorAll('.faq__item');
-    
-        allFaqItems.forEach((item, index) => {
-            if (index >= 6) {
-                item.style.display = 'none';
-            }
         });
-        
+
+        // Устанавливаем текст кнопки
         showAllButton.textContent = 'Zobraziť všetky otázky';
         let isExpanded = false;
-        
+
+        // Функция для показа/скрытия FAQ
         function toggleFaqVisibility() {
             if (!isExpanded) {
+                // Показываем все FAQ
                 allFaqItems.forEach(item => {
                     item.style.display = 'block';
                 });
                 showAllButton.textContent = 'Zobraziť menej';
                 isExpanded = true;
             } else {
-                allFaqItems.forEach((item, index) => {
-                    if (index >= 6) {
-                        item.style.display = 'none';
-                    } else {
-                        item.style.display = 'block';
-                    }
+                // Показываем только первые 3 FAQ в каждой колонке
+                itemsPerColumn.forEach(items => {
+                    items.forEach((item, index) => {
+                        if (index >= 3) {
+                            item.style.display = 'none';
+                        } else {
+                            item.style.display = 'block';
+                        }
+                    });
                 });
                 showAllButton.textContent = 'Zobraziť všetky otázky';
                 isExpanded = false;
             }
         }
-        
+
+        // Добавляем обработчик клика на кнопку
         showAllButton.addEventListener('click', toggleFaqVisibility);
     }
 
