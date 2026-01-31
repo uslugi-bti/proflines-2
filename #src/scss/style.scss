@@ -4677,6 +4677,9 @@ main {
         margin: 0px 0px 340px 0px;
         .service-hero__body {
             grid-template-columns: 40% 1fr;
+            @media (max-width: 970px) {
+                grid-template-columns: 1fr;
+            }
         }
     }
 
