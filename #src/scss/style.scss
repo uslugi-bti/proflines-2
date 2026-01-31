@@ -5094,6 +5094,16 @@ main {
     gap: 32px;
 }
 
+.banners__img {
+    align-self: start;
+    position: sticky;
+    top: 120px;
+    img {
+        display: block;
+        width: 100%;
+    }
+}
+
 .banner__body ul {
     display: flex;
     flex-direction: column;
