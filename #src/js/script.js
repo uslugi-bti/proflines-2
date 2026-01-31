@@ -295,14 +295,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const faqColumns = document.querySelectorAll('.faq__column');
         const allFaqItems = document.querySelectorAll('.faq__item');
 
-        // Собираем FAQ элементы по колонкам
         const itemsPerColumn = [];
         faqColumns.forEach(column => {
             const items = column.querySelectorAll('.faq__item');
             itemsPerColumn.push(items);
         });
 
-        // Скрываем лишние FAQ в каждой колонке (оставляем по 3)
         itemsPerColumn.forEach(items => {
             items.forEach((item, index) => {
                 if (index >= 3) {
@@ -311,21 +309,17 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-        // Устанавливаем текст кнопки
         showAllButton.textContent = 'Zobraziť všetky otázky';
         let isExpanded = false;
 
-        // Функция для показа/скрытия FAQ
         function toggleFaqVisibility() {
             if (!isExpanded) {
-                // Показываем все FAQ
                 allFaqItems.forEach(item => {
                     item.style.display = 'block';
                 });
                 showAllButton.textContent = 'Zobraziť menej';
                 isExpanded = true;
             } else {
-                // Показываем только первые 3 FAQ в каждой колонке
                 itemsPerColumn.forEach(items => {
                     items.forEach((item, index) => {
                         if (index >= 3) {
@@ -340,7 +334,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
-        // Добавляем обработчик клика на кнопку
         showAllButton.addEventListener('click', toggleFaqVisibility);
     }
 
