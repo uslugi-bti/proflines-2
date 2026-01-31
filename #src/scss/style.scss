@@ -5097,6 +5097,19 @@ main {
 
             .banner__content {
                 width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                .banner__title {
+                    h1 {
+                        text-align: left;
+                    }
+                }
+                .banner__text {
+                    p {
+                        text-align: left;
+                    }
+                }
             }
 
             .banner__button {
