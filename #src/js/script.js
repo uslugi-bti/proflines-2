@@ -942,33 +942,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const tableItems = document.querySelectorAll(".table__table tbody tr");
         const tableButton = document.querySelector(".table__button > button");
-        const tableButtonTextBefore = tableButton.innerHTML;
-        const tableButtonTextAfter = tableButton.id;
-        const tableCount = 15;
 
-        function hideServices() {
-            for (let i = tableCount; i < tableItems.length; i++) {
-                tableItems[i].style.display = "none";
-            }
-        }
+        if (tableButton) {
+            const tableButtonTextBefore = tableButton.innerHTML;
+            const tableButtonTextAfter = tableButton.id;
+            const tableCount = 15;
 
-        function showServices() {
-            for (let i = 0; i < tableItems.length; i++) {
-                tableItems[i].style.display = "table-row";
+            function hideServices() {
+                for (let i = tableCount; i < tableItems.length; i++) {
+                    tableItems[i].style.display = "none";
+                }
             }
+
+            function showServices() {
+                for (let i = 0; i < tableItems.length; i++) {
+                    tableItems[i].style.display = "table-row";
+                }
+            }
+            hideServices();
+            tableButton.addEventListener("click", function () {
+                if (tableButton.classList.contains("show")) {
+                    hideServices();
+                    tableButton.innerHTML = tableButtonTextBefore;
+                    tableButton.classList.remove("show");
+                } else {
+                    showServices();
+                    tableButton.innerHTML = tableButtonTextAfter;
+                    tableButton.classList.add("show");
+                }
+            });
         }
-        hideServices();
-        tableButton.addEventListener("click", function () {
-            if (tableButton.classList.contains("show")) {
-                hideServices();
-                tableButton.innerHTML = tableButtonTextBefore;
-                tableButton.classList.remove("show");
-            } else {
-                showServices();
-                tableButton.innerHTML = tableButtonTextAfter;
-                tableButton.classList.add("show");
-            }
-        });
     }
 
     if (document.querySelector(".refund-terminal")) {
