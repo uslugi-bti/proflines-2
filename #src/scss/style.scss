@@ -1052,6 +1052,34 @@ main {
 
 .packages-item__text {
     margin: 0px 0px 32px 0px;
+    position: relative;
+
+    &.line {
+        padding: 32px 0px 0px 0px;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #E4E4E4;
+        }
+
+        p {
+            text-align: center;
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: #E4E4E4;
+            }
+        }
+    }
 
     p {
         color: #242A36;
@@ -1059,6 +1087,9 @@ main {
         padding: 16px;
         line-height: 157%;
         transition: $transition;
+        strong {
+            font-weight: 600;
+        }
 
         @media (max-width: 425px) {
             padding: 16px 0px;
