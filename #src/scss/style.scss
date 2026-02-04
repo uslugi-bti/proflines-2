@@ -5586,4 +5586,75 @@ main {
     }
 }
 
+.faq-page {
+    .breadcrump {
+        margin: 0px 0px 69px 0px;
+    }
+}
+
+.qa {
+    margin: 0px 0px 75px 0px;
+}
+.qa__head {
+    max-width: 725px;
+    width: 100%;
+}
+.qa-head__title {
+    margin: 0px 0px 32px 0px;
+    h1 {
+        font-size: 52px;
+        letter-spacing: -2.6px;
+        color: #242A36;
+        font-weight: 500;
+        line-height: 87%;
+
+        @media (max-width: 970px) {
+            font-size: 45px;
+            line-height: 100%;
+            letter-spacing: -1.6px;
+        }
+
+        @media (max-width: 575px) {
+            font-size: 35px;
+            letter-spacing: 0;
+        }
+
+        @media (max-width: 425px) {
+            font-size: 25px;
+        }
+    }
+}
+.qa-head__text {
+    margin: 0px 0px 69px 0px;
+    p {
+        font-size: 20px;
+        color: #242A36;
+        letter-spacing: -0.4px;
+        line-height: 174%;
+    }
+}
+.qa__body {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 32px;
+}
+.qa__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.qa-content__item {}
+.qa-content__title {
+    margin: 0px 0px 40px 0px;
+    h3 {
+        font-size: 22px;
+        letter-spacing: -1px;
+        color: #242A36;
+        font-weight: 500;
+    }
+}
+.qa__menu {}
+.qa-menu__list {}
+.qa-menu__button {}
+
 @import "footer";
