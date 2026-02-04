@@ -290,7 +290,7 @@ document.addEventListener("DOMContentLoaded", function () {
         window.addEventListener('resize', initBadgePositions);
     }
 
-    if (document.querySelector(".faq__body")) {
+    if (document.querySelector(".faq__body") && document.querySelector(".faq__button")) {
         const showAllButton = document.querySelector('.faq__button button');
         const faqColumns = document.querySelectorAll('.faq__column');
         const allFaqItems = document.querySelectorAll('.faq__item');
