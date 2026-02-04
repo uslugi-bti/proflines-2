@@ -290,53 +290,68 @@ document.addEventListener("DOMContentLoaded", function () {
         window.addEventListener('resize', initBadgePositions);
     }
 
-    if (document.querySelector(".faq__body") && document.querySelector(".faq__button")) {
+    if (document.querySelector(".faq__body")) {
         const showAllButton = document.querySelector('.faq__button button');
         const faqColumns = document.querySelectorAll('.faq__column');
         const allFaqItems = document.querySelectorAll('.faq__item');
-        const showAllButtonBefore = showAllButton.textContent;
-        const showAllButtonAfter = showAllButton.id;
 
-        const itemsPerColumn = [];
-        faqColumns.forEach(column => {
-            const items = column.querySelectorAll('.faq__item');
-            itemsPerColumn.push(items);
-        });
+        if (document.querySelector(".faq__button")) {
+            const showAllButtonBefore = showAllButton.textContent;
+            const showAllButtonAfter = showAllButton.id;
 
-        itemsPerColumn.forEach(items => {
-            items.forEach((item, index) => {
-                if (index >= 3) {
-                    item.style.display = 'none';
-                }
+            const itemsPerColumn = [];
+            faqColumns.forEach(column => {
+                const items = column.querySelectorAll('.faq__item');
+                itemsPerColumn.push(items);
             });
-        });
 
-        showAllButton.textContent = showAllButtonBefore;
-        let isExpanded = false;
-
-        function toggleFaqVisibility() {
-            if (!isExpanded) {
-                allFaqItems.forEach(item => {
-                    item.style.display = 'block';
+            itemsPerColumn.forEach(items => {
+                items.forEach((item, index) => {
+                    if (index >= 3) {
+                        item.style.display = 'none';
+                    }
                 });
-                showAllButton.textContent = showAllButtonAfter;
-                isExpanded = true;
-            } else {
-                itemsPerColumn.forEach(items => {
-                    items.forEach((item, index) => {
-                        if (index >= 3) {
-                            item.style.display = 'none';
-                        } else {
-                            item.style.display = 'block';
-                        }
+            });
+
+            showAllButton.textContent = showAllButtonBefore;
+            let isExpanded = false;
+
+            function toggleFaqVisibility() {
+                if (!isExpanded) {
+                    allFaqItems.forEach(item => {
+                        item.style.display = 'block';
                     });
-                });
-                showAllButton.textContent = showAllButtonBefore;
-                isExpanded = false;
+                    showAllButton.textContent = showAllButtonAfter;
+                    isExpanded = true;
+                } else {
+                    itemsPerColumn.forEach(items => {
+                        items.forEach((item, index) => {
+                            if (index >= 3) {
+                                item.style.display = 'none';
+                            } else {
+                                item.style.display = 'block';
+                            }
+                        });
+                    });
+                    showAllButton.textContent = showAllButtonBefore;
+                    isExpanded = false;
+                }
             }
+
+            showAllButton.addEventListener('click', toggleFaqVisibility);
         }
 
-        showAllButton.addEventListener('click', toggleFaqVisibility);
+        allFaqItems.forEach(item => {
+            const title = item.querySelector('.faq-item__title');
+            const text = item.querySelector('.faq-item__text');
+            
+            if (title && text) {
+                title.addEventListener('click', function() {
+                    this.classList.toggle('open');
+                    text.classList.toggle('open');
+                });
+            }
+        });
     }
 
     if (document.querySelector(".roi")) {
