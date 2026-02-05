@@ -1017,4 +1017,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
         typeLine();
     }
+    
+    if (document.querySelector(".qa__menu")) {
+        const menuItems = document.querySelectorAll('.qa-menu__list a');
+        const sections = document.querySelectorAll('section[id], div[id]');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    
+                    menuItems.forEach(item => {
+                        item.parentElement.classList.remove('active');
+                        
+                        if (item.getAttribute('href') === `#${id}`) {
+                            item.parentElement.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, {
+            threshold: 0.5,
+            rootMargin: '-100px 0px -50% 0px'
+        });
+        
+        sections.forEach(section => {
+            if (section.getAttribute('id')) {
+                observer.observe(section);
+            }
+        });
+    }
 });

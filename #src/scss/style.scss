@@ -5695,15 +5695,16 @@ main {
     flex-direction: column;
     gap: 16px;
     margin: 0px 0px 16px 0px;
-    &.active {
-        a {
-            color: #242A36;
-        }
-    }
     a {
         font-size: 16px;
         line-height: 157%;
         color: #717580;
+    }
+
+    li.active {
+        a {
+            color: #242A36;
+        }
     }
 }
 .qa-menu__button {
