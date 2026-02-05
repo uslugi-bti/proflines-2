@@ -822,6 +822,23 @@ main {
     height: 24px;
     position: relative;
 
+    &.step {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #F8F8F8;
+        border: 1px solid #E4E4E4;
+        border-radius: 10px;
+
+        span {
+            font-size: 16px;
+            color: #242A36;
+            font-weight: 600;
+        }
+    }
+
     img {
         position: absolute;
         top: 50%;
@@ -4091,6 +4108,13 @@ main {
         h2 {
             font-size: 22px;
         }
+    }
+
+    .columns__body {
+        grid-template-columns: 1fr;
+    }
+    .columns__item {
+        padding: 16px;
     }
 }
 
