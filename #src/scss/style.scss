@@ -4199,6 +4199,14 @@ main {
     }
 }
 
+.briff-content__caption {
+    p {
+        font-size: 16px;
+        line-height: 157%;
+        color: #242A36;
+    }
+} 
+
 .briff-content__title {
     h1 {
         color: #242A36;
@@ -4219,6 +4227,31 @@ main {
 
         @media (max-width: 425px) {
             font-size: 25px;
+        }
+    }
+    h2 {
+        font-size: 35px;
+        line-height: 112%;
+        letter-spacing: -1px;
+        font-weight: 700;
+        color: #242A36;
+        @media (max-width: 575px) {
+            font-size: 25px;
+        }
+    }
+}
+
+.briff-content__quote {
+    blockquote {
+        padding: 24px 32px;
+        border-radius: 10px;
+        background-color: #1059B91C;
+        border-left: 3px solid #1059B9;
+        font-size: 16px;
+        line-height: 157%;
+        color: #242A36;
+        strong {
+            font-weight: 600;
         }
     }
 }
@@ -5809,6 +5842,12 @@ main {
         padding: 64px 0px;
         border-top: 1px solid #E4E4E4;
         border-bottom: 1px solid #E4E4E4;
+        &::before {
+            display: none;
+        }
+    }
+
+    .briff {
         &::before {
             display: none;
         }
