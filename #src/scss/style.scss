@@ -1589,6 +1589,12 @@ main {
             background-color: #E4E4E4;
         }
 
+        &.left {
+            p {
+                text-align: left;
+            }
+        }
+
         p {
             text-align: center;
             position: relative;
