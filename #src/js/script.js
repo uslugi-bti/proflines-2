@@ -504,7 +504,7 @@ document.addEventListener("DOMContentLoaded", function () {
         window.addEventListener("resize", portfolioCoverWidth);
     }
 
-    if (document.querySelector(".technical")) {
+    /*if (document.querySelector(".technical")) {
         const listItems = document.querySelectorAll('.technical-list__item');
         const contentSections = document.querySelectorAll('.technical-content__body');
 
@@ -555,7 +555,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         window.addEventListener('scroll', handleScroll);
         handleScroll();
-    }
+    }*/
 
     const missionHeroBlocks = document.querySelectorAll('.mission-hero');
 
@@ -1017,7 +1017,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         typeLine();
     }
-    
+
     if (document.querySelector(".qa__menu")) {
         const menuItems = document.querySelectorAll('.qa-menu__list a');
         const sections = document.querySelectorAll('section[id], div[id]');
