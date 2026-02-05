@@ -5804,6 +5804,15 @@ main {
     .technical-content__body {
         border: none;
     }
+
+    .faq {
+        padding: 64px 0px;
+        border-top: 1px solid #E4E4E4;
+        border-bottom: 1px solid #E4E4E4;
+        &::before {
+            display: none;
+        }
+    }
 }
 
 @import "footer";
