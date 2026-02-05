@@ -4206,6 +4206,12 @@ main {
     }
 }
 
+.technical-list__button {
+    a {
+        display: block;
+    }
+}
+
 .contact-page {
     .breadcrump {
         margin: 0px 0px 66px 0px;
@@ -5753,6 +5759,12 @@ main {
 .qa-menu__button {
     a {
         display: block;
+    }
+}
+
+.initiative-page {
+    .breadcrump {
+        margin: 0px 0px 69px 0px;
     }
 }
 
