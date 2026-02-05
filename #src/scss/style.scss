@@ -2212,6 +2212,9 @@ main {
         display: flex;
         flex-direction: column;
         gap: 32px;
+        @media (max-width: 767px) {
+            gap: 16px;
+        }
     }
 
     &__item {
@@ -5637,11 +5640,21 @@ main {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 32px;
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+    }
 }
 .qa__content {
     display: flex;
     flex-direction: column;
     gap: 40px;
+
+    .faq__body {
+        margin: 0;
+        @media (max-width: 970px) {
+            grid-template-columns: 1fr;
+        }
+    }
 }
 .qa-content__item {
     .faq-item__title {
@@ -5654,6 +5667,9 @@ main {
 }
 .qa-content__title {
     margin: 0px 0px 40px 0px;
+    @media (max-width: 970px) {
+        margin: 0px 0px 20px 0px;
+    }
     h3 {
         font-size: 22px;
         letter-spacing: -1px;
@@ -5670,6 +5686,9 @@ main {
     align-self: flex-start;
     position: sticky;
     top: 120px;
+    @media (max-width: 767px) {
+        display: none;
+    }
 }
 .qa-menu__list {
     display: flex;
