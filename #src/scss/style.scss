@@ -3007,14 +3007,16 @@ main {
         align-items: flex-start;
         padding: 0px 32px 0px 80px;
         position: relative;
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 32px;
-            width: 32px;
-            height: 32px;
-            background: url('../img/banners/05.svg') center / contain no-repeat;
+        &.icon {
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 32px;
+                width: 32px;
+                height: 32px;
+                background: url('../img/banners/05.svg') center / contain no-repeat;
+            }
         }
         .banner__title h1,
         .banner__title h2,
