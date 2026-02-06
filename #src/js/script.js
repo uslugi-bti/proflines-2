@@ -727,11 +727,9 @@ document.addEventListener("DOMContentLoaded", function () {
             this.isAnimationComplete = false;
             this.isAnimating = false;
             this.currentY = 120;
+            this.targetY = 120;
             this.lastTimestamp = 0;
-            this.scrollSensitivity = 2.5;
-            this.animationSpeed = 0.15;
-            this.velocity = 0;
-            this.lastDeltaY = 0;
+            this.scrollSensitivity = 0.8;
             
             this.init();
         }
@@ -740,7 +738,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!this.heroSection || !this.graphElement) return;
 
             this.graphElement.style.transform = `translate(-50%, ${this.currentY}%)`;
-            this.graphElement.style.transition = 'transform 0.05s cubic-bezier(0.25, 0.1, 0.25, 1)';
+            this.graphElement.style.transition = 'transform 0.1s ease-out';
 
             window.addEventListener('wheel', this.onWheel.bind(this), { passive: false });
             window.addEventListener('touchmove', this.onTouch.bind(this), { passive: false });
@@ -750,21 +748,21 @@ document.addEventListener("DOMContentLoaded", function () {
             requestAnimationFrame(this.animate.bind(this));
         }
 
-        animate() {
+        animate(timestamp) {
+            if (!this.lastTimestamp) this.lastTimestamp = timestamp;
+            const deltaTime = timestamp - this.lastTimestamp;
+            this.lastTimestamp = timestamp;
+
             if (this.isAnimating && !this.isAnimationComplete) {
-                this.currentY += this.velocity;
-                this.currentY = Math.max(0, this.currentY);
+                const speed = 0.002;
+                const diff = this.targetY - this.currentY;
+                this.currentY += diff * speed * deltaTime;
                 
-                if (this.currentY <= 0) {
+                if (this.currentY < 0.5) {
                     this.currentY = 0;
                     this.finishAnimation();
                 } else {
                     this.graphElement.style.transform = `translate(-50%, ${this.currentY}%)`;
-                    this.velocity *= 0.95;
-                    
-                    if (Math.abs(this.velocity) < 0.01) {
-                        this.velocity = 0;
-                    }
                 }
             }
             
@@ -787,9 +785,9 @@ document.addEventListener("DOMContentLoaded", function () {
             e.preventDefault();
             e.stopPropagation();
 
-            const delta = e.deltaY * this.scrollSensitivity * 0.015;
-            this.velocity -= delta;
-            this.lastDeltaY = e.deltaY;
+            const delta = e.deltaY * this.scrollSensitivity * 0.1;
+            this.targetY -= delta;
+            this.targetY = Math.max(0, this.targetY);
         }
 
         onTouch(e) {
@@ -801,7 +799,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 const delta = this.lastTouchY - currentY;
                 
                 if (delta > 0) {
-                    this.velocity -= delta * 0.03;
+                    this.targetY -= delta * 0.05;
+                    this.targetY = Math.max(0, this.targetY);
                 }
                 
                 this.lastTouchY = currentY;
@@ -813,9 +812,9 @@ document.addEventListener("DOMContentLoaded", function () {
         finishAnimation() {
             this.isAnimationComplete = true;
             this.isAnimating = false;
-            this.velocity = 0;
+            this.targetY = 0;
 
-            this.graphElement.style.transition = 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            this.graphElement.style.transition = 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
             this.graphElement.style.transform = 'translate(-50%, 0%)';
             this.graphElement.classList.add('active');
             this.heroImgContainer.classList.add('active');
@@ -825,7 +824,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 window.removeEventListener('wheel', this.onWheel);
                 window.removeEventListener('touchmove', this.onTouch);
                 window.removeEventListener('scroll', this.checkVisibility);
-            }, 400);
+            }, 800);
         }
     }
 
