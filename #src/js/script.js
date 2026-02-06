@@ -723,9 +723,17 @@ document.addEventListener("DOMContentLoaded", function () {
         constructor() {
             this.heroSection = document.querySelector('.service-hero');
             this.graphElement = document.querySelector('.service-hero-img__img');
+            this.heroImgContainer = document.querySelector('.service-hero__img');
             this.isAnimationComplete = false;
             this.isAnimating = false;
             this.currentY = 120;
+            this.lastTimestamp = 0;
+            this.scrollSensitivity = 1.5;
+            this.animationDuration = 2000;
+            this.easingFunction = this.easeOutCubic;
+            this.totalDistance = 120;
+            this.animationStartTime = 0;
+            this.isManualControl = true;
 
             this.init();
         }
@@ -743,13 +751,55 @@ document.addEventListener("DOMContentLoaded", function () {
             window.addEventListener('scroll', this.checkVisibility.bind(this));
         }
 
+        easeOutCubic(t) {
+            return 1 - Math.pow(1 - t, 3);
+        }
+
+        easeInOutCubic(t) {
+            return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        }
+
+        startAutoAnimation() {
+            if (this.isAnimationComplete || !this.isManualControl) return;
+
+            this.isManualControl = false;
+            this.animationStartTime = performance.now();
+            
+            const animate = (currentTime) => {
+                if (this.isAnimationComplete) return;
+
+                const elapsed = currentTime - this.animationStartTime;
+                const progress = Math.min(elapsed / this.animationDuration, 1);
+                const easedProgress = this.easingFunction(progress);
+                
+                this.currentY = 120 - (easedProgress * 120);
+                this.graphElement.style.transform = `translate(-50%, ${this.currentY}%)`;
+
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                } else {
+                    this.finishAnimation();
+                }
+            };
+
+            requestAnimationFrame(animate);
+        }
+
         checkVisibility() {
+            if (this.isAnimationComplete) return;
+
             const rect = this.heroSection.getBoundingClientRect();
-            const isVisible = rect.top < window.innerHeight - 100 && rect.bottom > 100;
+            const isVisible = rect.top < window.innerHeight * 0.7 && rect.bottom > 100;
 
             if (isVisible && !this.isAnimationComplete && !this.isAnimating) {
                 this.isAnimating = true;
                 document.body.classList.add('body-scroll-lock');
+                
+                setTimeout(() => {
+                    if (!this.isAnimationComplete && this.isManualControl) {
+                        this.startAutoAnimation();
+                    }
+                }, 500);
             }
         }
 
@@ -759,12 +809,15 @@ document.addEventListener("DOMContentLoaded", function () {
             e.preventDefault();
             e.stopPropagation();
 
-            if (e.deltaY > 0) {
-                this.currentY -= 5;
+            const delta = Math.max(Math.min(e.deltaY, 50), -50) * this.scrollSensitivity;
+            
+            if (delta > 0) {
+                this.isManualControl = true;
+                this.currentY -= delta / 10;
                 this.currentY = Math.max(0, this.currentY);
 
-                this.graphElement.style.transform = `translate(-50%, ${this.currentY}%)`;
-
+                this.applySmoothTransform();
+                
                 if (this.currentY <= 0) {
                     this.finishAnimation();
                 }
@@ -781,10 +834,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 const delta = this.lastTouchY - currentY;
 
                 if (delta > 0) {
-                    this.currentY -= 3;
+                    this.isManualControl = true;
+                    this.currentY -= delta * 0.8;
                     this.currentY = Math.max(0, this.currentY);
 
-                    this.graphElement.style.transform = `translate(-50%, ${this.currentY}%)`;
+                    this.applySmoothTransform();
 
                     if (this.currentY <= 0) {
                         this.finishAnimation();
@@ -797,21 +851,34 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
+        applySmoothTransform() {
+            const now = performance.now();
+            
+            if (now - this.lastTimestamp > 16) {
+                this.graphElement.style.transform = `translate(-50%, ${this.currentY}%)`;
+                this.lastTimestamp = now;
+            } else {
+                requestAnimationFrame(() => {
+                    this.graphElement.style.transform = `translate(-50%, ${this.currentY}%)`;
+                });
+            }
+        }
+
         finishAnimation() {
             this.isAnimationComplete = true;
             this.isAnimating = false;
 
-            this.graphElement.style.transition = 'transform 0.3s ease-out';
+            this.graphElement.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
             this.graphElement.style.transform = 'translate(-50%, 0%)';
             this.graphElement.classList.add('active');
-            document.querySelector(".service-hero__img").classList.add("active");
+            this.heroImgContainer.classList.add('active');
 
             setTimeout(() => {
                 document.body.classList.remove('body-scroll-lock');
                 window.removeEventListener('wheel', this.onWheel);
                 window.removeEventListener('touchmove', this.onTouch);
                 window.removeEventListener('scroll', this.checkVisibility);
-            }, 300);
+            }, 500);
         }
     }
 
