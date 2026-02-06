@@ -2974,6 +2974,12 @@ main {
         padding: 24px 16px;
         background-color: #E53E3E1C;
         border-left: 3px solid #E53E3E;
+
+        .banner__text {
+            p {
+                text-align: left;
+            }
+        }
     }
 
     &.gradient {
@@ -6000,6 +6006,18 @@ main {
                         0px 535px 250px 0px #F9C73205,
                         1px 951px 250px 0px #F9C73203,
                         1px 1485px 250px 0px #F9C73200;
+        }
+    }
+
+    .banners {
+        padding: 0;
+        border: none;
+    }
+
+    .banner__body.red {
+        height: 100%;
+        .banner__container {
+            justify-content: flex-start;
         }
     }
 }
