@@ -5428,21 +5428,40 @@ main {
     }
 }
 
-.banner__body ul {
+.banner__body ul,
+.banner__body ol {
     display: flex;
     flex-direction: column;
     gap: 16px;
 
     &.err {
         li {
+            position: relative;
+            padding: 0px 0px 0px 26px;
             &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translate(0, -50%);
+                width: 14px;
+                height: 25.5px;
                 background: url('../img/banners/03.svg') center / contain no-repeat;
             }
         }
     }
     &.success {
         li {
+            position: relative;
+            padding: 0px 0px 0px 26px;
             &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translate(0, -50%);
+                width: 14px;
+                height: 25.5px;
                 background: url('../img/banners/04.svg') center / contain no-repeat;
             }
         }
@@ -5452,25 +5471,16 @@ main {
         font-size: 16px;
         line-height: 157%;
         color: #717580;
-        position: relative;
-        padding: 0px 0px 0px 26px;
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translate(0, -50%);
-            width: 14px;
-            height: 25.5px;
-            background: url('../img/banners/03.svg') center / contain no-repeat;
-        }
 
         strong {
             color: #242A36;
             font-weight: 600;
         }
     }
+}
+
+.banner__body ol li {
+    list-style-type: decimal;
 }
 
 .banners__body {
