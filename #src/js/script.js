@@ -728,13 +728,11 @@ document.addEventListener("DOMContentLoaded", function () {
             this.isAnimating = false;
             this.currentY = 120;
             this.lastTimestamp = 0;
-            this.scrollSensitivity = 1.5;
-            this.animationDuration = 2000;
-            this.easingFunction = this.easeOutCubic;
-            this.totalDistance = 120;
-            this.animationStartTime = 0;
-            this.isManualControl = true;
-
+            this.scrollSensitivity = 2.5;
+            this.animationSpeed = 0.15;
+            this.velocity = 0;
+            this.lastDeltaY = 0;
+            
             this.init();
         }
 
@@ -742,133 +740,82 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!this.heroSection || !this.graphElement) return;
 
             this.graphElement.style.transform = `translate(-50%, ${this.currentY}%)`;
-            this.graphElement.style.transition = 'none';
+            this.graphElement.style.transition = 'transform 0.05s cubic-bezier(0.25, 0.1, 0.25, 1)';
 
             window.addEventListener('wheel', this.onWheel.bind(this), { passive: false });
             window.addEventListener('touchmove', this.onTouch.bind(this), { passive: false });
 
             this.checkVisibility();
             window.addEventListener('scroll', this.checkVisibility.bind(this));
+            requestAnimationFrame(this.animate.bind(this));
         }
 
-        easeOutCubic(t) {
-            return 1 - Math.pow(1 - t, 3);
-        }
-
-        easeInOutCubic(t) {
-            return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-        }
-
-        startAutoAnimation() {
-            if (this.isAnimationComplete || !this.isManualControl) return;
-
-            this.isManualControl = false;
-            this.animationStartTime = performance.now();
-            
-            const animate = (currentTime) => {
-                if (this.isAnimationComplete) return;
-
-                const elapsed = currentTime - this.animationStartTime;
-                const progress = Math.min(elapsed / this.animationDuration, 1);
-                const easedProgress = this.easingFunction(progress);
+        animate() {
+            if (this.isAnimating && !this.isAnimationComplete) {
+                this.currentY += this.velocity;
+                this.currentY = Math.max(0, this.currentY);
                 
-                this.currentY = 120 - (easedProgress * 120);
-                this.graphElement.style.transform = `translate(-50%, ${this.currentY}%)`;
-
-                if (progress < 1) {
-                    requestAnimationFrame(animate);
-                } else {
+                if (this.currentY <= 0) {
+                    this.currentY = 0;
                     this.finishAnimation();
+                } else {
+                    this.graphElement.style.transform = `translate(-50%, ${this.currentY}%)`;
+                    this.velocity *= 0.95;
+                    
+                    if (Math.abs(this.velocity) < 0.01) {
+                        this.velocity = 0;
+                    }
                 }
-            };
-
-            requestAnimationFrame(animate);
+            }
+            
+            requestAnimationFrame(this.animate.bind(this));
         }
 
         checkVisibility() {
             if (this.isAnimationComplete) return;
-
             const rect = this.heroSection.getBoundingClientRect();
-            const isVisible = rect.top < window.innerHeight * 0.7 && rect.bottom > 100;
+            const isVisible = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
 
             if (isVisible && !this.isAnimationComplete && !this.isAnimating) {
                 this.isAnimating = true;
                 document.body.classList.add('body-scroll-lock');
-                
-                setTimeout(() => {
-                    if (!this.isAnimationComplete && this.isManualControl) {
-                        this.startAutoAnimation();
-                    }
-                }, 500);
             }
         }
 
         onWheel(e) {
             if (!this.isAnimating || this.isAnimationComplete) return;
-
             e.preventDefault();
             e.stopPropagation();
 
-            const delta = Math.max(Math.min(e.deltaY, 50), -50) * this.scrollSensitivity;
-            
-            if (delta > 0) {
-                this.isManualControl = true;
-                this.currentY -= delta / 10;
-                this.currentY = Math.max(0, this.currentY);
-
-                this.applySmoothTransform();
-                
-                if (this.currentY <= 0) {
-                    this.finishAnimation();
-                }
-            }
+            const delta = e.deltaY * this.scrollSensitivity * 0.015;
+            this.velocity -= delta;
+            this.lastDeltaY = e.deltaY;
         }
 
         onTouch(e) {
             if (!this.isAnimating || this.isAnimationComplete) return;
-
             e.preventDefault();
 
             if (e.touches.length === 1 && this.lastTouchY) {
                 const currentY = e.touches[0].clientY;
                 const delta = this.lastTouchY - currentY;
-
+                
                 if (delta > 0) {
-                    this.isManualControl = true;
-                    this.currentY -= delta * 0.8;
-                    this.currentY = Math.max(0, this.currentY);
-
-                    this.applySmoothTransform();
-
-                    if (this.currentY <= 0) {
-                        this.finishAnimation();
-                    }
+                    this.velocity -= delta * 0.03;
                 }
-
+                
                 this.lastTouchY = currentY;
             } else if (e.touches.length === 1) {
                 this.lastTouchY = e.touches[0].clientY;
             }
         }
 
-        applySmoothTransform() {
-            const now = performance.now();
-            
-            if (now - this.lastTimestamp > 16) {
-                this.graphElement.style.transform = `translate(-50%, ${this.currentY}%)`;
-                this.lastTimestamp = now;
-            } else {
-                requestAnimationFrame(() => {
-                    this.graphElement.style.transform = `translate(-50%, ${this.currentY}%)`;
-                });
-            }
-        }
-
         finishAnimation() {
             this.isAnimationComplete = true;
             this.isAnimating = false;
+            this.velocity = 0;
 
-            this.graphElement.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            this.graphElement.style.transition = 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
             this.graphElement.style.transform = 'translate(-50%, 0%)';
             this.graphElement.classList.add('active');
             this.heroImgContainer.classList.add('active');
@@ -878,7 +825,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 window.removeEventListener('wheel', this.onWheel);
                 window.removeEventListener('touchmove', this.onTouch);
                 window.removeEventListener('scroll', this.checkVisibility);
-            }, 500);
+            }, 400);
         }
     }
 
