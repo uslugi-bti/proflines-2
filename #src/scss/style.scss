@@ -5989,4 +5989,21 @@ main {
     }
 }
 
+.statistics {
+    margin: 0px 0px 120px 0px;
+    @media (max-width: 425px) {
+        margin: 0px 0px 90px 0px;
+    }
+    .columns__body {
+        margin: 0px 0px 32px 0px;
+    }
+    .columns__item {
+        padding: 32px;
+    }
+
+    .assessment {
+        margin: 0;
+    }
+}
+
 @import "footer";
