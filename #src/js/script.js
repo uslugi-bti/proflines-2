@@ -729,7 +729,8 @@ document.addEventListener("DOMContentLoaded", function () {
             this.currentY = 120;
             this.targetY = 120;
             this.lastTimestamp = 0;
-            this.scrollSensitivity = 0.8;
+            this.scrollThreshold = 50;
+            this.scrollAccumulated = 0;
             
             this.init();
         }
@@ -754,15 +755,17 @@ document.addEventListener("DOMContentLoaded", function () {
             this.lastTimestamp = timestamp;
 
             if (this.isAnimating && !this.isAnimationComplete) {
-                const speed = 0.002;
-                const diff = this.targetY - this.currentY;
-                this.currentY += diff * speed * deltaTime;
-                
-                if (this.currentY < 0.5) {
-                    this.currentY = 0;
-                    this.finishAnimation();
-                } else {
-                    this.graphElement.style.transform = `translate(-50%, ${this.currentY}%)`;
+                if (this.targetY < this.currentY) {
+                    const speed = 0.0008;
+                    const diff = this.currentY - this.targetY;
+                    this.currentY -= diff * speed * deltaTime;
+                    
+                    if (this.currentY < 0.5) {
+                        this.currentY = 0;
+                        this.finishAnimation();
+                    } else {
+                        this.graphElement.style.transform = `translate(-50%, ${this.currentY}%)`;
+                    }
                 }
             }
             
@@ -785,9 +788,12 @@ document.addEventListener("DOMContentLoaded", function () {
             e.preventDefault();
             e.stopPropagation();
 
-            const delta = e.deltaY * this.scrollSensitivity * 0.1;
-            this.targetY -= delta;
-            this.targetY = Math.max(0, this.targetY);
+            this.scrollAccumulated += Math.abs(e.deltaY);
+            
+            if (this.scrollAccumulated >= this.scrollThreshold) {
+                this.targetY = 0;
+                this.scrollAccumulated = 0;
+            }
         }
 
         onTouch(e) {
@@ -796,11 +802,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (e.touches.length === 1 && this.lastTouchY) {
                 const currentY = e.touches[0].clientY;
-                const delta = this.lastTouchY - currentY;
+                const delta = Math.abs(this.lastTouchY - currentY);
                 
-                if (delta > 0) {
-                    this.targetY -= delta * 0.05;
-                    this.targetY = Math.max(0, this.targetY);
+                this.scrollAccumulated += delta;
+                
+                if (this.scrollAccumulated >= this.scrollThreshold) {
+                    this.targetY = 0;
+                    this.scrollAccumulated = 0;
                 }
                 
                 this.lastTouchY = currentY;
@@ -814,7 +822,7 @@ document.addEventListener("DOMContentLoaded", function () {
             this.isAnimating = false;
             this.targetY = 0;
 
-            this.graphElement.style.transition = 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+            this.graphElement.style.transition = 'transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)';
             this.graphElement.style.transform = 'translate(-50%, 0%)';
             this.graphElement.classList.add('active');
             this.heroImgContainer.classList.add('active');
@@ -824,7 +832,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 window.removeEventListener('wheel', this.onWheel);
                 window.removeEventListener('touchmove', this.onTouch);
                 window.removeEventListener('scroll', this.checkVisibility);
-            }, 800);
+            }, 1200);
         }
     }
 
