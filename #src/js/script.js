@@ -729,8 +729,9 @@ document.addEventListener("DOMContentLoaded", function () {
             this.currentY = 120;
             this.targetY = 120;
             this.lastTimestamp = 0;
-            this.scrollThreshold = 40;
+            this.scrollThreshold = 30;
             this.scrollAccumulated = 0;
+            this.animationSpeed = 0.003;
             
             this.init();
         }
@@ -739,7 +740,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!this.heroSection || !this.graphElement) return;
 
             this.graphElement.style.transform = `translate(-50%, ${this.currentY}%)`;
-            this.graphElement.style.transition = 'transform 0.08s ease-out';
+            this.graphElement.style.transition = 'transform 0.05s linear';
 
             window.addEventListener('wheel', this.onWheel.bind(this), { passive: false });
             window.addEventListener('touchmove', this.onTouch.bind(this), { passive: false });
@@ -756,11 +757,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (this.isAnimating && !this.isAnimationComplete) {
                 if (this.targetY < this.currentY) {
-                    const speed = 0.002;
                     const diff = this.currentY - this.targetY;
+                    let speed = this.animationSpeed;
+                    
+                    if (diff < 20) {
+                        speed = this.animationSpeed * 1.5;
+                    }
+                    
                     this.currentY -= diff * speed * deltaTime;
                     
-                    if (this.currentY < 0.5) {
+                    if (this.currentY < 1) {
                         this.currentY = 0;
                         this.finishAnimation();
                     } else {
@@ -822,7 +828,7 @@ document.addEventListener("DOMContentLoaded", function () {
             this.isAnimating = false;
             this.targetY = 0;
 
-            this.graphElement.style.transition = 'transform 0.9s cubic-bezier(0.16, 1, 0.3, 1)';
+            this.graphElement.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
             this.graphElement.style.transform = 'translate(-50%, 0%)';
             this.graphElement.classList.add('active');
             this.heroImgContainer.classList.add('active');
@@ -832,7 +838,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 window.removeEventListener('wheel', this.onWheel);
                 window.removeEventListener('touchmove', this.onTouch);
                 window.removeEventListener('scroll', this.checkVisibility);
-            }, 900);
+            }, 600);
         }
     }
 
