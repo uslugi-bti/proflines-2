@@ -3010,9 +3010,10 @@ main {
     margin: 0 auto;
     &.left {
         align-items: flex-start;
-        padding: 0px 32px 0px 80px;
+        padding: 0px 32px 0px 32px;
         position: relative;
         &.icon {
+            padding: 0px 32px 0px 80px;
             &::before {
                 content: '';
                 position: absolute;
@@ -5511,17 +5512,19 @@ main {
         grid-template-columns: 1fr;
     }
 
-    .banner__body.span-two {
-        grid-column: span 2;
+    .banner__body {
+        &.span-two {
+            grid-column: span 2;
 
-        @media (max-width: 767px) {
-            grid-column: span 1;
+            @media (max-width: 767px) {
+                grid-column: span 1;
+            }
         }
-    }
-
-    .banner__body.white .banner__container {
-        @media (max-width: 970px) {
-            padding: 0px 16px;
+        &.span-row-two {
+            grid-row: span 2;
+            @media (max-width: 767px) {
+                grid-row: span 1;
+            }
         }
     }
 }
@@ -6027,7 +6030,7 @@ main {
         border: none;
     }
 
-    .banner__body.red {
+    .banner__body {
         height: 100%;
         .banner__container {
             justify-content: flex-start;
