@@ -4963,6 +4963,15 @@ main {
 
 .assessment.banner.gradient .banner__container {
     max-width: 790px;
+    margin: 0;
+    padding: 0px 32px;
+    align-items: flex-start;
+
+    .banner__title h1,
+    .banner__text p {
+        text-align: left;
+        color: #242A36;
+    }
 }
 
 .assessment .banner__body {
