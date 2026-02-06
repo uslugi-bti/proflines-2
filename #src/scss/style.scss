@@ -6124,4 +6124,17 @@ main {
     }
 }
 
+.gradient-block {
+    margin: 0px 0px 120px 0px;
+    @media (max-width: 425px) {
+        margin: 0px 0px 90px 0px;
+    }
+}
+
+.gradient-block__body {
+    background: linear-gradient(0deg, #E9E9E9, #E9E9E9),
+                radial-gradient(120% 50% at 100% 100%, #D8EAFF 0%, rgba(216, 234, 255, 0) 70%),
+                radial-gradient(120% 50% at 0% 0%, #D8EAFF 0%, rgba(216, 234, 255, 0) 70%);
+}
+
 @import "footer";
