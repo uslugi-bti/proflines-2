@@ -5951,4 +5951,16 @@ main {
     }
 }
 
+.marketing-page {
+    .breadcrump {
+        margin: 0px 0px 46px 0px;
+    }
+
+    .briff {
+        &::before {
+            display: none;
+        }
+    }
+}
+
 @import "footer";
