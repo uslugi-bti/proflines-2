@@ -5862,6 +5862,10 @@ main {
     align-self: flex-start;
     position: sticky;
     top: 120px;
+    margin: 71px 0px 0px 0px;
+    @media (max-width: 970px) {
+        margin: 51px 0px 0px 0px;
+    }
     @media (max-width: 767px) {
         display: none;
     }
