@@ -5311,19 +5311,41 @@ main {
             z-index: 2;
             overflow: hidden;
 
+            &:hover {
+                &::before {
+                    transform: rotate(0deg);
+                }
+                &::after {
+                    transform: rotate(25deg);
+                }
+            }
+
             &::before {
                 content: '';
                 position: absolute;
-                top: -1.9%;
-                right: -5%;
-                width: 400px;
-                height: 432px;
+                top: 10%;
+                right: 5%;
+                width: 255px;
+                height: 371px;
                 background: url('../img/assessment/01.svg') center / contain no-repeat;
                 z-index: -1;
+                transform: rotate(6deg);
+                box-shadow: 0px 13.98px 66.39px 0px #C9CBCC4D;
+                transition: $transition;
+            }
 
-                @media (max-width: 970px) {
-                    top: -10%;
-                }
+            &::after {
+                content: '';
+                position: absolute;
+                top: 9%;
+                right: 1.7%;
+                width: 255px;
+                height: 371px;
+                background: url('../img/assessment/02.svg') center / contain no-repeat;
+                z-index: -2;
+                transform: rotate(18deg);
+                box-shadow: 0px 13.98px 66.39px 0px #C9CBCC4D;
+                transition: $transition;
             }
             .banner__container {
                 max-width: none;
