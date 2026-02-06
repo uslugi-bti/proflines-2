@@ -6132,9 +6132,41 @@ main {
 }
 
 .gradient-block__body {
-    background: linear-gradient(0deg, #E9E9E9, #E9E9E9),
-                radial-gradient(120% 50% at 100% 100%, #D8EAFF 0%, rgba(216, 234, 255, 0) 70%),
-                radial-gradient(120% 50% at 0% 0%, #D8EAFF 0%, rgba(216, 234, 255, 0) 70%);
+    background: radial-gradient(120% 50% at 100% 100%, #D8EAFF 0%, rgba(216, 234, 255, 0) 70%),
+                radial-gradient(120% 50% at 0% 0%, #D8EAFF 0%, rgba(216, 234, 255, 0) 70%),
+                linear-gradient(0deg, #E9E9E9, #E9E9E9);
+    border-radius: 10px;
+}
+
+.gradient-block__container {
+    max-width: 1072px;
+    padding: 40px 15px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gradient-block__title {
+    margin: 0px 0px 16px 0px;
+    h2 {
+        font-size: 35px;
+        letter-spacing: -1px;
+        font-weight: 700;
+        text-align: center;
+        color: #242A36;
+        letter-spacing: 112%;
+    }
+}
+
+.gradient-block__text {
+    margin: 0px 0px 33px 0px;
+    p {
+        font-size: 14px;
+        text-align: center;
+        line-height: 130%;
+        color: #717580;
+    }
 }
 
 @import "footer";
