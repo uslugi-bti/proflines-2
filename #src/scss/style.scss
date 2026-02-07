@@ -6248,15 +6248,28 @@ main {
     border-radius: 10px;
 }
 .quote__content {
+    height: 100%;
     border-right: 1px solid #E4E4E4;
-    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .quote__text {
     max-width: 424px;
+    padding: 0px 0px 0px 9.33%;
 }
-.quote__info {}
-.quote-info__head {}
-.quote-info__icon {}
+.quote__info {
+    padding: 32px 32px 0px 32px;
+}
+.quote-info__head {
+    display: flex;
+    gap: 8px;
+}
+.quote-info__icon {
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+}
 .quote-info__text {}
 .quote-info__img {}
 
