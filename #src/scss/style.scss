@@ -6243,9 +6243,17 @@ main {
     margin: 0 auto;
     background-color: #FFFFFF;
     border: 1px solid #E4E4E4;
+    position: relative;
+    bottom: -40px;
+    border-radius: 10px;
 }
-.quote__content {}
-.quote__text {}
+.quote__content {
+    border-right: 1px solid #E4E4E4;
+    align-self: center;
+}
+.quote__text {
+    max-width: 424px;
+}
 .quote__info {}
 .quote-info__head {}
 .quote-info__icon {}
