@@ -6059,6 +6059,17 @@ main {
             justify-content: flex-start;
         }
     }
+
+    .process {
+        &::before {
+            display: none;
+        }
+    }
+
+    .steps {
+        padding: 0;
+        border: none;
+    }
 }
 
 .statistics {
