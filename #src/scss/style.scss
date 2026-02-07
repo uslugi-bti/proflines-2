@@ -6236,7 +6236,14 @@ main {
     }
 }
 
-.quote {}
+.quote {
+    display: grid;
+    grid-template-columns: 71fr 29fr;
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    border: 1px solid #E4E4E4;
+}
 .quote__content {}
 .quote__text {}
 .quote__info {}
