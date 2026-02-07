@@ -6205,7 +6205,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    position: relative;
     .columns__item {
         padding: 32px;
         @media (max-width: 425px) {
@@ -6235,5 +6235,14 @@ main {
         color: #717580;
     }
 }
+
+.quote {}
+.quote__content {}
+.quote__text {}
+.quote__info {}
+.quote-info__head {}
+.quote-info__icon {}
+.quote-info__text {}
+.quote-info__img {}
 
 @import "footer";
