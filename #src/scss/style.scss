@@ -6325,4 +6325,23 @@ main {
     }
 }
 
+.transparency {
+    margin: 0px 0px 120px 0px;
+    @media (max-width: 425px) {
+        margin: 0px 0px 90px 0px;
+    }
+
+    &__title {
+        margin: 0px 0px 40px 0px;
+        text-align: center;
+        h2 {
+            text-align: center;
+            font-size: 35px;
+            line-height: 112%;
+            color: #242A36;
+            font-weight: 700;
+        }
+    }
+}
+
 @import "footer";
