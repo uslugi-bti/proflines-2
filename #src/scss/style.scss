@@ -6237,15 +6237,20 @@ main {
 }
 
 .quote {
+    margin: 44px 0px 0px 0px;
     display: grid;
     grid-template-columns: 71fr 29fr;
     max-width: 960px;
+    width: 100%;
     margin: 0 auto;
     background-color: #FFFFFF;
     border: 1px solid #E4E4E4;
     position: relative;
     bottom: -40px;
     border-radius: 10px;
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+    }
 }
 .quote__content {
     height: 100%;
@@ -6253,13 +6258,35 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @media (max-width: 767px) {
+        order: 2;
+        border: none;
+        border-top: 1px solid #E4E4E4;
+    }
 }
 .quote__text {
     max-width: 424px;
     padding: 0px 0px 0px 9.33%;
+    @media (max-width: 767px) {
+        max-width: none;
+        padding: 32px;
+    }
+    p {
+        text-align: center;
+        font-size: 16px;
+        font-weight: 600;
+        color: #242A36;
+    }
 }
 .quote__info {
     padding: 32px 32px 0px 32px;
+    @media (max-width: 767px) {
+        order: 1;
+        max-width: 274px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 32px;
+    }
 }
 .quote-info__head {
     display: flex;
