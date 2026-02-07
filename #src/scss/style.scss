@@ -6264,13 +6264,38 @@ main {
 .quote-info__head {
     display: flex;
     gap: 8px;
+    align-items: center;
+    margin: 0px 0px 16px 0px;
 }
 .quote-info__icon {
     flex: 0 0 auto;
     width: 16px;
     height: 16px;
+    position: relative;
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
 }
-.quote-info__text {}
-.quote-info__img {}
+.quote-info__text {
+    p {
+        font-size: 16px;
+        line-height: 157%;
+        color: #242A36;
+        text-align: center;
+    }
+}
+.quote-info__img {
+    img {
+        margin: 0 auto;
+        display: block;
+        max-width: 100%;
+    }
+}
 
 @import "footer";
