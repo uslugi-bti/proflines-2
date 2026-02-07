@@ -5744,6 +5744,10 @@ main {
         z-index: 101;
         border-bottom: 2px solid #242A36;
         position: relative;
+
+        strong {
+            color: #ffffff !important;
+        }
     }
 
     th:first-child,
