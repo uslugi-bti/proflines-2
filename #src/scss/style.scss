@@ -6145,6 +6145,10 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    .columns__item {
+        padding: 32px;
+    }
 }
 
 .gradient-block__title {
