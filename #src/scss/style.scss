@@ -1300,6 +1300,9 @@ main {
     transition: $transition;
     overflow: hidden;
     position: relative;
+    @media (max-width: 425px) {
+        padding: 24px 24px 92px 24px;
+    }
 
     &:hover {
         box-shadow: 0px 20px 95px 0px #C9CBCC4D;
@@ -1889,6 +1892,9 @@ main {
 
     .columns__item {
         padding: 32px;
+        @media (max-width: 425px) {
+            padding: 24px;
+        }
     }
 }
 
@@ -2032,6 +2038,9 @@ main {
 
     .columns__item {
         padding: 32px;
+        @media (max-width: 425px) {
+            padding: 24px;
+        }
     }
 }
 
@@ -6096,6 +6105,9 @@ main {
 
     .columns__item {
         padding: 32px;
+        @media (max-width: 425px) {
+            padding: 24px;
+        }
     }
 }
 
@@ -6109,6 +6121,9 @@ main {
     }
     .columns__item {
         padding: 32px;
+        @media (max-width: 425px) {
+            padding: 24px;
+        }
     }
 
     .assessment {
@@ -6159,6 +6174,9 @@ main {
 
     .columns__item {
         padding: 32px;
+        @media (max-width: 425px) {
+            padding: 24px;
+        }
     }
 }
 
@@ -6186,6 +6204,9 @@ main {
 
     .columns__item {
         padding: 32px;
+        @media (max-width: 425px) {
+            padding: 24px;
+        }
     }
 }
 
