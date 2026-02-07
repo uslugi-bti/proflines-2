@@ -5785,7 +5785,8 @@ main {
         z-index: 2;
         position: relative;
         isolation: isolate;
-        h3 {
+        h3,
+        strong {
             color: #FFFFFF;
         }
     }
