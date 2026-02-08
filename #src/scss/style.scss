@@ -6322,8 +6322,14 @@ main {
     }
 }
 
-.gradient-block__badge {
+.gradient-block__column {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gradient-block__badge {
+    display: inline-flex;
     align-items: center;
     gap: 10px;
     margin: 0px 0px 16px 0px;
