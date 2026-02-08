@@ -1304,6 +1304,19 @@ main {
     transition: $transition;
     overflow: hidden;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+    &.span-three {
+        grid-column: span 3;
+        @media (max-width: 970px) {
+            grid-column: span 2;
+        }
+        @media (max-width: 575px) {
+            grid-column: span 1;
+        }
+    }
     @media (max-width: 425px) {
         padding: 24px 24px 92px 24px;
     }
@@ -1430,6 +1443,14 @@ main {
                 background: url('../img/columns/01.svg') center / contain no-repeat;
             }
         }
+    }
+}
+
+.columns-item__description {
+    p {
+        line-height: 157%;
+        font-size: 16px;
+        color: #242A36;
     }
 }
 
