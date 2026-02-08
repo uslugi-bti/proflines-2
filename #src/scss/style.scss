@@ -6542,6 +6542,12 @@ main {
     .banner__container {
         justify-content: flex-start;
     }
+
+    .faq {
+        &::before {
+            display: none;
+        }
+    }
 }
 
 .forward-agencies {
