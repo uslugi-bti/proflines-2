@@ -2989,7 +2989,18 @@ main {
                         1px 951px 250px 0px #F9C73203,
                         1px 1485px 250px 0px #F9C73200;
             span {
-
+                position: relative;
+                padding: 0px 0px 0px 34px;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translate(0, -50%);
+                    width: 24px;
+                    height: 24px;
+                    background: url('../img/banners/01.svg') center / contain no-repeat;
+                }
             }
         }
     }
