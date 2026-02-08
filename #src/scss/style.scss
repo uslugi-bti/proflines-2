@@ -1705,6 +1705,18 @@ main {
     }
 }
 
+.packages__link {
+    margin: 32px 0px 0px 0px;
+    text-align: center;
+    a {
+        text-align: center;
+        color: #242A36;
+        font-size: 16px;
+        line-height: 157%;
+        text-decoration: underline;
+    }
+}
+
 .services {
     margin: 0px 0px 120px 0px;
     padding: 64px 0px;
