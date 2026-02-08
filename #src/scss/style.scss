@@ -6529,6 +6529,14 @@ main {
         border: none;
         padding: 0;
     }
+
+    .process {
+        border: none;
+        padding: 0;
+        &::before {
+            display: none;
+        }
+    }
 }
 
 .forward-agencies {
@@ -6549,6 +6557,9 @@ main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+    }
 }
 .forward-agencies-item__content {
     max-width: 376px;
@@ -6574,12 +6585,20 @@ main {
     height: 0;
     padding: 0px 0px 71% 0px;
     position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background: radial-gradient(120% 50% at 100% 100%, #D8EAFF 0%, rgba(216, 234, 255, 0) 70%),
+                radial-gradient(120% 50% at 0% 0%, #D8EAFF 0%, rgba(216, 234, 255, 0) 70%),
+                linear-gradient(0deg, #E9E9E9, #E9E9E9);
     img,
     video {
         position: absolute;
         bottom: 0;
-        left: 0;
-        width: 100%;
+        right: 0;
+        width: 84%;
+        height: 84%;
+        object-fit: cover;
+        border-radius: 10px;
     }
 }
 
