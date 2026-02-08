@@ -86,8 +86,6 @@ form {
         gap: 8px;
         justify-content: flex-end;
 
-        &.stub {}
-
         &>label {
             font-size: 16px;
             color: #242A36;
@@ -281,6 +279,12 @@ form {
             text-align: center;
             line-height: 124%;
             color: #717580;
+        }
+    }
+
+    .stub {
+        @media (max-width: 970px) {
+            display: none;
         }
     }
 
