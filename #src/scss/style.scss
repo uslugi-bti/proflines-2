@@ -2941,18 +2941,46 @@ main {
             grid-template-rows: 1fr;
             opacity: 1;
             padding: 0px 24px 32px 24px;
+            p {
+                margin: 0px 0px 16px 0px;
+                &:last-child {
+                    margin: 0;
+                }
+            }
+            .faq-item__button {
+                height: auto;
+                visibility: visible;
+                opacity: 1;
+                a {
+                    padding: 14.5px 20px;
+                }
+            }
         }
 
         p {
             font-size: 16px;
             color: #717580;
             line-height: 157%;
+            margin: 0px 0px 0px 0px;
+            &:last-child {
+                margin: 0;
+            }
         }
     }
 
     &__button {
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+        transition: $transition;
         a {
-            padding: 14.5px 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            line-height: 157%;
+            color: #242A36;
+            display: inline-block;
+            padding: 0px 20px;
             border: 1px solid #E4E4E4;
             border-radius: 6px;
             box-shadow: 0px 59px 131px 0px #F9C7320A,
