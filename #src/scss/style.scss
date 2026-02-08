@@ -3071,7 +3071,7 @@ main {
 .banner__body {
     padding: 40px 0px;
     border-radius: 10px;
-
+    height: 100%;
     &.white {
         background-color: #FFFFFF;
         border: 1px solid #E4E4E4;
@@ -5590,6 +5590,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 32px;
+    
 }
 
 .banners__img {
@@ -6536,6 +6537,10 @@ main {
         &::before {
             display: none;
         }
+    }
+
+    .banner__container {
+        justify-content: flex-start;
     }
 }
 
