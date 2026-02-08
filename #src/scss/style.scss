@@ -44,11 +44,6 @@ form {
 
     @media (max-width: 767px) {
         gap: 32px;
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (max-width: 650px) {
-        grid-template-columns: 1fr;
     }
 
     @media (max-width: 425px) {
@@ -90,6 +85,8 @@ form {
         flex-direction: column;
         gap: 8px;
         justify-content: flex-end;
+
+        &.stub {}
 
         &>label {
             font-size: 16px;
@@ -291,14 +288,6 @@ form {
         grid-column: span 2;
 
         @media (max-width: 970px) {
-            grid-column: span 1;
-        }
-
-        @media (max-width: 767px) {
-            grid-column: span 2;
-        }
-
-        @media (max-width: 650px) {
             grid-column: span 1;
         }
     }
