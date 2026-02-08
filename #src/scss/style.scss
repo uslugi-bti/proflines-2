@@ -6571,6 +6571,16 @@ main {
 }
 .forward-agencies-item__media {
     width: 100%;
+    height: 0;
+    padding: 0px 0px 71% 0px;
+    position: relative;
+    img,
+    video {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
 }
 
 @import "footer";
