@@ -6531,4 +6531,46 @@ main {
     }
 }
 
+.forward-agencies {
+    margin: 0px 0px 120px 0px;
+    padding: 64px 0px;
+    border-top: 1px solid #E4E4E4;
+    border-bottom: 1px solid #E4E4E4;
+    @media (max-width: 425px) {
+        margin: 0px 0px 90px 0px;
+    }
+}
+.forward-agencies__body {
+    display: flex;
+    flex-direction: column;
+    gap: 39px;
+}
+.forward-agencies__item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+.forward-agencies-item__content {
+    max-width: 376px;
+}
+.forward-agencies-item__title {
+    margin: 0px 0px 16px 0px;
+    h3 {
+        font-size: 22px;
+        letter-spacing: -1px;
+        color: #242A36;
+        font-weight: 700;
+    }
+}
+.forward-agencies-item__text {
+    p {
+        color: #242A36;
+        font-size: 16px;
+        line-height: 157%;
+    }
+}
+.forward-agencies-item__media {
+    width: 100%;
+}
+
 @import "footer";
