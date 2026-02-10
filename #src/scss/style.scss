@@ -6574,6 +6574,12 @@ main {
 }
 .forward-agencies-item__content {
     max-width: 376px;
+    position: sticky;
+    top: 120px;
+    align-self: start;
+    @media (max-width: 767px) {
+        position: static;
+    }
 }
 .forward-agencies-item__title {
     margin: 0px 0px 16px 0px;
