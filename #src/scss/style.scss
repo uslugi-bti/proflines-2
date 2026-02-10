@@ -86,6 +86,14 @@ form {
         gap: 8px;
         justify-content: flex-end;
 
+        &.valid-error {
+            input[type=text],
+            textarea,
+            select {
+                outline: 1px solid #ff0000;
+            }
+        }
+
         &>label {
             font-size: 16px;
             color: #242A36;
