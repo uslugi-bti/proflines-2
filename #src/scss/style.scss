@@ -99,6 +99,14 @@ form {
                     }
                 }
             }
+
+            &.checkbox {
+                .form-group__body {
+                    label > span {
+                        outline: 1px solid #ff0000;
+                    }
+                }
+            }
         }
 
         &>label {
