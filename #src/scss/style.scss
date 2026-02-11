@@ -535,6 +535,14 @@ main {
         gap: 24px;
         margin: 0px 0px 16px 0px;
         justify-content: center;
+        @media (max-width: 575px) {
+            width: 100%;
+            flex-direction: column;
+            a {
+                display: block;
+                text-align: center;
+            }
+        }
 
         a {
             display: inline-block;
@@ -768,7 +776,7 @@ main {
     margin: 0px 0px 64px 0px;
 
     @media (max-width: 767px) {
-        margin: 0px 0px 32px 0px;
+        margin: 0px 0px 40px 0px;
     }
 
     h1 {
@@ -778,12 +786,8 @@ main {
         letter-spacing: -1px;
         line-height: 112%;
 
-        @media (max-width: 575px) {
-            text-align: center;
-        }
-
         @media (max-width: 425px) {
-            font-size: 25px;
+            font-size: 28px;
         }
     }
 }
