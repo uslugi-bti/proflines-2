@@ -68,7 +68,7 @@ form {
             font-weight: 700;
 
             @media (max-width: 425px) {
-                font-size: 25px;
+                font-size: 28px;
             }
         }
     }
@@ -368,7 +368,7 @@ form {
         }
 
         @media (max-width: 425px) {
-            font-size: 25px;
+            font-size: 28px;
         }
     }
 }
@@ -1137,18 +1137,11 @@ main {
         }
 
         h2 {
-            font-size: 26px;
+            font-size: 28px;
         }
 
         h3 {
             font-size: 20px;
-        }
-    }
-
-    @media (max-width: 480px) {
-
-        h2 {
-            font-size: 22px;
         }
     }
 
@@ -3226,7 +3219,7 @@ main {
         color: #242A36;
 
         @media (max-width: 425px) {
-            font-size: 25px;
+            font-size: 28px;
         }
     }
     h3 {
@@ -3295,7 +3288,7 @@ main {
         font-weight: 700;
 
         @media (max-width: 425px) {
-            font-size: 25px;
+            font-size: 28px;
         }
     }
 }
@@ -3467,7 +3460,7 @@ main {
             font-weight: 700;
 
             @media (max-width: 425px) {
-                font-size: 25px;
+                font-size: 28px;
             }
         }
     }
@@ -3551,7 +3544,7 @@ main {
         color: #242A36;
 
         @media (max-width: 425px) {
-            font-size: 25px;
+            font-size: 28px;
         }
     }
 }
@@ -4113,18 +4106,11 @@ main {
             }
 
             h2 {
-                font-size: 26px;
+                font-size: 28px;
             }
 
             h3 {
                 font-size: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-
-            h2 {
-                font-size: 22px;
             }
         }
     }
@@ -4412,7 +4398,7 @@ main {
         font-weight: 700;
         color: #242A36;
         @media (max-width: 575px) {
-            font-size: 25px;
+            font-size: 28px;
         }
     }
 }
@@ -4618,12 +4604,8 @@ main {
             }
 
             @media (max-width: 575px) {
-                font-size: 35px;
+                font-size: 34px;
                 letter-spacing: 0;
-            }
-
-            @media (max-width: 425px) {
-                font-size: 25px;
             }
         }
 
@@ -4635,7 +4617,7 @@ main {
             font-weight: 700;
 
             @media (max-width: 425px) {
-                font-size: 25px;
+                font-size: 28px;
             }
         }
     }
@@ -4996,7 +4978,7 @@ main {
         line-height: 112.00000000000001%;
 
         @media (max-width: 425px) {
-            font-size: 25px;
+            font-size: 28px;
         }
     }
 }
@@ -5069,12 +5051,8 @@ main {
             }
 
             @media (max-width: 575px) {
-                font-size: 35px;
+                font-size: 34px;
                 letter-spacing: 0;
-            }
-
-            @media (max-width: 425px) {
-                font-size: 25px;
             }
         }
     }
@@ -5410,7 +5388,7 @@ main {
             color: #242A36;
 
             @media (max-width: 425px) {
-                font-size: 25px;
+                font-size: 28px;
             }
         }
     }
@@ -5562,7 +5540,7 @@ main {
         color: #242A36;
 
         @media (max-width: 425px) {
-            font-size: 25px;
+            font-size: 28px;
         }
     }
 }
@@ -5996,12 +5974,8 @@ main {
         }
 
         @media (max-width: 575px) {
-            font-size: 35px;
+            font-size: 34px;
             letter-spacing: 0;
-        }
-
-        @media (max-width: 425px) {
-            font-size: 25px;
         }
     }
 }
@@ -6253,7 +6227,7 @@ main {
             line-height: 112%;
             color: #242A36;
             @media (max-width: 575px) {
-                font-size: 25px;
+                font-size: 28px;
             }
         }
     }
@@ -6364,6 +6338,9 @@ main {
         text-align: center;
         color: #242A36;
         letter-spacing: 112%;
+        @media (max-width: 425px) {
+            font-size: 28px;
+        }
     }
 }
 
@@ -6507,6 +6484,9 @@ main {
             line-height: 112%;
             color: #242A36;
             font-weight: 700;
+            @media (max-width: 425px) {
+                font-size: 28px;
+            }
         }
     }
 }
