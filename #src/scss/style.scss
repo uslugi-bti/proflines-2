@@ -352,6 +352,7 @@ form {
     @media (max-width: 970px) {
         flex-direction: column;
         gap: 15px;
+        align-items: flex-start;
     }
 }
 
@@ -363,10 +364,6 @@ form {
         letter-spacing: -1px;
         line-height: 112%;
 
-        @media (max-width: 970px) {
-            text-align: center;
-        }
-
         @media (max-width: 425px) {
             font-size: 28px;
         }
@@ -376,10 +373,6 @@ form {
 .block-head__text {
     @media (max-width: 970px) {
         max-width: none;
-
-        p {
-            text-align: center;
-        }
     }
 
     p {
