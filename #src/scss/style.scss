@@ -1209,17 +1209,8 @@ main {
         text-align: center;
         color: #242A36;
 
-        @media (max-width: 1024px) {
-            font-size: 30px;
-            letter-spacing: 0;
-        }
-
-        @media (max-width: 767px) {
-            font-size: 26px;
-        }
-
         @media (max-width: 480px) {
-            font-size: 22px;
+            font-size: 28px;
         }
     }
 }
@@ -1951,7 +1942,7 @@ main {
         }
 
         @media (max-width: 425px) {
-            font-size: 25px;
+            font-size: 28px;
         }
     }
 }
@@ -2052,7 +2043,7 @@ main {
         text-align: center;
 
         @media (max-width: 425px) {
-            font-size: 25px;
+            font-size: 28px;
         }
     }
 }
@@ -2122,7 +2113,7 @@ main {
         text-align: center;
 
         @media (max-width: 425px) {
-            font-size: 25px;
+            font-size: 28px;
         }
     }
 }
@@ -2684,7 +2675,7 @@ main {
             font-weight: 700;
 
             @media (max-width: 425px) {
-                font-size: 25px;
+                font-size: 28px;
             }
         }
     }
@@ -2815,7 +2806,7 @@ main {
             color: #242A36;
 
             @media (max-width: 425px) {
-                font-size: 25px;
+                font-size: 28px;
             }
         }
     }
