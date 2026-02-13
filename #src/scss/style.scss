@@ -6784,6 +6784,10 @@ main {
     @media (max-width: 767px) {
         margin: 0px 0px 100px 0px;
     }
+
+    .columns-item__head {
+        margin: 0;
+    }
 }
 
 @import "footer";
