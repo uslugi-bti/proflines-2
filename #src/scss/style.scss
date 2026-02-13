@@ -1082,6 +1082,17 @@ main {
         line-height: 157%;
         color: #242A36;
         border-radius: 10px;
+        * {
+            margin: 0 0 10px 0;
+            &:last-child {
+                margin: 0;
+            }
+        }
+
+        &.red {
+            border-left: 3px solid #E53E3E;
+            background-color: #E53E3E1C;
+        }
     }
 
     hr {
@@ -6634,6 +6645,10 @@ main {
     .single__body {
         margin: 0px 0px 32px 0px;
     }
+}
+
+.mistakes {
+    margin: 0px 0px 150px 0px;
 }
 
 @import "footer";
