@@ -6652,7 +6652,7 @@ main {
 }
 
 .error {
-    padding: 62px;
+    padding: 62px 0px;
     position: relative;
     overflow-x: clip;
     &::before {
@@ -6705,6 +6705,9 @@ main {
             transition: $transition;
             &:nth-child(2) {
                 transform: rotate(-24.3deg);
+            }
+            @media (max-width: 767px) {
+                font-size: 130px;
             }
         }
     }
