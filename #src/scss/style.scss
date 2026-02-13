@@ -354,6 +354,10 @@ form {
         gap: 15px;
         align-items: flex-start;
     }
+
+    @media (max-width: 575px) {
+        margin: 0px 0px 24px 0px;
+    }
 }
 
 .block-head__title {
@@ -772,6 +776,10 @@ main {
         margin: 0px 0px 40px 0px;
     }
 
+    @media (max-width: 575px) {
+        margin: 0px 0px 24px 0px;
+    }
+
     h1 {
         font-size: 35px;
         color: #242A36;
@@ -1131,6 +1139,7 @@ main {
 
         h2 {
             font-size: 28px;
+            margin: 0px 0px 24px 0px;
         }
 
         h3 {
@@ -1921,6 +1930,10 @@ main {
     @media (max-width: 767px) {
         margin: 0px 0px 32px 0px;
         grid-column: 1 / 2;
+    }
+
+    @media (max-width: 575px) {
+        margin: 0px 0px 24px 0px;
     }
 
     h1 {
