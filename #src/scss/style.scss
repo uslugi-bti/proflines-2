@@ -6651,4 +6651,79 @@ main {
     margin: 0px 0px 150px 0px;
 }
 
+.error {
+    padding: 62px;
+    position: relative;
+    overflow-x: clip;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 354px;
+        height: 354px;
+        background-color: #FFC721;
+        border-radius: 50%;
+        filter: blur(350px);
+        animation: floatMovement 15s ease-in-out infinite alternate;
+        @media (max-width: 767px) {
+            filter: blur(450px);
+        }
+    }
+    &__body {
+        display: flex;
+        flex-direction: column;
+        max-width: 481px;
+        width: 100%;
+        margin: 0 auto;
+        align-items: center;
+        gap: 24px;
+        &:hover {
+            .error__title {
+                span {
+                    color: #717580;
+                    &:first-child {
+                        transform: rotate(12deg);
+                    }
+                    &:nth-child(2) {
+                        transform: rotate(10.87deg);
+                    }
+                    &:last-child {
+                        transform: rotate(-13deg);
+                    }
+                }
+            }
+        }
+    }
+
+    &__title {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+            color: #242A36;
+            font-weight: 500;
+            font-size: 181.7px;
+            transition: $transition;
+            &:nth-child(2) {
+                transform: rotate(-24.3deg);
+            }
+        }
+    }
+
+    &__text {
+        p {
+            text-align: center;
+            color: #717580;
+            font-size: 20px;
+            line-height: 157%;
+            letter-spacing: 0.4px;
+        }
+    }
+
+    &__button {
+    }
+}
+
 @import "footer";
