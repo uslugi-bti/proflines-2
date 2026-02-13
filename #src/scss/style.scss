@@ -6726,4 +6726,64 @@ main {
     }
 }
 
+.thanks-page {
+    .breadcrump {
+        margin: 0px 0px 105px 0px;
+    }
+}
+
+.thanks {
+    margin: 0px 0px 40px 0px;
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 27px;
+        @media (max-width: 575px) {
+            gap: 24px;
+        }
+    }
+
+    &__title {
+        h1 {
+            color: #242A36;
+            font-size: 52px;
+            font-weight: 500;
+            letter-spacing: -2.6px;
+            line-height: 87%;
+
+            @media (max-width: 970px) {
+                font-size: 45px;
+            }
+
+            @media (max-width: 525px) {
+                font-size: 34px;
+                line-height: 90%;
+                letter-spacing: 0;
+            }
+        }
+    }
+
+    &__text {
+        max-width: 344px;
+        width: 100%;
+        p {
+            font-size: 16px;
+            line-height: 157%;
+            color: #717580;
+        }
+    }
+
+    &__button {
+    }
+}
+
+.next {
+    padding: 0;
+    border: none;
+    margin: 0px 0px 147px 0px;
+    @media (max-width: 767px) {
+        margin: 0px 0px 100px 0px;
+    }
+}
+
 @import "footer";
