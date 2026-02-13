@@ -1308,8 +1308,8 @@ main {
             grid-column: span 1;
         }
     }
-    @media (max-width: 425px) {
-        padding: 24px 24px 92px 24px;
+    @media (max-width: 575px) {
+        padding: 24px;
     }
 
     &:hover {
