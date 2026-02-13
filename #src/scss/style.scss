@@ -454,7 +454,7 @@ main {
         max-width: 800px;
         margin: 0 auto;
 
-        @media (max-width: 425px) {
+        @media (max-width: 767px) {
             padding: 49px 0px 100px 0px;
         }
     }
@@ -2040,6 +2040,9 @@ main {
 
 .process__title {
     margin: 0px 0px 40px 0px;
+    @media (max-width: 575px) {
+        margin: 0px 0px 24px 0px;
+    }
 
     h1 {
         font-size: 35px;
@@ -2109,6 +2112,10 @@ main {
 
     @media (max-width: 767px) {
         margin: 0 auto 32px;
+    }
+
+    @media (max-width: 575px) {
+        margin: 0 auto 24px;
     }
 
     h1 {
@@ -2803,6 +2810,10 @@ main {
         margin: 0px 0px 40px 0px;
         position: relative;
         z-index: 3;
+        margin: 0 auto 32px;
+        @media (max-width: 575px) {
+            margin: 0 auto 24px;
+        }
 
         h1 {
             font-size: 35px;
@@ -3276,6 +3287,9 @@ main {
 
 .roi__title {
     margin: 0px 0px 40px 0px;
+    @media (max-width: 575px) {
+        margin: 0px 0px 24px 0px;
+    }
 
     h1 {
         font-size: 35px;
@@ -4104,6 +4118,7 @@ main {
 
             h2 {
                 font-size: 28px;
+                margin: 0px 0px 24px 0px;
             }
 
             h3 {
@@ -5529,6 +5544,9 @@ main {
 
 .banners__title {
     margin: 0px 0px 40px 0px;
+    @media (max-width: 575px) {
+        margin: 0px 0px 24px 0px;
+    }
     h2 {
         text-align: center;
         font-size: 35px;
@@ -6475,6 +6493,9 @@ main {
     &__title {
         margin: 0px 0px 40px 0px;
         text-align: center;
+        @media (max-width: 575px) {
+            margin: 0px 0px 24px 0px;
+        }
         h2 {
             text-align: center;
             font-size: 35px;
