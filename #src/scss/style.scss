@@ -442,6 +442,9 @@ main {
         border-radius: 50%;
         filter: blur(350px);
         animation: floatMovement 15s ease-in-out infinite alternate;
+        @media (max-width: 767px) {
+            filter: blur(450px);
+        }
     }
 
     &__body {
