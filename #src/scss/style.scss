@@ -3920,6 +3920,21 @@ main {
         }
     }
 
+    &__banner {
+        padding: 24px;
+        background-color: #F5F5F5;
+        border: 0.8px solid #E4E4E4;
+        border-radius: 10px;
+        p {
+            font-size: 16px;
+            color: #242A36;
+            line-height: 157%;
+            strong {
+                font-weight: 600;
+            }
+        }
+    }
+
     &__img {
         width: 100%;
         height: 0;
@@ -6608,6 +6623,12 @@ main {
         height: 84%;
         object-fit: cover;
         border-radius: 10px;
+    }
+}
+
+.mistakes-page {
+    .breadcrump {
+        margin: 0px 0px 81px 0px;
     }
 }
 
