@@ -1074,4 +1074,18 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
+    const chart = document.querySelector('.chart');
+
+    if (chart) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    chart.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.3 });
+
+        observer.observe(chart);
+    }
 });
