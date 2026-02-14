@@ -1076,7 +1076,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const chart = document.querySelector('.chart');
-
+    
     if (chart) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {

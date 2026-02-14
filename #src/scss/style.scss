@@ -6781,15 +6781,19 @@ main {
     padding: 0;
     border: none;
     margin: 0px 0px 147px 0px;
-    @media (max-width: 767px) {
-        margin: 0px 0px 100px 0px;
-    }
+}
 
-    .columns-item__head {
-        margin: 0;
+@media (max-width: 767px) {
+    .next {
+        margin: 0px 0px 100px 0px;
     }
 }
 
+.next .columns-item__head {
+    margin: 0;
+}
+
+/* Analysis chart */
 .analysis__chart {
     margin-top: 60px;
 }
@@ -6800,6 +6804,7 @@ main {
     padding: 30px;
 }
 
+/* Header */
 .chart__header h3 {
     font-size: 22px;
     margin-bottom: 5px;
@@ -6810,11 +6815,13 @@ main {
     font-size: 14px;
 }
 
+/* Body */
 .chart__body {
     position: relative;
     margin-top: 30px;
 }
 
+/* Y axis */
 .chart__y {
     position: absolute;
     left: 0;
@@ -6825,29 +6832,69 @@ main {
     justify-content: space-between;
     font-size: 12px;
     color: #999;
+    z-index: 3;
 }
 
+/* Graph container */
 .chart__graph {
     margin-left: 40px;
     position: relative;
-}
-
-.chart__svg {
-    width: 100%;
     height: 300px;
 }
 
+/* Grid lines */
+.chart__grid {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.chart__grid-line {
+    width: 100%;
+    height: 1px;
+    background: #eee;
+    border: none;
+    display: block;
+}
+
+/* SVG */
+.chart__svg {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    z-index: 2;
+    display: block;
+}
+
+/* Line animation */
 .chart__line {
     fill: none;
     stroke: #111;
     stroke-width: 2;
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
-    transition: 1.5s ease;
+    transition: stroke-dashoffset 1.5s ease;
 }
 
 .chart.animate .chart__line {
     stroke-dashoffset: 0;
+}
+
+/* Points */
+.chart__points {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
 }
 
 .chart__points span {
@@ -6858,33 +6905,35 @@ main {
     border-radius: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
-    transition: 0.5s ease;
+    transition: opacity 0.5s ease;
 }
 
 .chart.animate .chart__points span {
     opacity: 1;
 }
 
-.chart__points .green {
-    background: #1db954;
+/* Special points with labels */
+.chart__points .green,
+.chart__points .yellow {
     width: auto;
     height: auto;
     padding: 4px 8px;
     border-radius: 6px;
-    color: #fff;
     font-size: 12px;
+    white-space: nowrap;
+}
+
+.chart__points .green {
+    background: #1db954;
+    color: #fff;
 }
 
 .chart__points .yellow {
     background: #f5b400;
-    width: auto;
-    height: auto;
-    padding: 4px 8px;
-    border-radius: 6px;
     color: #000;
-    font-size: 12px;
 }
 
+/* X axis */
 .chart__x {
     margin-left: 40px;
     display: flex;
@@ -6894,6 +6943,7 @@ main {
     margin-top: 10px;
 }
 
+/* Legend */
 .chart__legend {
     margin-top: 20px;
     display: flex;
@@ -6915,6 +6965,24 @@ main {
 
 .dot.yellow {
     background: #f5b400;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .chart {
+        padding: 20px;
+    }
+    
+    .chart__points .green,
+    .chart__points .yellow {
+        font-size: 10px;
+        padding: 2px 4px;
+    }
+    
+    .chart__legend {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
 @import "footer";

@@ -1776,24 +1776,45 @@
 
                                 <!-- Graph -->
                                 <div class="chart__graph">
+                                    
+                                    <!-- Горизонтальные линии сетки -->
+                                    <div class="chart__grid">
+                                        <span class="chart__grid-line"></span>
+                                        <span class="chart__grid-line"></span>
+                                        <span class="chart__grid-line"></span>
+                                        <span class="chart__grid-line"></span>
+                                        <span class="chart__grid-line"></span>
+                                    </div>
+
+                                    <!-- SVG линия -->
                                     <svg viewBox="0 0 800 300" class="chart__svg">
                                         <polyline 
                                             class="chart__line"
-                                            points="0,120 100,90 200,110 300,100 400,95 500,130 600,100 700,85 800,70"
+                                            points="
+                                                0,120      /* 2016 - 20k */
+                                                100,90     /* 2017 - 50k */
+                                                200,110    /* 2018 - 40k */
+                                                300,100    /* 2019 - 30k */
+                                                400,95     /* 2020 - 20k */
+                                                500,130    /* 2021 - 60k (38 900)*/
+                                                600,100    /* 2022 - 30k */
+                                                700,85     /* 2023 - 50k (57 544) */
+                                                800,70     /* 2024 - 60k */
+                                            "
                                         />
                                     </svg>
 
-                                    <!-- dots -->
+                                    <!-- Точки с подписями -->
                                     <div class="chart__points">
-                                        <span style="left:0%; top:40%"></span>
-                                        <span style="left:12%; top:30%"></span>
-                                        <span style="left:25%; top:36%"></span>
-                                        <span style="left:37%; top:33%"></span>
-                                        <span style="left:50%; top:32%"></span>
-                                        <span class="green" style="left:62%; top:45%">38 900</span>
-                                        <span style="left:75%; top:33%"></span>
-                                        <span style="left:87%; top:28%"></span>
-                                        <span class="yellow" style="left:100%; top:24%">57 544</span>
+                                        <span style="left:0%; top:40%"></span>      <!-- 2016 -->
+                                        <span style="left:12.5%; top:30%"></span>   <!-- 2017 -->
+                                        <span style="left:25%; top:36.7%"></span>   <!-- 2018 -->
+                                        <span style="left:37.5%; top:33.3%"></span> <!-- 2019 -->
+                                        <span style="left:50%; top:31.7%"></span>   <!-- 2020 -->
+                                        <span class="green" style="left:62.5%; top:43.3%">38 900</span> <!-- 2021 -->
+                                        <span style="left:75%; top:33.3%"></span>   <!-- 2022 -->
+                                        <span style="left:87.5%; top:28.3%"></span> <!-- 2023 -->
+                                        <span class="yellow" style="left:100%; top:23.3%">57 544</span> <!-- 2023 пик -->
                                     </div>
                                 </div>
 
