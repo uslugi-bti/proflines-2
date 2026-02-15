@@ -1075,59 +1075,58 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
     
-    const ctx = document.getElementById('myChart');
+    if (document.querySelector(".chart")) {
+        const ctx = document.getElementById('myChart').getContext("2d");
 
-    new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['2016','2017','2018','2019','2020','2021','2022','2023'],
-            datasets: [{
-                data: [40000, 50000, 45000, 47000, 48000, 38900, 47000, 57544],
-                borderColor: '#111',
-                borderWidth: 2,
-                tension: 0.4,
-                pointRadius: 4,
-                pointBackgroundColor: '#111',
-                pointHoverRadius: 6
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                    display: false
-                },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            return context.raw.toLocaleString();
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['2016','2017','2018','2019','2020','2021','2022','2023'],
+                datasets: [{
+                    data: [40000, 50000, 45000, 47000, 48000, 38900, 47000, 57544],
+                    borderColor: '#111',
+                    borderWidth: 2,
+                    tension: 0.4,
+                    pointRadius: 4,
+                    pointBackgroundColor: '#111',
+                    pointHoverRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.raw.toLocaleString();
+                            }
                         }
                     }
-                }
-            },
-            scales: {
-                x: {
-                    grid: {
-                        display: false
-                    }
                 },
-                y: {
-                    ticks: {
-                        callback: function(value) {
-                            return value / 1000 + 'k';
+                scales: {
+                    x: {
+                        grid: {
+                            display: false
                         }
                     },
-                    grid: {
-                        color: '#eee'
+                    y: {
+                        ticks: {
+                            callback: function(value) {
+                                return value / 1000 + 'k';
+                            }
+                        },
+                        grid: {
+                            color: '#eee'
+                        }
                     }
+                },
+                animation: {
+                    duration: 1500
                 }
-            },
-            animation: {
-                duration: 1500
             }
-        }
-    });
-
-    console.log(typeof Chart);
-
+        });
+    }
 });
