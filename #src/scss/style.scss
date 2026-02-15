@@ -6789,4 +6789,242 @@ main {
     }
 }
 
+.analysis {
+    margin: 0px 0px 154px 0px;
+    @media (max-width: 767px) {
+        margin: 0px 0px 100px 0px;
+    }
+    &__title {
+        margin: 0px 0px 16px 0px;
+        h2 {
+            font-size: 35px;
+            letter-spacing: -1px;
+            font-weight: 700;
+            text-align: center;
+            color: #242A36;
+
+            @media (max-width: 480px) {
+                font-size: 28px;
+            }
+        }
+    }
+
+    &__text {
+        margin: 0px 0px 40px 0px;
+        p {
+            font-size: 16px;
+            text-align: center;
+            color: #717580;
+            line-height: 157%;
+        }
+    }
+
+    &__items {
+        margin: 0px 0px 40px 0px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+    }
+
+    &__item {
+        padding: 32px;
+        border-radius: 16px;
+        &.blue {
+            background-color: #242A36;
+            .analysis-item__icon {
+                background-color: #FFFFFF1A;
+            }
+            .analysis-item__badge {
+                span {
+                    background-color: #FB2C3633;
+                    color: #FFA2A2;
+                }
+            }
+            .analysis-item__title {
+                h2 {
+                    color: #FFFFFF;
+                }
+            }
+            .analysis-item__text {
+                p {
+                    &:first-child {
+                        color: #FFFFFFB2;
+                    }
+                    &:last-child {
+                        color: #FFFFFF80;
+                    }
+                }
+            }
+        }
+        &.white {
+            background-color: #FFFFFF;
+            border: 1px solid #E4E4E4;
+            .analysis-item__icon {
+                background-color: #FAFAFA;
+            }
+            .analysis-item__badge {
+                span {
+                    background-color: #F4D03F33;
+                    color: #242A36;
+                }
+            }
+            .analysis-item__title {
+                h2 {
+                    color: #242A36;
+                }
+            }
+            .analysis-item__text {
+                p {
+                    &:first-child {
+                        color: #717580;
+                    }
+                    &:last-child {
+                        color: #717580;
+                    }
+                }
+            }
+        }
+        &.yellow {
+            background-color: #FFC721;
+            .analysis-item__icon {
+                background-color: #FFFFFF4D;
+            }
+            .analysis-item__badge {
+                span {
+                    background-color: #FFFFFF66;
+                    color: #242A36;
+                }
+            }
+            .analysis-item__title {
+                h2 {
+                    color: #242A36;
+                }
+            }
+            .analysis-item__text {
+                p {
+                    &:first-child {
+                        color: #242A36;
+                    }
+                    &:last-child {
+                        color: #242A36B2;
+                    }
+                }
+            }
+        }
+    }
+
+    &__chart {
+    }
+
+    &__table {
+    }
+
+    &__quote {
+    }
+}
+.container {
+}
+.blue {
+}
+.analysis-item {
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        margin: 0px 0px 16px 0px;
+    }
+
+    &__icon {
+        width: 48px;
+        height: 48px;
+        position: relative;
+        border-radius: 14px;
+        overflow: hidden;
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50%;
+            height: 50%;
+            object-fit: contain;
+        }
+    }
+
+    &__badge {
+        span {
+            display: inline-block;
+            padding: 2px 4.5px;
+            border-radius: 4px;
+        }
+    }
+
+    &__title {
+        margin: 0px 0px 17px 0px;
+        h2 {
+            font-size: 35px;
+            letter-spacing: -1px;
+            font-weight: 700;
+            color: #242A36;
+
+            @media (max-width: 480px) {
+                font-size: 28px;
+            }
+        }
+    }
+
+    &__text {
+        p {
+            margin: 0px 0px 4px 0px;
+            font-size: 16px;
+            line-height: 157%;
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+}
+.white {
+}
+.yellow {
+}
+.analysis-chart {
+
+    &__title {
+    }
+
+    &__text {
+    }
+
+    &__body {
+    }
+
+    &__items {
+    }
+
+    &__item {
+    }
+}
+.green {
+}
+.block {
+
+    &__head {
+    }
+}
+.block-head {
+
+    &__title {
+    }
+}
+.analysis-table {
+
+    &__title {
+    }
+
+    &__body {
+    }
+}
+
 @import "footer";
