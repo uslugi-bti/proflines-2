@@ -1762,79 +1762,11 @@
                                 <p>Počet zaniknutých subjektov s výrazným nárastom po pandémii</p>
                             </div>
 
-                            <div class="chart__body">
-                                <!-- Y axis -->
-                                <div class="chart__y">
-                                    <span>60k</span>
-                                    <span>50k</span>
-                                    <span>40k</span>
-                                    <span>30k</span>
-                                    <span>20k</span>
-                                </div>
-
-                                <!-- Graph -->
-                                <div class="chart__graph">
-                                    <!-- Горизонтальные линии сетки -->
-                                    <div class="chart__grid">
-                                        <span class="chart__grid-line"></span>
-                                        <span class="chart__grid-line"></span>
-                                        <span class="chart__grid-line"></span>
-                                        <span class="chart__grid-line"></span>
-                                        <span class="chart__grid-line"></span>
-                                    </div>
-
-                                    <svg viewBox="0 0 800 300" class="chart__svg">
-                                        <polyline 
-                                            class="chart__line"
-                                            points="
-                                                0,220
-                                                100,210
-                                                200,190
-                                                300,180
-                                                400,160
-                                                500,135
-                                                600,100
-                                                700,60
-                                                800,25
-                                            "
-                                        />
-
-                                        <!-- Точки -->
-                                        <g class="chart__dots">
-                                            <circle cx="0" cy="220" r="4" />
-                                            <circle cx="100" cy="210" r="4" />
-                                            <circle cx="200" cy="190" r="4" />
-                                            <circle cx="300" cy="180" r="4" />
-                                            <circle cx="400" cy="160" r="4" />
-                                            <circle cx="500" cy="135" r="4" />
-                                            <circle cx="600" cy="100" r="4" />
-                                            <circle cx="700" cy="60" r="4" />
-                                            <circle cx="800" cy="25" r="4" />
-                                        </g>
-                                    </svg>
-
-                                    <div class="chart__points">
-                                        <span class="green" style="left:62.5%; top:45%">38 900</span>
-                                        <span class="yellow" style="left:100%; top:8.33%">57 544</span>
-                                    </div>
-                                </div>
-
-                                <!-- X axis -->
-                                <div class="chart__x">
-                                    <span>2016</span>
-                                    <span>2017</span>
-                                    <span>2018</span>
-                                    <span>2019</span>
-                                    <span>2020</span>
-                                    <span>2021</span>
-                                    <span>2022</span>
-                                    <span>2023</span>
-                                </div>
-                            </div>
+                            <canvas id="myChart"></canvas>
 
                             <div class="chart__legend">
-                                <span><i class="dot green"></i> 2021 - Pandemická podpora (38 900)</span>
-                                <span><i class="dot yellow"></i> 2023 - Rekordný rok (57 544)</span>
+                                <span><i class="dot green"></i> 2021 - Pandemická podpora</span>
+                                <span><i class="dot yellow"></i> 2023 - Rekordný rok</span>
                             </div>
                         </div>
                     </div>
@@ -1844,6 +1776,7 @@
         @@include("_footer.html")
     </div>
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.min.js"></script>
     <script src="js/script.min.js"></script>
 </body>
 </html>
