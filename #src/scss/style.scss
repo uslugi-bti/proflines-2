@@ -6837,6 +6837,9 @@ main {
     &__item {
         padding: 32px;
         border-radius: 16px;
+        @media (max-width: 425px) {
+            padding: 24px;
+        }
         &.blue {
             background-color: #242A36;
             .analysis-item__icon {
@@ -6927,6 +6930,8 @@ main {
     }
 
     &__table {
+        overflow-x: auto;
+        margin: 0px 0px 40px 0px;
     }
 
     &__quote {
@@ -7000,6 +7005,9 @@ main {
         border-radius: 16px;
         overflow-x: auto;
         min-width: 650px;
+        @media (max-width: 575px) {
+            padding: 20px;
+        }
     }
 
     &__title {
@@ -7071,14 +7079,38 @@ main {
         }
     }
 }
-.green {
-}
 .analysis-table {
 
+    &__wrapper {
+        border-radius: 16px;
+        overflow: hidden;
+        border: 0.8px solid #E4E4E4;
+    }
+
     &__title {
+        padding: 32px 20px;
+        background-color: #F8F8F8;
+        border-bottom: 0.8px solid #E4E4E4;
+        h3 {
+            color: #242A36;
+            letter-spacing: -1px;
+            font-weight: 700;
+            font-size: 22px;
+        }
     }
 
     &__body {
+        table {
+            width: 100%;
+            thead {
+                border-bottom: 0.8px solid #E4E4E4;
+                background-color: #F8F8F8;
+            }
+            tbody {
+                background-color: #FFFFFF;
+                
+            }
+        }
     }
 }
 
