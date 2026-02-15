@@ -1786,8 +1786,9 @@
                                         <span class="chart__grid-line"></span>
                                     </div>
 
-                                    <!-- SVG линия -->
                                     <svg viewBox="0 0 800 300" class="chart__svg">
+
+                                        <!-- Линия -->
                                         <polyline 
                                             class="chart__line"
                                             points="
@@ -1802,7 +1803,28 @@
                                                 800,70
                                             "
                                         />
+
+                                        <!-- Точки -->
+                                        <g class="chart__dots">
+                                            <circle cx="0" cy="120" r="4" />
+                                            <circle cx="100" cy="90" r="4" />
+                                            <circle cx="200" cy="110" r="4" />
+                                            <circle cx="300" cy="100" r="4" />
+                                            <circle cx="400" cy="95" r="4" />
+                                            <circle cx="500" cy="130" r="4" />
+                                            <circle cx="600" cy="100" r="4" />
+                                            <circle cx="700" cy="85" r="4" />
+                                            <circle cx="800" cy="70" r="4" />
+                                        </g>
+
+                                        <!-- Подписи -->
+                                        <g class="chart__labels">
+                                            <text x="500" y="130" dy="-10" class="label green">38 900</text>
+                                            <text x="800" y="70" dy="-10" class="label yellow">57 544</text>
+                                        </g>
+
                                     </svg>
+
 
                                     <!-- Точки с подписями - ИСПРАВЛЕННЫЕ ПРОЦЕНТЫ -->
                                     <div class="chart__points">
