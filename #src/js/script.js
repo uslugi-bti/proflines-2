@@ -1109,6 +1109,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 scales: {
                     x: {
                         grid: {
+                            display: false,
+                            drawBorder: false,
+                            drawOnChartArea: false,
+                            drawTicks: false
+                        },
+                        border: {
                             display: false
                         }
                     },
