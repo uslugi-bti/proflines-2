@@ -1110,13 +1110,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     x: {
                         grid: {
                             display: false,
-                            drawBorder: false,
-                            drawOnChartArea: false,
-                            drawTicks: false
                         },
-                        border: {
-                            display: false
-                        }
                     },
                     y: {
                         ticks: {
