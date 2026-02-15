@@ -1128,4 +1128,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    console.log(typeof Chart);
+
 });
