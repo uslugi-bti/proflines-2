@@ -1119,7 +1119,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             }
                         },
                         grid: {
-                            color: '#717580'
+                            color: '#E4E4E4',
                         }
                     }
                 },
