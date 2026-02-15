@@ -6935,6 +6935,18 @@ main {
     }
 
     &__quote {
+        padding: 24px;
+        border-left: 4px solid #F4D03F;
+        background-color: #FAFAFA;
+        p {
+            font-size: 16px;
+            color: #717580;
+            line-height: 157%;
+            strong {
+                color: #242A36;
+                font-weight: 600;
+            }
+        }
     }
 }
 .analysis-item {
@@ -7085,6 +7097,7 @@ main {
         border-radius: 16px;
         overflow: hidden;
         border: 0.8px solid #E4E4E4;
+        min-width: 600px;
     }
 
     &__title {
@@ -7112,15 +7125,31 @@ main {
             }
         }
 
+        td, th {
+            padding: 16px;
+        }
+
         th {
             text-align: left;
             color: #717580;
             font-size: 13px;
             font-weight: 600;
+            text-transform: uppercase;
         }
 
-        td, th {
-            padding: 16px;
+        td {
+            font-size: 16px;
+            line-height: 157%;
+            color: #717580;
+            &:first-child {
+                color: #242A36;
+            }
+
+            h4 {
+                color: #242A36;
+                font-size: 18px;
+                font-weight: 500;
+            }
         }
 
         tr {
