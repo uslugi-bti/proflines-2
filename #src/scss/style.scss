@@ -6781,16 +6781,12 @@ main {
     padding: 0;
     border: none;
     margin: 0px 0px 147px 0px;
-}
-
-@media (max-width: 767px) {
-    .next {
+    @media (max-width: 767px) {
         margin: 0px 0px 100px 0px;
     }
-}
-
-.next .columns-item__head {
-    margin: 0;
+    .columns-item__head {
+        margin: 0;
+    }
 }
 
 /* Analysis chart */
