@@ -1075,8 +1075,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
     
-    if (document.querySelector(".chart")) {
-        const ctx = document.getElementById('myChart').getContext("2d");
+    if (document.querySelector(".analysis__chart")) {
+        const ctx = document.getElementById('chart').getContext("2d");
 
         const myChart = new Chart(ctx, {
             type: 'line',

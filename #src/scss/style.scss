@@ -6824,6 +6824,14 @@ main {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 32px;
+
+        @media (max-width: 970px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 575px) {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__item {
@@ -6914,6 +6922,8 @@ main {
     }
 
     &__chart {
+        overflow-x: auto;
+        margin: 0px 0px 40px 0px;
     }
 
     &__table {
@@ -6921,10 +6931,6 @@ main {
 
     &__quote {
     }
-}
-.container {
-}
-.blue {
 }
 .analysis-item {
 
@@ -6985,38 +6991,87 @@ main {
         }
     }
 }
-.white {
-}
-.yellow {
-}
 .analysis-chart {
 
+    &__wrapper {
+        padding: 40px;
+        background-color: #FFFFFF;
+        border: 0.8px solid #E4E4E4;
+        border-radius: 16px;
+        overflow-x: auto;
+        min-width: 650px;
+    }
+
     &__title {
+        margin: 0px 0px 12.6px 0px;
+        h3 {
+            color: #242A36;
+            font-weight: 700;
+            font-size: 22px;
+            letter-spacing: -1px;
+        }
     }
 
     &__text {
+        margin: 0px 0px 28.4px 0px;
+        p {
+            color: #717580;
+            font-size: 16px;
+            line-height: 157%;
+        }
     }
 
     &__body {
+        margin: 0px 0px 32px 0px;
+        canvas {
+            width: 100%;
+        }
     }
 
     &__items {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        padding: 12px 0px;
+        border-top: 0.8px solid #E4E4E4;
     }
 
     &__item {
+        span {
+            padding: 0px 0px 0px 20px;
+            position: relative;
+            color: #717580;
+            font-size: 13px;
+            line-height: 124%;
+            letter-spacing: -0.26px;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translate(0, -50%);
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+            }
+        }
+        &.green {
+            span {
+                &::before {
+                    background-color: #0D894F;
+                }
+            }
+        }
+        &.yellow {
+            span {
+                &::before {
+                    background-color: #FFC721;
+                }
+            }
+        }
     }
 }
 .green {
-}
-.block {
-
-    &__head {
-    }
-}
-.block-head {
-
-    &__title {
-    }
 }
 .analysis-table {
 
