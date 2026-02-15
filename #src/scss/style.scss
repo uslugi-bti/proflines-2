@@ -7109,7 +7109,24 @@ main {
             }
             tbody {
                 background-color: #FFFFFF;
-                
+            }
+        }
+
+        th {
+            text-align: left;
+            color: #717580;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        td, th {
+            padding: 16px;
+        }
+
+        tr {
+            border-bottom: 1px solid #E4E4E4;
+            &:last-child {
+                border: none;
             }
         }
     }
