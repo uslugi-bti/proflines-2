@@ -7102,6 +7102,7 @@ main {
     &__body {
         table {
             width: 100%;
+            border-collapse: collapse;
             thead {
                 border-bottom: 0.8px solid #E4E4E4;
                 background-color: #F8F8F8;
