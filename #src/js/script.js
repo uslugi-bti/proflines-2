@@ -1084,11 +1084,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 labels: ['2016','2017','2018','2019','2020','2021','2022','2023'],
                 datasets: [{
                     data: [40000, 50000, 45000, 47000, 48000, 38900, 47000, 57544],
-                    borderColor: '#111',
-                    borderWidth: 2,
+                    borderColor: '#242A36',
+                    borderWidth: 3,
                     tension: 0.4,
                     pointRadius: 4,
-                    pointBackgroundColor: '#111',
+                    pointBackgroundColor: '#242A36',
                     pointHoverRadius: 6
                 }]
             },
@@ -1119,7 +1119,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             }
                         },
                         grid: {
-                            color: '#eee'
+                            color: '#717580'
                         }
                     }
                 },
