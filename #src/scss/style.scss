@@ -6950,9 +6950,9 @@ main {
     }
 
     &__button {
-        text-align: center;
-        margin: 0px 0px 40px 0px;
+        margin: 0 auto 40px;
         max-width: 329px;
+        width: 100%;
         a {
             display: block;
         }
