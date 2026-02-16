@@ -6926,12 +6926,12 @@ main {
 
     &__chart {
         overflow-x: auto;
-        margin: 0px 0px 40px 0px;
+        margin: 0px 0px 32px 0px;
     }
 
     &__table {
         overflow-x: auto;
-        margin: 0px 0px 40px 0px;
+        margin: 0px 0px 32px 0px;
     }
 
     &__quote {
@@ -6946,6 +6946,15 @@ main {
                 color: #242A36;
                 font-weight: 600;
             }
+        }
+    }
+
+    &__button {
+        text-align: center;
+        margin: 0px 0px 40px 0px;
+        max-width: 329px;
+        a {
+            display: block;
         }
     }
 }
