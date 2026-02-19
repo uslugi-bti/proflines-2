@@ -6822,6 +6822,10 @@ main {
     @media (max-width: 767px) {
         margin: 0px 0px 100px 0px;
     }
+    &__body {
+        max-width: 960px;
+        margin: 0 auto;
+    }
     &__title {
         margin: 0px 0px 16px 0px;
         h2 {
