@@ -6216,16 +6216,12 @@ main {
     }
 
     .briff {
-        margin: 0px 0px 44px 0px;
         &::before {
             display: none;
         }
 
-        &__content {
-            margin: 64px 0px 0px 0px;
-            @media (max-width: 767px) {
-                margin: 0;
-            }
+        &__body {
+            grid-template-columns: 27fr 23fr;
         }
         &__form {
             box-shadow: 0px 59px 131px 0px #F9C7320A,
