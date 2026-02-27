@@ -870,6 +870,8 @@ main {
     border: 1px solid #E4E4E4;
     border-radius: 10px;
     position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
 .technical-content__head {
@@ -1106,6 +1108,7 @@ main {
     }
 
     .wp-block-table {
+        width: 100%;
         overflow-x: auto;
         margin: 0 0 24px 0;
     }
@@ -3870,6 +3873,7 @@ main {
         border: 1px solid #E4E4E4;
         border-radius: 10px;
         overflow: hidden;
+        width: 100%;
     }
 
     &__side {
@@ -4106,6 +4110,8 @@ main {
         }
 
         .wp-block-table {
+            display: none;
+            width: 100%;
             overflow-x: auto;
             margin: 0 0 24px 0;
         }

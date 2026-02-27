@@ -397,6 +397,7 @@
         @media (max-width: 525px) {
             left: 0;
             width: 100%;
+            transform: translate(0, 0);
         }
     }
     &__tip {
