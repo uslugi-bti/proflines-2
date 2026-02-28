@@ -90,6 +90,8 @@ form {
 
         &.valid-error {
             input[type=text],
+            input[type=tel],
+            input[type=email],
             textarea,
             select {
                 outline: 1px solid #ff0000;
