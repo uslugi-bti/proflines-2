@@ -6103,12 +6103,32 @@ main {
     .breadcrump {
         margin: 0px 0px 81px 0px;
     }
-}
 
-.ppc-page {
     .banners {
         padding: 0;
         border: 0;
+    }
+
+    .packages {
+        border: none;
+        padding: 0;
+    }
+
+    .packages-item__text {
+        p {
+            &:last-child {
+                background-color: #0000000A;
+                border-radius: 10px;
+                &::before {
+                    display: none;
+                }
+            }
+            &:nth-last-child(2) {
+                &::before {
+                    display: none;
+                }
+            }
+        }
     }
 }
 
@@ -6267,8 +6287,26 @@ main {
     }
 
     .packages {
-        padding: 0;
         border: none;
+        padding: 0;
+    }
+
+    .packages-item__text {
+        p {
+            &:first-child {
+                background-color: #0000000A;
+                border-radius: 10px;
+                text-align: center;
+                &::before {
+                    display: none;
+                }
+            }
+            &:nth-last-child(2) {
+                &::before {
+                    display: none;
+                }
+            }
+        }
     }
 
     .process {
