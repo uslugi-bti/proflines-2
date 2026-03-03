@@ -5061,6 +5061,23 @@ main {
         border: none;
         padding: 0;
     }
+
+    .packages-item__text {
+        p {
+            &:last-child {
+                background-color: #0000000A;
+                border-radius: 10px;
+                &::before {
+                    display: none;
+                }
+            }
+            &:nth-last-child(2) {
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
 }
 
 .service-hero {
