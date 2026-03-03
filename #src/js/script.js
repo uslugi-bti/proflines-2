@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const openSubMenu = document.querySelector(".header-bottom__item>span");
+    const openSubMenuLink = openSubMenu.parentElement.querySelector("a");
     const heightServices = document.querySelector(".header-bottom__services");
 
     openSubMenu.addEventListener("click", function () {
@@ -39,8 +40,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    openSubMenuLink.addEventListener("click", function (event) {
+        event.preventDefault();
+        if (heightServices.classList.contains("open")) {
+            heightServices.classList.remove("open");
+            openSubMenu.classList.remove("open");
+        } else {
+            heightServices.classList.add("open");
+            openSubMenu.classList.add("open");
+        }
+    });
+
     document.addEventListener("click", function (event) {
-        if (!event.target.closest(".header-bottom__item>span") && !event.target.closest(".header-bottom__services")) {
+        if (!event.target.closest(".header-bottom__item>span") && !event.target.closest(".header-bottom__services") && !event.target.closest(".header-bottom__item>a")) {
             heightServices.classList.remove("open");
             openSubMenu.classList.remove("open");
         }
