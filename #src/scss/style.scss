@@ -5579,6 +5579,11 @@ main {
     border-top: 1px solid #E4E4E4;
     border-bottom: 1px solid #E4E4E4;
 
+    &.border-none {
+        border: none;
+        padding: 0;
+    }
+
     @media (max-width: 425px) {
         margin: 0px 0px 90px 0px;
     }
