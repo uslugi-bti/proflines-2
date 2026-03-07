@@ -1163,18 +1163,4 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-
-    document.querySelectorAll("img").forEach(img => {
-
-        if (img.width && img.height) return;
-
-        const temp = new Image();
-        temp.src = img.src;
-
-        temp.onload = () => {
-            img.setAttribute("width", temp.naturalWidth);
-            img.setAttribute("height", temp.naturalHeight);
-        };
-
-    });
 });
