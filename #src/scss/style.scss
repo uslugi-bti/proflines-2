@@ -1830,6 +1830,7 @@ main {
     img {
         display: block;
         width: 100%;
+        height: auto;
         transition: transform 0.3s ease;
     }
 
@@ -2131,6 +2132,7 @@ main {
     img {
         display: block;
         width: 100%;
+        height: auto;
     }
 }
 
@@ -2609,6 +2611,7 @@ main {
         img {
             display: block;
             width: 100%;
+            height: auto;
         }
     }
 
@@ -4710,6 +4713,7 @@ main {
         img {
             display: block;
             width: 100%;
+            height: auto;
         }
     }
 }
@@ -4951,6 +4955,7 @@ main {
     img {
         display: block;
         width: 100%;
+        height: auto;
     }
 }
 
@@ -5210,6 +5215,7 @@ main {
             border-radius: 10px;
             display: block;
             width: 100%;
+            height: auto;
         }
     }
 
@@ -5238,6 +5244,7 @@ main {
             display: block;
             max-width: 100%;
             object-fit: contain;
+            height: auto;
         }
 
         &.active {
@@ -5495,6 +5502,7 @@ main {
             img {
                 display: block;
                 width: 100%;
+                height: auto;
             }
         }
     }
@@ -5727,6 +5735,7 @@ main {
     img {
         display: block;
         width: 100%;
+        height: auto;
     }
 }
 
@@ -6691,6 +6700,7 @@ main {
         margin: 0 auto;
         display: block;
         max-width: 100%;
+        height: auto;
     }
 }
 
